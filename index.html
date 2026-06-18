@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1D6B3E" />
 
   <!-- ═══ PRIMARY SEO ═══ -->
   <title>MapleSavings – RRSP & FHSA Tax Calculator Canada</title>
@@ -10,8 +11,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="RRSP calculator Canada, FHSA calculator, Canadian tax savings calculator, tax bracket calculator Canada, marginal tax rate Canada, RRSP contribution limit 2024, FHSA contribution limit, income tax calculator Canada, tax refund calculator Canada, Ontario tax calculator, Quebec tax calculator, CRA tax brackets" />
 
-  <!-- TODO: replace PLACEHOLDER-DOMAIN with real Vercel URL after first deploy -->
-  <link rel="canonical" href="https://PLACEHOLDER-DOMAIN.vercel.app/" />
+  <link rel="canonical" href="https://maplesavings.ca/" />
 
   <!-- ═══ FAVICON ═══ -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>" />
@@ -20,15 +20,19 @@
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="MapleSavings" />
   <meta property="og:locale"      content="en_CA" />
-  <meta property="og:url"         content="https://PLACEHOLDER-DOMAIN.vercel.app/" />
+  <meta property="og:url"         content="https://maplesavings.ca/" />
   <meta property="og:title"       content="MapleSavings – RRSP & FHSA Tax Calculator Canada" />
   <meta property="og:description" content="Free Canadian RRSP & FHSA tax savings calculator. Enter your income to see exactly how much tax you can save — all 13 provinces, 2024 & 2025 CRA brackets." />
-  <meta property="og:image"       content="https://PLACEHOLDER-DOMAIN.vercel.app/og-image.png" />
+  <meta property="og:image"       content="https://maplesavings.ca/og-image.png" />
+  <meta property="og:image:alt"   content="MapleSavings RRSP and FHSA tax savings calculator for Canada" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- ═══ TWITTER CARD ═══ -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="MapleSavings – RRSP & FHSA Tax Calculator Canada" />
   <meta name="twitter:description" content="Free Canadian tax calculator. See how much you can save with RRSP & FHSA contributions — instant results for all 13 provinces." />
+  <meta name="twitter:image"       content="https://maplesavings.ca/og-image.png" />
 
   <!-- ═══ FONTS ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,7 +46,7 @@
     "@type": "WebApplication",
     "name": "MapleSavings — RRSP & FHSA Tax Calculator",
     "description": "Free Canadian tax savings calculator. Calculate your RRSP and FHSA tax savings instantly across all 13 provinces and territories for 2024 and 2025.",
-    "url": "https://PLACEHOLDER-DOMAIN.vercel.app/",
+    "url": "https://maplesavings.ca/",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "inLanguage": "en-CA",
@@ -112,9 +116,10 @@
       --accent-light:#E8F4EE;   /* pale green tint */
       --text:        #1C1917;   /* warm near-black */
       --text-muted:  #6B5E55;   /* warm medium brown */
-      --text-dim:    #A89E96;   /* warm light gray */
+      --text-dim:    #7A6E64;   /* warm light gray — WCAG AA compliant */
       --danger:      #C0392B;   /* warm red */
-      --gold:        #C05621;   /* amber-orange for savings */
+      --gold:        #C05621;   /* amber-orange for warnings */
+      --gain:        #15803D;   /* positive savings green */
       --maple:       #B91C1C;   /* Canadian maple red */
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -292,9 +297,9 @@
     .stat-value { font-size: 1.1875rem; font-weight: 700; color: var(--text); }
     .savings-payoff {
       text-align: center; padding: 28px 20px;
-      background: linear-gradient(135deg, #FEF9F5 0%, #FDF4ED 100%);
+      background: linear-gradient(135deg, #F1FAF4 0%, #E8F4EE 100%);
       border-radius: 14px; margin-bottom: 20px;
-      border: 1px solid #F0D9C8;
+      border: 1px solid #CDE9D8;
     }
     .savings-payoff-label {
       font-size: 0.75rem; color: var(--text-muted);
@@ -302,17 +307,17 @@
       font-weight: 600;
     }
     .savings-amount {
-      font-size: 64px; font-weight: 700; color: var(--gold);
-      line-height: 1; text-shadow: 0 2px 20px rgba(192,86,33,0.18);
+      font-size: 64px; font-weight: 700; color: var(--gain);
+      line-height: 1; text-shadow: 0 2px 20px rgba(21,128,61,0.18);
       margin-bottom: 10px; letter-spacing: -0.02em;
     }
-    .savings-divider { height: 1px; background: #F0D9C8; margin: 10px 0; }
+    .savings-divider { height: 1px; background: #CDE9D8; margin: 10px 0; }
     .savings-breakdown {
       display: flex; align-items: center; justify-content: center;
       gap: 20px; flex-wrap: wrap;
     }
     .savings-breakdown-item { font-size: 0.875rem; color: var(--text-muted); }
-    .savings-breakdown-item span { color: var(--gold); font-weight: 600; }
+    .savings-breakdown-item span { color: var(--gain); font-weight: 600; }
     .btn-cta-full {
       display: block; width: 100%; padding: 17px;
       font-size: 1.0625rem; background: var(--accent); color: #FFFFFF;
@@ -407,11 +412,11 @@
     .comparison-row:last-child { border-bottom: none; }
     .comparison-row .rlbl { color: var(--text-muted); }
     .comparison-row .rval { font-weight: 600; color: var(--text); }
-    .rval-savings { color: var(--gold) !important; font-weight: 700; }
+    .rval-savings { color: var(--gain) !important; font-weight: 700; }
     .rval-neg { color: var(--accent) !important; }
     .optimization-cta { max-width: 1100px; margin: 0 auto; text-align: center; }
     .optimization-cta p { color: var(--text-muted); margin-bottom: 16px; font-size: 1rem; }
-    .savings-highlight { color: var(--gold); font-weight: 700; }
+    .savings-highlight { color: var(--gain); font-weight: 700; }
     .btn-cta-center {
       display: inline-flex; align-items: center;
       background: var(--accent); color: #FFFFFF;
@@ -447,9 +452,9 @@
     .rec-title { font-size: 1rem; font-weight: 700; padding-right: 30px; color: var(--text); }
     .rec-desc { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
     .rec-pill {
-      display: inline-block; background: #FEF4EC;
-      color: var(--gold); font-size: 0.75rem; font-weight: 600;
-      padding: 4px 10px; border-radius: 100px; border: 1px solid #F5DECA;
+      display: inline-block; background: #E8F4EE;
+      color: var(--gain); font-size: 0.75rem; font-weight: 600;
+      padding: 4px 10px; border-radius: 100px; border: 1px solid #CDE9D8;
     }
     .btn-rec {
       display: block; text-align: center;
@@ -603,6 +608,14 @@
     }
     .rec-more-btn:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* === FAQ === */
+    .faq-section { padding: 0 24px 72px; }
+    .faq-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .faq-item { background: var(--surface); border-radius: 16px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04); }
+    .faq-q { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .faq-a { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
+    @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
+
     /* === SOCIAL PROOF === */
     .social-proof { padding: 0 24px 40px; display: none; }
     .social-proof.visible { display: block; }
@@ -620,23 +633,31 @@
     .testimonial-body { flex: 1; }
     .testimonial-text { font-size: 0.9375rem; color: var(--text); line-height: 1.65; font-style: italic; }
     .testimonial-author { font-size: 0.8125rem; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+
+    /* === SKIP LINK === */
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; z-index: 300; }
+    .skip-link:focus { left: 0; }
   </style>
 </head>
 <body>
 
+<a href="#calculator" class="skip-link">Skip to calculator</a>
+
 <!-- NAVBAR -->
 <nav class="navbar" aria-label="Main navigation">
   <div class="navbar-inner">
-    <a href="#" class="logo" aria-label="MapleSavings home">
+    <a href="#hero" class="logo" aria-label="MapleSavings home">
       <span aria-hidden="true">🍁</span>
       <span><span class="logo-maple">Maple</span><span class="logo-savings">Savings</span></span>
     </a>
   </div>
 </nav>
 
+<main id="main-content">
+
 <!-- HERO -->
 <section class="hero" id="hero">
-  <h1>See how much tax you could save this year</h1>
+  <h1>See How Much Tax You Could Save With an RRSP or FHSA</h1>
   <p class="hero-sub">Enter your income and contribution room — MapleSavings calculates your exact federal and provincial tax savings instantly. Built for Canadians. <span aria-hidden="true">🍁</span></p>
   <div class="trust-bar" aria-label="Calculator highlights">
     <div class="trust-item">
@@ -644,7 +665,7 @@
       <span class="trust-label">Provinces &amp; Territories</span>
     </div>
     <div class="trust-item">
-      <span class="trust-value">2024</span>
+      <span class="trust-value">2024 &amp; 2025</span>
       <span class="trust-label">Tax Year Brackets</span>
     </div>
     <div class="trust-item">
@@ -662,7 +683,7 @@
       <span class="trust-badge">✅ 2024 &amp; 2025 CRA tax tables</span>
       <span class="trust-badge"><span aria-hidden="true">🍁</span> Made for Canadians</span>
     </div>
-    <h2 class="calc-title">Calculate Your Tax Savings</h2>
+    <h2 class="calc-title">Free Canadian RRSP &amp; FHSA Tax Calculator</h2>
     <p class="calc-subtitle">Fill in the fields below — results update as you type.</p>
     <form id="taxForm" novalidate>
       <div class="form-grid">
@@ -882,19 +903,6 @@
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<div class="social-proof" id="social-proof" aria-label="Customer testimonial">
-  <div class="social-proof-inner">
-    <div class="testimonial">
-      <div class="testimonial-avatar" aria-hidden="true">👤</div>
-      <div class="testimonial-body">
-        <div class="testimonial-text">"I saved $4,200 using this calculator – and opened my RRSP in minutes. Couldn't believe how easy it was."</div>
-        <div class="testimonial-author">— Sarah M., Toronto</div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- OPTIMIZATION COMPARISON -->
 <section class="optimization-section" id="optimization" aria-label="Tax optimization comparison">
   <div class="section-header" style="max-width:1100px;margin-left:auto;margin-right:auto;">
@@ -939,6 +947,33 @@
   </div>
 </section>
 
+</main>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq" aria-label="Frequently asked questions">
+  <div class="section-header" style="max-width:1100px;margin:0 auto 32px;">
+    <h2 class="section-title">RRSP &amp; FHSA Tax Savings — Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h3 class="faq-q">How much can I save with an RRSP contribution?</h3>
+      <p class="faq-a">Your RRSP tax savings equal your contribution multiplied by your combined federal and provincial marginal tax rate. For example, contributing $18,000 at a 43% marginal rate saves approximately $7,740 in taxes.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What is the RRSP contribution limit for 2024?</h3>
+      <p class="faq-a">The 2024 RRSP contribution limit is 18% of your 2023 earned income, up to a maximum of $31,560. Your personal limit is shown on your CRA Notice of Assessment or in My CRA Account.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What is an FHSA and how much can I contribute?</h3>
+      <p class="faq-a">The First Home Savings Account (FHSA) is for first-time homebuyers. You can contribute up to $8,000 per year with a $40,000 lifetime maximum. Contributions are fully tax-deductible, just like RRSP contributions.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Are these tax calculations accurate?</h3>
+      <p class="faq-a">MapleSavings uses 2024 federal and provincial tax brackets to estimate your savings. Results are estimates for informational purposes. Your actual tax owing may differ. Consult a tax professional for personalized advice.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER CTA STRIP -->
 <section class="footer-cta-strip" aria-label="Open account call to action">
   <h2>Open your RRSP, FHSA, or TFSA today</h2>
@@ -970,6 +1005,7 @@
         <a href="#calculator">RRSP Calculator</a>
         <a href="#calculator">FHSA Info</a>
         <a href="#results">Tax Brackets</a>
+        <a href="#faq">FAQ</a>
       </div>
     </nav>
     <div class="footer-disclaimer">
@@ -977,7 +1013,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    &copy; 2024 MapleSavings · Your Canadian tax savings, calculated in seconds.
+    &copy; 2026 MapleSavings · Your Canadian tax savings, calculated in seconds.
   </div>
 </footer>
 
@@ -1448,7 +1484,6 @@ function calculate(doScroll) {
   document.getElementById('results').classList.add('visible');
   document.getElementById('optimization').classList.add('visible');
   document.getElementById('recommendations').classList.add('visible');
-  document.getElementById('social-proof').classList.add('visible');
 
   if (doScroll) {
     const resultsEl = document.getElementById('results');
