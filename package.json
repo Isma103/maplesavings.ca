@@ -1,0 +1,16 @@
+{
+  "name": "maplesavings",
+  "version": "1.0.0",
+  "description": "MapleSavings helps Canadians better understand their taxes and finances through simple, accurate, and easy-to-use calculators.",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static HTML site - no build required'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
