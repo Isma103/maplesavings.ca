@@ -90,7 +90,7 @@
         "name": "What is an FHSA and how much can I contribute?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The First Home Savings Account (FHSA) is for first-time homebuyers. You can contribute up to $8,000 per year with a $40,000 lifetime maximum. Contributions are fully tax-deductible, just like RRSP contributions."
+          "text": "The First Home Savings Account (FHSA) is for first-time homebuyers. In your first year, you can contribute up to $8,000. In subsequent years, unused room from prior years carries forward (up to $8,000), allowing a maximum of $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible, just like RRSP contributions."
         }
       },
       {
@@ -259,6 +259,17 @@
     .field-note { font-size: 0.75rem; color: var(--text-dim); }
     .field-error { font-size: 0.75rem; color: var(--danger); display: none; }
     .fhsa-cap-notice { font-size: 0.75rem; color: var(--gold); display: none; }
+    .fhsa-year-toggle {
+      display: flex; align-items: center; gap: 6px; margin-top: 2px;
+    }
+    .fhsa-toggle-label {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted); cursor: pointer;
+      user-select: none;
+    }
+    .fhsa-toggle-label input[type="checkbox"] {
+      accent-color: var(--accent); width: 14px; height: 14px; cursor: pointer; flex-shrink: 0;
+    }
     .btn-calculate {
       width: 100%; padding: 17px; font-size: 1.0625rem;
       background: var(--accent); color: #FFFFFF;
@@ -761,18 +772,28 @@
         <!-- FHSA Room -->
         <div class="form-group">
           <div class="field-label">
-            <label for="fhsa-room">FHSA Room (First-Time Buyers)</label>
+            <label for="fhsa-room">FHSA Contribution Room (First-Time Buyers)</label>
             <div class="tooltip-wrapper">
-              <button type="button" class="tooltip-trigger" aria-label="Info about FHSA">?</button>
-              <div class="tooltip-box" role="tooltip">The First Home Savings Account lets first-time homebuyers contribute up to $8,000/year (max $40,000 lifetime). Contributions are fully tax-deductible, just like RRSP.</div>
+              <button type="button" class="tooltip-trigger" aria-label="Info about FHSA contribution room">?</button>
+              <div class="tooltip-box" role="tooltip">Enter the amount you plan to contribute to your FHSA. Your annual limit depends on whether this is your first year: $8,000 if you opened your FHSA this year, or up to $16,000 if you have unused room carried forward from a prior year.</div>
             </div>
           </div>
           <div class="input-wrapper">
             <span class="input-prefix" aria-hidden="true">$</span>
             <input type="text" id="fhsa-room" class="form-input has-prefix" placeholder="8,000" inputmode="decimal" autocomplete="off" />
           </div>
-          <div class="field-note">Annual max: $8,000 · Lifetime max: $40,000</div>
-          <div class="fhsa-cap-notice" id="fhsa-cap-notice" role="alert">Annual FHSA contribution is capped at $8,000.</div>
+          <div class="fhsa-year-toggle">
+            <label class="fhsa-toggle-label">
+              <input type="checkbox" id="fhsa-first-year" checked />
+              This is my first year with an FHSA
+            </label>
+            <div class="tooltip-wrapper">
+              <button type="button" class="tooltip-trigger" aria-label="Info about first year vs carry-forward">?</button>
+              <div class="tooltip-box" role="tooltip">First year (opened this year): max contribution is $8,000. Prior year account with unused room: unused room (up to $8,000) carries forward, so your max can be up to $16,000. The CRA tracks your available room in My CRA Account.</div>
+            </div>
+          </div>
+          <div class="field-note" id="fhsa-field-note">First year · Max this year: $8,000 · Lifetime max: $40,000</div>
+          <div class="fhsa-cap-notice" id="fhsa-cap-notice" role="alert">Annual FHSA contribution is capped at $8,000 (first year).</div>
         </div>
 
         <!-- Other Income -->
@@ -966,7 +987,7 @@
     </div>
     <div class="faq-item">
       <h3 class="faq-q">What is an FHSA and how much can I contribute?</h3>
-      <p class="faq-a">The First Home Savings Account (FHSA) is for first-time homebuyers. You can contribute up to $8,000 per year with a $40,000 lifetime maximum. Contributions are fully tax-deductible, just like RRSP contributions.</p>
+      <p class="faq-a">The First Home Savings Account (FHSA) is for first-time homebuyers. In your first year, you can contribute up to $8,000. In subsequent years, unused room from the prior year carries forward (up to $8,000), so you can contribute up to $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible — just like RRSP — and withdrawals to buy a first home are tax-free.</p>
     </div>
     <div class="faq-item">
       <h3 class="faq-q">Are these tax calculations accurate?</h3>
@@ -1203,11 +1224,10 @@ function calcRRSPSavings(income, rrspRoom, province, B) {
   return Math.max(0, calcTotalTax(income, province, B) - calcTotalTax(Math.max(0, income - rrspRoom), province, B));
 }
 
-// FHSA savings (capped at $8,000/year)
+// FHSA savings — fhsaRoom is already capped to the correct annual limit before being passed in
 function calcFHSASavings(income, fhsaRoom, province, B) {
-  const contrib = Math.min(fhsaRoom, 8000);
-  if (contrib <= 0) return 0;
-  return Math.max(0, calcTotalTax(income, province, B) - calcTotalTax(Math.max(0, income - contrib), province, B));
+  if (fhsaRoom <= 0) return 0;
+  return Math.max(0, calcTotalTax(income, province, B) - calcTotalTax(Math.max(0, income - fhsaRoom), province, B));
 }
 
 // ================================
@@ -1266,7 +1286,7 @@ const REC_DEFS = [
   },
   {
     id: 'fhsa', icon: '🏠', title: 'Open & Maximize Your FHSA',
-    desc: 'First-time homebuyers can contribute up to $8,000/year tax-free. Fully deductible — just like RRSP — and withdrawals for a home purchase are tax-free too.',
+    desc: 'First-time homebuyers can contribute up to $8,000/year ($16,000 if you have carry-forward room). Fully deductible — just like RRSP — and withdrawals for a first home purchase are tax-free.',
     show: d => d.fhsaRoom > 0,
     savings: d => d.fhsaSavings > 0 ? fmt(d.fhsaSavings) + ' potential savings' : null,
     sortVal: d => d.fhsaSavings,
@@ -1375,7 +1395,9 @@ function calculate(doScroll) {
   const otherIncome = parseInput(document.getElementById('other-income').value);
   const rrspRoom    = parseInput(document.getElementById('rrsp-room').value);
   const rawFhsa     = parseInput(document.getElementById('fhsa-room').value);
-  const fhsaRoom    = Math.min(rawFhsa, 8000);
+  const fhsaFirstYear = document.getElementById('fhsa-first-year').checked;
+  const fhsaCap     = fhsaFirstYear ? 8000 : 16000;
+  const fhsaRoom    = Math.min(rawFhsa, fhsaCap);
   const withheld    = parseInput(document.getElementById('taxes-withheld').value);
   const totalIncome = empIncome + otherIncome;
 
@@ -1507,9 +1529,28 @@ function onInputChange() {
   }, 300);
 }
 
-// FHSA cap notice
-document.getElementById('fhsa-room').addEventListener('input', function() {
-  document.getElementById('fhsa-cap-notice').style.display = parseInput(this.value) > 8000 ? 'block' : 'none';
+// FHSA cap notice + field note — updates on input and on first-year checkbox change
+function updateFhsaNotice() {
+  const firstYear = document.getElementById('fhsa-first-year').checked;
+  const cap = firstYear ? 8000 : 16000;
+  const val = parseInput(document.getElementById('fhsa-room').value);
+  const notice = document.getElementById('fhsa-cap-notice');
+  const note   = document.getElementById('fhsa-field-note');
+  if (firstYear) {
+    note.textContent = 'First year · Max this year: $8,000 · Lifetime max: $40,000';
+    notice.textContent = 'Annual FHSA contribution is capped at $8,000 (first year).';
+  } else {
+    note.textContent = 'Carry-forward · Max this year: $16,000 · Lifetime max: $40,000';
+    notice.textContent = 'Annual FHSA contribution is capped at $16,000 (incl. carry-forward room).';
+  }
+  notice.style.display = val > cap ? 'block' : 'none';
+}
+document.getElementById('fhsa-room').addEventListener('input', updateFhsaNotice);
+document.getElementById('fhsa-first-year').addEventListener('change', function() {
+  updateFhsaNotice();
+  const emp = parseInput(document.getElementById('employment-income').value);
+  const oth = parseInput(document.getElementById('other-income').value);
+  if (emp + oth > 0) calculate(false);
 });
 
 // Live listeners
@@ -1553,6 +1594,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('rrsp-room').value = '18,000';
   document.getElementById('fhsa-room').value = '8,000';
   document.getElementById('taxes-withheld').value = '0';
+  updateFhsaNotice();
   calculate(false);
 });
 </script>
