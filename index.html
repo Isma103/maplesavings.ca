@@ -14,7 +14,8 @@
   <link rel="canonical" href="https://maplesavings.ca/" />
 
   <!-- ═══ FAVICON ═══ -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
 
   <!-- ═══ OPEN GRAPH ═══ -->
   <meta property="og:type"        content="website" />
@@ -645,6 +646,23 @@
     .testimonial-text { font-size: 0.9375rem; color: var(--text); line-height: 1.65; font-style: italic; }
     .testimonial-author { font-size: 0.8125rem; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
 
+    /* === RELATED CALCULATORS === */
+    .related-section { padding: 0 24px 72px; }
+    .related-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+    }
+    .related-card {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 18px 12px; text-align: center;
+      font-size: 0.875rem; font-weight: 600; color: var(--text-muted);
+      transition: all 0.2s ease;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+    }
+    .related-card:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(29,107,62,0.1); }
+    .related-card.active { border-color: var(--accent); color: var(--accent); background: var(--accent-light); pointer-events: none; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
+
     /* === SKIP LINK === */
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; z-index: 300; }
     .skip-link:focus { left: 0; }
@@ -996,6 +1014,21 @@
   </div>
 </section>
 
+<!-- RELATED CALCULATORS -->
+<section class="related-section" aria-label="Tax calculators by province">
+  <div style="max-width:1100px;margin:0 auto 28px;text-align:center;padding:0 24px;">
+    <h2 class="section-title">Tax Calculators by Province</h2>
+    <p class="section-sub">Select your province for a pre-configured view with local tax brackets.</p>
+  </div>
+  <div class="related-grid">
+    <a href="/" class="related-card active"><span style="font-size:22px;" aria-hidden="true">🍁</span><span>All Provinces</span></a>
+    <a href="/ontario/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏙️</span><span>Ontario</span></a>
+    <a href="/bc/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏔️</span><span>British Columbia</span></a>
+    <a href="/alberta/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🌾</span><span>Alberta</span></a>
+    <a href="/quebec/" class="related-card"><span style="font-size:22px;" aria-hidden="true">⚜️</span><span>Quebec</span></a>
+  </div>
+</section>
+
 <!-- FOOTER CTA STRIP -->
 <section class="footer-cta-strip" aria-label="Open account call to action">
   <h2>Open your RRSP, FHSA, or TFSA today</h2>
@@ -1025,8 +1058,11 @@
     <nav aria-label="Footer navigation">
       <div class="footer-links">
         <a href="#calculator">RRSP Calculator</a>
-        <a href="#calculator">FHSA Info</a>
-        <a href="#results">Tax Brackets</a>
+        <a href="#calculator">FHSA Calculator</a>
+        <a href="/ontario/">Ontario Tax Calculator</a>
+        <a href="/bc/">BC Tax Calculator</a>
+        <a href="/alberta/">Alberta Tax Calculator</a>
+        <a href="/quebec/">Quebec Tax Calculator</a>
         <a href="#faq">FAQ</a>
       </div>
     </nav>
