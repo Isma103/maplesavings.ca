@@ -113,6 +113,30 @@
           "@type": "Answer",
           "text": "MapleSavings uses 2025 CRA federal and Ontario provincial tax brackets. Results are estimates only and may differ from your CRA assessment. Ontario's surtax may affect results at higher income levels. Always consult a tax professional for personalized advice."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RRSP contribution limit for 2025 and 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 2025 RRSP contribution limit is $32,490 (or 18% of your 2024 earned income, whichever is lower). For 2026, the limit increased to $33,810. Unused room carries forward indefinitely and your personal limit appears on your CRA Notice of Assessment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I contribute to both an RRSP and an FHSA in the same year as an Ontario resident?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Ontario residents can contribute to both an RRSP and an FHSA in the same tax year. Both reduce your federal and Ontario provincial taxable income dollar-for-dollar, maximizing your combined tax savings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my personal data safe when using MapleSavings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. MapleSavings runs entirely in your browser. Your income, RRSP room, FHSA room, and all other inputs are never sent to any server or third party. All calculations happen locally on your device and nothing is stored or tracked."
+        }
       }
     ]
   }
@@ -678,6 +702,15 @@
     /* === SKIP LINK === */
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; z-index: 300; }
     .skip-link:focus { left: 0; }
+
+    /* === BRIDGE + WHY-WS === */
+    .savings-bridge { background: rgba(198,160,80,0.08); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); margin: 14px 0 10px; }
+    .why-ws { background: rgba(198,160,80,0.06); border-radius: 10px; padding: 14px 16px; margin: 0 0 14px; }
+    .why-ws-title { font-weight: 700; font-size: 0.85rem; letter-spacing: .04em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .why-ws-features { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
+    .why-ws-feature { font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
+    .why-ws-check { color: var(--gold); font-weight: 700; }
+    @media (max-width: 480px) { .why-ws-features { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -743,7 +776,7 @@
             <option value="2024">2024 — Last filed year</option>
             <option value="2025" selected>2025 — Current filing season</option>
           </select>
-          <div class="year-notice" id="year-notice">2025 rates based on CRA-announced 2.7% indexation.</div>
+          <div class="year-notice" id="year-notice">2025 rates: federal bottom bracket reduced to 14.5% (blended, effective July 1, 2025). Provincial brackets indexed ~2.7%.</div>
         </div>
 
         <!-- Province -->
@@ -890,7 +923,6 @@
             <div class="stat-value" id="result-fhsa-room">—</div>
           </div>
         </div>
-        <div class="urgency-banner" aria-live="polite">⏳ FHSA contribution deadline: December 31 – contribute before year-end to claim your deduction.</div>
         <div class="savings-payoff">
           <div class="savings-payoff-label">Your Potential Tax Savings</div>
           <div class="savings-amount" id="total-savings-counter" aria-live="polite">$0</div>
@@ -900,8 +932,23 @@
             <div class="savings-breakdown-item">FHSA Savings: <span id="fhsa-savings-amount">$0</span></div>
           </div>
         </div>
-        <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-full" id="primary-cta" aria-live="polite">Open Account &amp; Get $25 Bonus →</a>
-        <p class="cta-subtext">Wealthsimple is Canada's largest online broker · CIPF protected</p>
+        <div class="savings-bridge">
+          These savings come from contributing to an <strong>RRSP</strong> or <strong>FHSA</strong> — registered accounts that reduce your taxable income dollar-for-dollar. To contribute, you need an account that holds these plans. Wealthsimple opens an RRSP, FHSA, and TFSA together in about 5 minutes — free, with no minimum balance.
+        </div>
+        <div class="why-ws">
+          <div class="why-ws-title">Why Wealthsimple?</div>
+          <div class="why-ws-features">
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> Free to open</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> No minimum balance</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> RRSP + FHSA + TFSA in one app</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> ~5-minute setup</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> CIPF protected</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> Your data stays in your browser</div>
+          </div>
+        </div>
+        <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-full" id="primary-cta" aria-live="polite">Open your account →</a>
+        <p class="cta-subtext">+ $25 to start · Free to open · No minimum · ~5 min · CIPF-protected</p>
+        <div class="urgency-banner" id="urgency-banner" aria-live="polite" style="display:none;"></div>
       </div>
 
       <!-- Card B: Tax Bracket Breakdown -->
@@ -1020,8 +1067,20 @@
       <p class="faq-a">The First Home Savings Account (FHSA) is for first-time homebuyers. In your first year, you can contribute up to $8,000. Unused room carries forward (up to $8,000), allowing up to $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible and withdrawals for a first home purchase are tax-free.</p>
     </div>
     <div class="faq-item">
+      <h3 class="faq-q">What is the RRSP contribution limit for 2025 and 2026?</h3>
+      <p class="faq-a">The 2025 RRSP limit is $32,490 (or 18% of your 2024 earned income, whichever is lower). For 2026, the limit increased to $33,810. Unused room carries forward indefinitely. Your personal limit is shown on your CRA Notice of Assessment or in My CRA Account.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Can I contribute to both an RRSP and FHSA in the same year?</h3>
+      <p class="faq-a">Yes — Ontario residents can contribute to both in the same tax year. Both reduce your federal and Ontario provincial taxable income dollar-for-dollar, maximizing your combined tax savings. This calculator shows both savings simultaneously above.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Is my personal data safe when using MapleSavings?</h3>
+      <p class="faq-a">Yes. MapleSavings runs entirely in your browser — your income, RRSP room, FHSA room, and all other inputs are never sent to any server or third party. All calculations happen locally on your device and nothing is stored or tracked.</p>
+    </div>
+    <div class="faq-item">
       <h3 class="faq-q">Are these Ontario tax calculations accurate?</h3>
-      <p class="faq-a">MapleSavings uses 2024 and 2025 CRA federal and Ontario provincial tax brackets to estimate your savings. Note: Ontario's surtax is not included in these estimates. Results are for informational purposes — your actual tax owing may differ. Consult a tax professional for personalized advice.</p>
+      <p class="faq-a">MapleSavings uses 2025 CRA federal and Ontario provincial tax brackets to estimate your savings. Note: Ontario's surtax is not included in these estimates. Results are for informational purposes — your actual tax owing may differ. Consult a tax professional for personalized advice.</p>
     </div>
   </div>
 </section>
@@ -1079,7 +1138,9 @@
       </div>
     </nav>
     <div class="footer-disclaimer">
-      Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.
+      Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
+      <strong>Affiliate disclosure:</strong> Some links on this site are referral links. If you open an account through our links, we may receive a referral bonus at no cost to you.<br><br>
+      Tax data: 2025 federal &amp; provincial brackets · <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Source: CRA</a> · Last updated June 2026
     </div>
   </div>
   <div class="footer-bottom">
@@ -1098,124 +1159,213 @@
 // Tax Brackets — 2024 confirmed · 2025 announced (CRA indexation)
 // ================================
 
-// 2024 — CRA-confirmed rates (base year)
+// 2024 — CRA-confirmed rates (base year) · Source: CRA / TaxTips.ca
+// Sources: CRA, Narcity (2024), TaxTips.ca (2025) — all confirmed 2024 values
 const BRACKETS_2024 = {
   federal: {
     personalAmount: 15705,
     brackets: [
-      { min: 0,      max: 55867,   rate: 0.15   },
-      { min: 55867,  max: 111733,  rate: 0.205  },
-      { min: 111733, max: 154906,  rate: 0.26   },
-      { min: 154906, max: 220000,  rate: 0.29   },
-      { min: 220000, max: Infinity, rate: 0.33  }
+      { min: 0,      max: 55867,    rate: 0.15   },
+      { min: 55867,  max: 111733,   rate: 0.205  },
+      { min: 111733, max: 173205,   rate: 0.26   },
+      { min: 173205, max: 246752,   rate: 0.29   },
+      { min: 246752, max: Infinity, rate: 0.33   }
     ]
   },
-  AB: { name: 'Alberta', personalAmount: 21003, brackets: [
-    { min: 0,      max: 148269,  rate: 0.10  },
-    { min: 148269, max: 177922,  rate: 0.12  },
-    { min: 177922, max: 237230,  rate: 0.13  },
-    { min: 237230, max: 355845,  rate: 0.14  },
-    { min: 355845, max: Infinity, rate: 0.15 }
+  AB: { name: 'Alberta', personalAmount: 21885, brackets: [
+    { min: 0,      max: 148269,    rate: 0.10  },
+    { min: 148269, max: 177922,    rate: 0.12  },
+    { min: 177922, max: 237230,    rate: 0.13  },
+    { min: 237230, max: 355845,    rate: 0.14  },
+    { min: 355845, max: Infinity,  rate: 0.15  }
   ]},
-  BC: { name: 'British Columbia', personalAmount: 11981, brackets: [
-    { min: 0,      max: 45654,   rate: 0.0506 },
-    { min: 45654,  max: 91310,   rate: 0.077  },
-    { min: 91310,  max: 104835,  rate: 0.105  },
-    { min: 104835, max: 127299,  rate: 0.1229 },
-    { min: 127299, max: 172602,  rate: 0.147  },
-    { min: 172602, max: 240716,  rate: 0.168  },
-    { min: 240716, max: Infinity, rate: 0.205 }
+  BC: { name: 'British Columbia', personalAmount: 12580, brackets: [
+    { min: 0,      max: 47937,    rate: 0.0506 },
+    { min: 47937,  max: 95875,    rate: 0.077  },
+    { min: 95875,  max: 110076,   rate: 0.105  },
+    { min: 110076, max: 133664,   rate: 0.1229 },
+    { min: 133664, max: 181232,   rate: 0.147  },
+    { min: 181232, max: 252752,   rate: 0.168  },
+    { min: 252752, max: Infinity, rate: 0.205  }
   ]},
   MB: { name: 'Manitoba', personalAmount: 15780, brackets: [
-    { min: 0,      max: 47000,   rate: 0.108  },
-    { min: 47000,  max: 100000,  rate: 0.1275 },
-    { min: 100000, max: Infinity, rate: 0.174 }
+    { min: 0,      max: 47000,    rate: 0.108  },
+    { min: 47000,  max: 100000,   rate: 0.1275 },
+    { min: 100000, max: Infinity, rate: 0.174  }
   ]},
-  NB: { name: 'New Brunswick', personalAmount: 12458, brackets: [
-    { min: 0,      max: 47715,   rate: 0.094 },
-    { min: 47715,  max: 95431,   rate: 0.14  },
-    { min: 95431,  max: 176756,  rate: 0.16  },
-    { min: 176756, max: Infinity, rate: 0.195 }
+  NB: { name: 'New Brunswick', personalAmount: 13044, brackets: [
+    { min: 0,      max: 49958,    rate: 0.094 },
+    { min: 49958,  max: 99916,    rate: 0.14  },
+    { min: 99916,  max: 185064,   rate: 0.16  },
+    { min: 185064, max: Infinity, rate: 0.195 }
   ]},
   NL: { name: 'Newfoundland & Labrador', personalAmount: 10818, brackets: [
-    { min: 0,      max: 43198,   rate: 0.087 },
-    { min: 43198,  max: 86395,   rate: 0.145 },
-    { min: 86395,  max: 154244,  rate: 0.158 },
-    { min: 154244, max: 215943,  rate: 0.178 },
-    { min: 215943, max: 275870,  rate: 0.198 },
-    { min: 275870, max: Infinity, rate: 0.213 }
+    { min: 0,       max: 43198,    rate: 0.087 },
+    { min: 43198,   max: 86395,    rate: 0.145 },
+    { min: 86395,   max: 154244,   rate: 0.158 },
+    { min: 154244,  max: 215943,   rate: 0.178 },
+    { min: 215943,  max: 275870,   rate: 0.198 },
+    { min: 275870,  max: 551739,   rate: 0.208 },
+    { min: 551739,  max: 1103478,  rate: 0.213 },
+    { min: 1103478, max: Infinity, rate: 0.218 }
   ]},
-  NS: { name: 'Nova Scotia', personalAmount: 8481, brackets: [
-    { min: 0,      max: 29590,   rate: 0.0879 },
-    { min: 29590,  max: 59180,   rate: 0.1495 },
-    { min: 59180,  max: 93000,   rate: 0.1667 },
-    { min: 93000,  max: 150000,  rate: 0.175  },
-    { min: 150000, max: Infinity, rate: 0.21  }
+  NS: { name: 'Nova Scotia', personalAmount: 11481, brackets: [
+    { min: 0,      max: 29590,    rate: 0.0879 },
+    { min: 29590,  max: 59180,    rate: 0.1495 },
+    { min: 59180,  max: 93000,    rate: 0.1667 },
+    { min: 93000,  max: 150000,   rate: 0.175  },
+    { min: 150000, max: Infinity, rate: 0.21   }
   ]},
-  NT: { name: 'Northwest Territories', personalAmount: 16593, brackets: [
-    { min: 0,      max: 50597,   rate: 0.059  },
-    { min: 50597,  max: 101198,  rate: 0.086  },
-    { min: 101198, max: 164525,  rate: 0.122  },
+  NT: { name: 'Northwest Territories', personalAmount: 17373, brackets: [
+    { min: 0,      max: 50597,    rate: 0.059  },
+    { min: 50597,  max: 101198,   rate: 0.086  },
+    { min: 101198, max: 164525,   rate: 0.122  },
     { min: 164525, max: Infinity, rate: 0.1405 }
   ]},
-  NU: { name: 'Nunavut', personalAmount: 17925, brackets: [
-    { min: 0,      max: 53268,   rate: 0.04  },
-    { min: 53268,  max: 106537,  rate: 0.07  },
-    { min: 106537, max: 173205,  rate: 0.09  },
+  NU: { name: 'Nunavut', personalAmount: 18767, brackets: [
+    { min: 0,      max: 53268,    rate: 0.04  },
+    { min: 53268,  max: 106537,   rate: 0.07  },
+    { min: 106537, max: 173205,   rate: 0.09  },
     { min: 173205, max: Infinity, rate: 0.115 }
   ]},
-  ON: { name: 'Ontario', personalAmount: 11865, brackets: [
-    { min: 0,      max: 51446,   rate: 0.0505 },
-    { min: 51446,  max: 102894,  rate: 0.0915 },
-    { min: 102894, max: 150000,  rate: 0.1116 },
-    { min: 150000, max: 220000,  rate: 0.1216 },
+  ON: { name: 'Ontario', personalAmount: 12399, brackets: [
+    { min: 0,      max: 51446,    rate: 0.0505 },
+    { min: 51446,  max: 102894,   rate: 0.0915 },
+    { min: 102894, max: 150000,   rate: 0.1116 },
+    { min: 150000, max: 220000,   rate: 0.1216 },
     { min: 220000, max: Infinity, rate: 0.1316 }
   ]},
-  PE: { name: 'Prince Edward Island', personalAmount: 12000, brackets: [
-    { min: 0,      max: 32656,   rate: 0.096  },
-    { min: 32656,  max: 64313,   rate: 0.1337 },
-    { min: 64313,  max: 105000,  rate: 0.167  },
-    { min: 105000, max: 140000,  rate: 0.18   },
-    { min: 140000, max: Infinity, rate: 0.187 }
+  PE: { name: 'Prince Edward Island', personalAmount: 13500, brackets: [
+    { min: 0,      max: 32656,    rate: 0.0965 },
+    { min: 32656,  max: 64313,    rate: 0.1363 },
+    { min: 64313,  max: 105000,   rate: 0.1665 },
+    { min: 105000, max: 140000,   rate: 0.18   },
+    { min: 140000, max: Infinity, rate: 0.1875 }
   ]},
-  QC: { name: 'Quebec', personalAmount: 17183, brackets: [
-    { min: 0,      max: 51780,   rate: 0.14   },
-    { min: 51780,  max: 103545,  rate: 0.19   },
-    { min: 103545, max: 126000,  rate: 0.24   },
+  QC: { name: 'Quebec', personalAmount: 18056, brackets: [
+    { min: 0,      max: 51780,    rate: 0.14   },
+    { min: 51780,  max: 103545,   rate: 0.19   },
+    { min: 103545, max: 126000,   rate: 0.24   },
     { min: 126000, max: Infinity, rate: 0.2575 }
   ]},
-  SK: { name: 'Saskatchewan', personalAmount: 17661, brackets: [
-    { min: 0,      max: 49720,   rate: 0.105 },
-    { min: 49720,  max: 142058,  rate: 0.125 },
-    { min: 142058, max: Infinity, rate: 0.145 }
+  SK: { name: 'Saskatchewan', personalAmount: 18491, brackets: [
+    { min: 0,      max: 52057,    rate: 0.105 },
+    { min: 52057,  max: 148734,   rate: 0.125 },
+    { min: 148734, max: Infinity, rate: 0.145 }
   ]},
   YT: { name: 'Yukon', personalAmount: 15705, brackets: [
-    { min: 0,      max: 55867,   rate: 0.064 },
-    { min: 55867,  max: 111733,  rate: 0.09  },
-    { min: 111733, max: 154906,  rate: 0.109 },
-    { min: 154906, max: 500000,  rate: 0.128 },
-    { min: 500000, max: Infinity, rate: 0.15 }
+    { min: 0,      max: 55867,    rate: 0.064 },
+    { min: 55867,  max: 111733,   rate: 0.09  },
+    { min: 111733, max: 173205,   rate: 0.109 },
+    { min: 173205, max: 500000,   rate: 0.128 },
+    { min: 500000, max: Infinity, rate: 0.15  }
   ]}
 };
 
-// Apply CPI indexation to bracket thresholds and personal amount.
-// Rates never change — only dollar thresholds are indexed.
-function indexBrackets(base, factor) {
-  const out = { personalAmount: Math.round(base.personalAmount * (1 + factor)), brackets: [] };
-  if (base.name) out.name = base.name;
-  for (let i = 0; i < base.brackets.length; i++) {
-    const b = base.brackets[i];
-    const newMin = i === 0 ? 0 : out.brackets[i - 1].max;
-    const newMax = b.max === Infinity ? Infinity : Math.round(b.max * (1 + factor));
-    out.brackets.push({ min: newMin, max: newMax, rate: b.rate });
-  }
-  return out;
-}
-
-// 2025: federal 2.7% (CRA-announced); QC 2.9% (Revenu Québec); others ~2.7%
-const IDX_2025 = { federal:0.027, AB:0.027, BC:0.027, MB:0.027, NB:0.027, NL:0.027, NS:0.027, NT:0.027, NU:0.027, ON:0.027, PE:0.027, QC:0.029, SK:0.027, YT:0.027 };
-const BRACKETS_2025 = {};
-for (const [k, v] of Object.entries(BRACKETS_2024)) { BRACKETS_2025[k] = indexBrackets(v, IDX_2025[k] || 0.027); }
+// All 2025 values hardcoded from confirmed CRA / TaxTips.ca sources.
+// AB and PE had rate changes; YT added a new bracket; MB frozen at 2024.
+const BRACKETS_2025 = {
+  federal: {
+    personalAmount: 16129,
+    brackets: [
+      { min: 0,      max: 57375,    rate: 0.145 },
+      { min: 57375,  max: 114750,   rate: 0.205 },
+      { min: 114750, max: 177882,   rate: 0.26  },
+      { min: 177882, max: 253414,   rate: 0.29  },
+      { min: 253414, max: Infinity, rate: 0.33  }
+    ]
+  },
+  AB: { name: 'Alberta', personalAmount: 22323, brackets: [
+    { min: 0,      max: 60000,    rate: 0.08  },
+    { min: 60000,  max: 151234,   rate: 0.10  },
+    { min: 151234, max: 181481,   rate: 0.12  },
+    { min: 181481, max: 241974,   rate: 0.13  },
+    { min: 241974, max: 362961,   rate: 0.14  },
+    { min: 362961, max: Infinity, rate: 0.15  }
+  ]},
+  BC: { name: 'British Columbia', personalAmount: 12920, brackets: [
+    { min: 0,      max: 49233,    rate: 0.0506 },
+    { min: 49233,  max: 98464,    rate: 0.077  },
+    { min: 98464,  max: 113048,   rate: 0.105  },
+    { min: 113048, max: 137273,   rate: 0.1229 },
+    { min: 137273, max: 186125,   rate: 0.147  },
+    { min: 186125, max: 259576,   rate: 0.168  },
+    { min: 259576, max: Infinity, rate: 0.205  }
+  ]},
+  MB: { name: 'Manitoba', personalAmount: 15780, brackets: [
+    { min: 0,      max: 47000,    rate: 0.108  },
+    { min: 47000,  max: 100000,   rate: 0.1275 },
+    { min: 100000, max: Infinity, rate: 0.174  }
+  ]},
+  NB: { name: 'New Brunswick', personalAmount: 13396, brackets: [
+    { min: 0,      max: 51306,    rate: 0.094 },
+    { min: 51306,  max: 102614,   rate: 0.14  },
+    { min: 102614, max: 190060,   rate: 0.16  },
+    { min: 190060, max: Infinity, rate: 0.195 }
+  ]},
+  NL: { name: 'Newfoundland & Labrador', personalAmount: 11067, brackets: [
+    { min: 0,       max: 44192,    rate: 0.087 },
+    { min: 44192,   max: 88382,    rate: 0.145 },
+    { min: 88382,   max: 157792,   rate: 0.158 },
+    { min: 157792,  max: 220910,   rate: 0.178 },
+    { min: 220910,  max: 282214,   rate: 0.198 },
+    { min: 282214,  max: 564429,   rate: 0.208 },
+    { min: 564429,  max: 1128858,  rate: 0.213 },
+    { min: 1128858, max: Infinity, rate: 0.218 }
+  ]},
+  NS: { name: 'Nova Scotia', personalAmount: 11744, brackets: [
+    { min: 0,      max: 30507,    rate: 0.0879 },
+    { min: 30507,  max: 61015,    rate: 0.1495 },
+    { min: 61015,  max: 95883,    rate: 0.1667 },
+    { min: 95883,  max: 154650,   rate: 0.175  },
+    { min: 154650, max: Infinity, rate: 0.21   }
+  ]},
+  NT: { name: 'Northwest Territories', personalAmount: 17842, brackets: [
+    { min: 0,      max: 51964,    rate: 0.059  },
+    { min: 51964,  max: 103930,   rate: 0.086  },
+    { min: 103930, max: 168967,   rate: 0.122  },
+    { min: 168967, max: Infinity, rate: 0.1405 }
+  ]},
+  NU: { name: 'Nunavut', personalAmount: 19274, brackets: [
+    { min: 0,      max: 54707,    rate: 0.04  },
+    { min: 54707,  max: 109413,   rate: 0.07  },
+    { min: 109413, max: 177881,   rate: 0.09  },
+    { min: 177881, max: Infinity, rate: 0.115 }
+  ]},
+  ON: { name: 'Ontario', personalAmount: 12747, brackets: [
+    { min: 0,      max: 52886,    rate: 0.0505 },
+    { min: 52886,  max: 105775,   rate: 0.0915 },
+    { min: 105775, max: 150000,   rate: 0.1116 },
+    { min: 150000, max: 220000,   rate: 0.1216 },
+    { min: 220000, max: Infinity, rate: 0.1316 }
+  ]},
+  PE: { name: 'Prince Edward Island', personalAmount: 14650, brackets: [
+    { min: 0,      max: 33328,    rate: 0.095  },
+    { min: 33328,  max: 64656,    rate: 0.1347 },
+    { min: 64656,  max: 105000,   rate: 0.166  },
+    { min: 105000, max: 140000,   rate: 0.1762 },
+    { min: 140000, max: Infinity, rate: 0.19   }
+  ]},
+  QC: { name: 'Quebec', personalAmount: 18580, brackets: [
+    { min: 0,      max: 53282,    rate: 0.14   },
+    { min: 53282,  max: 106548,   rate: 0.19   },
+    { min: 106548, max: 129654,   rate: 0.24   },
+    { min: 129654, max: Infinity, rate: 0.2575 }
+  ]},
+  SK: { name: 'Saskatchewan', personalAmount: 19491, brackets: [
+    { min: 0,      max: 53463,    rate: 0.105 },
+    { min: 53463,  max: 152750,   rate: 0.125 },
+    { min: 152750, max: Infinity, rate: 0.145 }
+  ]},
+  YT: { name: 'Yukon', personalAmount: 16129, brackets: [
+    { min: 0,      max: 57375,    rate: 0.064  },
+    { min: 57375,  max: 114750,   rate: 0.09   },
+    { min: 114750, max: 177882,   rate: 0.109  },
+    { min: 177882, max: 253414,   rate: 0.1293 },
+    { min: 253414, max: 500000,   rate: 0.128  },
+    { min: 500000, max: Infinity, rate: 0.15   }
+  ]}
+};
 
 const ALL_BRACKETS = { 2024: BRACKETS_2024, 2025: BRACKETS_2025 };
 
@@ -1246,8 +1396,9 @@ function calcTax(income, brackets, personalAmount) {
 }
 
 function calcTotalTax(income, province, B) {
-  return calcTax(income, B.federal.brackets, B.federal.personalAmount)
-       + calcTax(income, B[province].brackets, B[province].personalAmount);
+  let fedTax = calcTax(income, B.federal.brackets, B.federal.personalAmount);
+  if (province === 'QC') fedTax *= 0.835;
+  return fedTax + calcTax(income, B[province].brackets, B[province].personalAmount);
 }
 
 // Combined federal + provincial marginal rate at given income
@@ -1262,8 +1413,9 @@ function getMarginalRate(income, province, B) {
   }
   const fedTaxable  = Math.max(0, income - B.federal.personalAmount);
   const provTaxable = Math.max(0, income - B[province].personalAmount);
-  return bracketRate(fedTaxable, B.federal.brackets)
-       + bracketRate(provTaxable, B[province].brackets);
+  const fedRate = bracketRate(fedTaxable, B.federal.brackets);
+  const adjustedFedRate = province === 'QC' ? fedRate * 0.835 : fedRate;
+  return adjustedFedRate + bracketRate(provTaxable, B[province].brackets);
 }
 
 // RRSP savings = actual tax difference (handles bracket crossings correctly)
@@ -1344,43 +1496,43 @@ const REC_DEFS = [
     id: 'tfsa', icon: '📈', title: 'Maximize Your TFSA',
     desc: 'Contribute up to $7,000 this year. All investment growth and withdrawals are completely tax-free — the most flexible tax shelter available to Canadians.',
     show: () => true,
-    savings: () => '$5,758 estimated lifetime tax savings',
+    savings: () => 'Tax-free growth and withdrawals for life',
     sortVal: () => 5758,
-    cta: 'Open TFSA →'
+    cta: 'Open TFSA Account →'
   },
   {
-    id: 'instalments', icon: '📅', title: 'Plan Your Tax Instalments',
-    desc: 'If you owe more than $3,000, the CRA may require quarterly tax instalments. Plan ahead to avoid interest charges and penalties.',
+    id: 'instalments', icon: '📅', title: 'Avoid CRA Interest Charges',
+    desc: 'If you owe more than $3,000, the CRA may require quarterly tax instalments. Filing your return accurately with Wealthsimple Tax (free) helps you stay on top of what you owe.',
     show: d => d.estimatedOwing > 3000,
-    savings: () => 'Avoid CRA interest charges',
+    savings: () => 'Avoid CRA interest and penalties',
     sortVal: () => 3500,
-    cta: 'Plan Payment →'
+    cta: 'File Taxes Free →'
   },
   {
     id: 'spousal', icon: '👫', title: 'Consider a Spousal RRSP',
-    desc: 'Income-splitting with a spousal RRSP reduces your combined family tax bill significantly — especially in retirement when one spouse earns less.',
+    desc: 'Income-splitting with a spousal RRSP lets you shift retirement income to a lower-earning partner — reducing your combined family tax bill when it matters most.',
     show: d => d.totalIncome > 80000,
-    savings: () => '$4,375 estimated retirement tax savings',
+    savings: () => 'Split income with your partner in retirement',
     sortVal: () => 4375,
-    cta: 'Learn More →'
+    cta: 'Open Spousal RRSP →'
   },
   {
-    id: 'advanced', icon: '⚙️', title: 'Advanced Tax Planning',
-    desc: 'At your income level, incorporation, family trusts, or insurance strategies may significantly reduce your tax burden. Consult a tax professional.',
+    id: 'advanced', icon: '⚙️', title: 'Max Out Your Registered Accounts First',
+    desc: 'At your income level, fully maximizing your RRSP, FHSA, and TFSA is the highest-return tax-reduction move available before considering more complex strategies.',
     show: d => d.totalIncome > 150000,
-    savings: () => 'Book a professional consultation',
+    savings: () => 'Maximize every registered shelter first',
     sortVal: () => 2000,
-    cta: 'Learn More →'
+    cta: 'Open an Account →'
   }
 ];
 
 const REC_CTA_LABELS = {
-  rrsp: 'Contribute to RRSP',
-  fhsa: 'Open FHSA',
-  tfsa: 'Open TFSA',
-  instalments: 'Plan Payment',
-  spousal: 'Learn More',
-  advanced: 'Consult a Pro'
+  rrsp: 'Open RRSP Account',
+  fhsa: 'Open FHSA Account',
+  tfsa: 'Open TFSA Account',
+  instalments: 'File Taxes Free',
+  spousal: 'Open Spousal RRSP',
+  advanced: 'Open an Account'
 };
 
 function makeRecCard(r, rank) {
@@ -1467,25 +1619,26 @@ function calculate(doScroll) {
   // Update year notice below the selector
   const yearNotice = document.getElementById('year-notice');
   if (year === 2025) {
-    yearNotice.textContent = '2025 rates based on CRA-announced 2.7% indexation.';
+    yearNotice.textContent = '2025 rates: federal bottom bracket reduced to 14.5% (blended, effective July 1, 2025). Provincial brackets indexed ~2.7%.';
     yearNotice.className = 'year-notice';
   } else {
     yearNotice.textContent = '';
   }
 
   // Tax calcs
-  const fedTax   = calcTax(totalIncome, B.federal.brackets, B.federal.personalAmount);
+  let fedTax = calcTax(totalIncome, B.federal.brackets, B.federal.personalAmount);
+  if (province === 'QC') fedTax *= 0.835;
   const provTax  = calcTax(totalIncome, B[province].brackets, B[province].personalAmount);
   const totalTax = fedTax + provTax;
   const marginalRate = getMarginalRate(totalIncome, province, B);
-  const rrspSavings  = calcRRSPSavings(totalIncome, rrspRoom, province, B);
-  const fhsaSavings  = calcFHSASavings(totalIncome, fhsaRoom, province, B);
-  const totalSavings = rrspSavings + fhsaSavings;
-  const estimatedOwing = totalTax - withheld;
-
-  // Optimized scenario
-  const reducedIncome = Math.max(0, totalIncome - rrspRoom - fhsaRoom);
-  const reducedTax    = calcTotalTax(reducedIncome, province, B);
+  // Single source of truth — prevents double-counting at bracket boundaries
+  const reducedIncome   = Math.max(0, totalIncome - rrspRoom - fhsaRoom);
+  const reducedTax      = calcTotalTax(reducedIncome, province, B);
+  const combinedSavings = Math.max(0, totalTax - reducedTax);
+  const rrspSavings     = calcRRSPSavings(totalIncome, rrspRoom, province, B);
+  const fhsaSavings     = Math.max(0, combinedSavings - rrspSavings);
+  const totalSavings    = combinedSavings;
+  const estimatedOwing  = totalTax - withheld;
 
   const data = { province, totalIncome, rrspRoom, fhsaRoom, rrspSavings, fhsaSavings, totalSavings, estimatedOwing };
 
@@ -1539,8 +1692,8 @@ function calculate(doScroll) {
   const primaryCta = document.getElementById('primary-cta');
   if (primaryCta) {
     primaryCta.textContent = totalSavings > 0
-      ? `Save ${fmt(totalSavings)} with RRSP/FHSA – Open Account & Get $25 Bonus →`
-      : 'Open Account & Get $25 Bonus →';
+      ? `Claim your ${fmt(totalSavings)} in tax savings — open your account →`
+      : 'Open your RRSP, FHSA & TFSA — free in ~5 minutes →';
   }
 
   // --- Sticky CTA text ---
@@ -1636,6 +1789,25 @@ function updateStickyCta() {
 }
 window.addEventListener('scroll', updateStickyCta, { passive: true });
 
+function computeUrgency() {
+  const banner = document.getElementById('urgency-banner');
+  if (!banner) return;
+  const now = new Date();
+  const yr = now.getFullYear();
+  const fhsaDeadline = new Date(yr, 11, 31);
+  const rrspDeadline = new Date(yr + (now.getMonth() >= 2 ? 1 : 0), 2, 1);
+  const dayMs = 864e5;
+  const fhsaDays = Math.ceil((fhsaDeadline - now) / dayMs);
+  const rrspDays = Math.ceil((rrspDeadline - now) / dayMs);
+  if (fhsaDays <= 90) {
+    banner.textContent = `FHSA contribution deadline: ${fhsaDays} day${fhsaDays !== 1 ? 's' : ''} left (December 31)`;
+    banner.style.display = '';
+  } else if (rrspDays <= 60) {
+    banner.textContent = `RRSP contribution deadline: ${rrspDays} day${rrspDays !== 1 ? 's' : ''} left (March 1)`;
+    banner.style.display = '';
+  }
+}
+
 // Pre-fill form and trigger initial calculation on load
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('employment-income').value = '75,000';
@@ -1644,6 +1816,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('taxes-withheld').value = '0';
   updateFhsaNotice();
   calculate(false);
+  computeUrgency();
 });
 </script>
 </body>
