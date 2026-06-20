@@ -666,6 +666,32 @@
     /* === SKIP LINK === */
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; z-index: 300; }
     .skip-link:focus { left: 0; }
+
+    /* === SAVINGS BRIDGE === */
+    .savings-bridge {
+      background: linear-gradient(135deg, #F0FAF5 0%, #EBF5F0 100%);
+      border: 1px solid #CDE9D8; border-radius: 12px;
+      padding: 13px 16px; margin-bottom: 12px;
+      font-size: 0.8125rem; color: var(--text-muted); line-height: 1.7;
+    }
+    .savings-bridge strong { color: var(--accent); font-weight: 600; }
+
+    /* === WHY WEALTHSIMPLE === */
+    .why-ws {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px; margin-bottom: 12px;
+    }
+    .why-ws-title {
+      font-size: 0.6875rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 9px;
+    }
+    .why-ws-features { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px; }
+    .why-ws-feature {
+      font-size: 0.78rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .why-ws-check { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    @media (max-width: 768px) { .why-ws-features { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -878,7 +904,6 @@
             <div class="stat-value" id="result-fhsa-room">—</div>
           </div>
         </div>
-        <div class="urgency-banner" aria-live="polite">⏳ FHSA contribution deadline: December 31 – contribute before year-end to claim your deduction.</div>
         <div class="savings-payoff">
           <div class="savings-payoff-label">Your Potential Tax Savings</div>
           <div class="savings-amount" id="total-savings-counter" aria-live="polite">$0</div>
@@ -888,8 +913,23 @@
             <div class="savings-breakdown-item">FHSA Savings: <span id="fhsa-savings-amount">$0</span></div>
           </div>
         </div>
-        <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-full" id="primary-cta" aria-live="polite">Open Account &amp; Get $25 Bonus →</a>
-        <p class="cta-subtext">Wealthsimple is Canada's largest online broker · CIPF protected</p>
+        <div class="savings-bridge">
+          These savings come from contributing to an <strong>RRSP</strong> or <strong>FHSA</strong> — registered accounts that reduce your taxable income dollar-for-dollar. To contribute, you need an account that holds these plans. Wealthsimple opens an RRSP, FHSA, and TFSA together in about 5 minutes — free, with no minimum balance.
+        </div>
+        <div class="why-ws">
+          <div class="why-ws-title">Why Wealthsimple?</div>
+          <div class="why-ws-features">
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> Free to open</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> No minimum balance</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> RRSP + FHSA + TFSA in one app</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> ~5-minute setup</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> CIPF protected</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> Your data stays in your browser</div>
+          </div>
+        </div>
+        <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-full" id="primary-cta" aria-live="polite">Open your account →</a>
+        <p class="cta-subtext">+ $25 to start · Free to open · No minimum · ~5 min · CIPF-protected</p>
+        <div class="urgency-banner" id="urgency-banner" aria-live="polite" style="display:none;"></div>
       </div>
 
       <!-- Card B: Tax Bracket Breakdown -->
@@ -970,7 +1010,7 @@
   </div>
   <div class="optimization-cta">
     <p>By contributing to your RRSP and FHSA, you could save an additional <span class="savings-highlight" id="cmp-savings-inline">$0</span> this tax year.</p>
-    <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-center">Start Saving Now →</a>
+    <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-center">Open your account — free in ~5 minutes →</a>
   </div>
 </section>
 
@@ -1021,11 +1061,11 @@
     <p class="section-sub">Select your province for a pre-configured view with local tax brackets.</p>
   </div>
   <div class="related-grid">
-    <a href="/" class="related-card active"><span style="font-size:22px;" aria-hidden="true">🍁</span><span>All Provinces</span></a>
-    <a href="/ontario/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏙️</span><span>Ontario</span></a>
-    <a href="/bc/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏔️</span><span>British Columbia</span></a>
-    <a href="/alberta/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🌾</span><span>Alberta</span></a>
-    <a href="/quebec/" class="related-card"><span style="font-size:22px;" aria-hidden="true">⚜️</span><span>Quebec</span></a>
+    <button class="related-card active" data-province="" onclick="setProvince('')"><span style="font-size:22px;" aria-hidden="true">🍁</span><span>All Provinces</span></button>
+    <button class="related-card" data-province="ON" onclick="setProvince('ON')"><span style="font-size:22px;" aria-hidden="true">🏙️</span><span>Ontario</span></button>
+    <button class="related-card" data-province="BC" onclick="setProvince('BC')"><span style="font-size:22px;" aria-hidden="true">🏔️</span><span>British Columbia</span></button>
+    <button class="related-card" data-province="AB" onclick="setProvince('AB')"><span style="font-size:22px;" aria-hidden="true">🌾</span><span>Alberta</span></button>
+    <button class="related-card" data-province="QC" onclick="setProvince('QC')"><span style="font-size:22px;" aria-hidden="true">⚜️</span><span>Quebec</span></button>
   </div>
 </section>
 
@@ -1059,10 +1099,10 @@
       <div class="footer-links">
         <a href="#calculator">RRSP Calculator</a>
         <a href="#calculator">FHSA Calculator</a>
-        <a href="/ontario/">Ontario Tax Calculator</a>
-        <a href="/bc/">BC Tax Calculator</a>
-        <a href="/alberta/">Alberta Tax Calculator</a>
-        <a href="/quebec/">Quebec Tax Calculator</a>
+        <a href="#calculator" onclick="setProvince('ON'); return false;">Ontario Tax Calculator</a>
+        <a href="#calculator" onclick="setProvince('BC'); return false;">BC Tax Calculator</a>
+        <a href="#calculator" onclick="setProvince('AB'); return false;">Alberta Tax Calculator</a>
+        <a href="#calculator" onclick="setProvince('QC'); return false;">Quebec Tax Calculator</a>
         <a href="#faq">FAQ</a>
       </div>
     </nav>
@@ -1332,33 +1372,33 @@ const REC_DEFS = [
     id: 'tfsa', icon: '📈', title: 'Maximize Your TFSA',
     desc: 'Contribute up to $7,000 this year. All investment growth and withdrawals are completely tax-free — the most flexible tax shelter available to Canadians.',
     show: () => true,
-    savings: () => '$5,758 estimated lifetime tax savings',
+    savings: () => 'Tax-free growth and withdrawals for life',
     sortVal: () => 5758,
-    cta: 'Open TFSA →'
+    cta: 'Open TFSA Account →'
   },
   {
-    id: 'instalments', icon: '📅', title: 'Plan Your Tax Instalments',
-    desc: 'If you owe more than $3,000, the CRA may require quarterly tax instalments. Plan ahead to avoid interest charges and penalties.',
+    id: 'instalments', icon: '📅', title: 'Avoid CRA Interest Charges',
+    desc: 'If you owe more than $3,000, the CRA may require quarterly tax instalments. Filing your return accurately with Wealthsimple Tax (free) helps you stay on top of what you owe.',
     show: d => d.estimatedOwing > 3000,
-    savings: () => 'Avoid CRA interest charges',
+    savings: () => 'Avoid CRA interest and penalties',
     sortVal: () => 3500,
-    cta: 'Plan Payment →'
+    cta: 'File Taxes Free →'
   },
   {
     id: 'spousal', icon: '👫', title: 'Consider a Spousal RRSP',
-    desc: 'Income-splitting with a spousal RRSP reduces your combined family tax bill significantly — especially in retirement when one spouse earns less.',
+    desc: 'Income-splitting with a spousal RRSP lets you shift retirement income to a lower-earning partner — reducing your combined family tax bill when it matters most.',
     show: d => d.totalIncome > 80000,
-    savings: () => '$4,375 estimated retirement tax savings',
+    savings: () => 'Split income with your partner in retirement',
     sortVal: () => 4375,
-    cta: 'Learn More →'
+    cta: 'Open Spousal RRSP →'
   },
   {
-    id: 'advanced', icon: '⚙️', title: 'Advanced Tax Planning',
-    desc: 'At your income level, incorporation, family trusts, or insurance strategies may significantly reduce your tax burden. Consult a tax professional.',
+    id: 'advanced', icon: '⚙️', title: 'Max Out Your Registered Accounts First',
+    desc: 'At your income level, fully maximizing your RRSP, FHSA, and TFSA is the highest-return tax-reduction move available before considering more complex strategies.',
     show: d => d.totalIncome > 150000,
-    savings: () => 'Book a professional consultation',
+    savings: () => 'Maximize every registered shelter first',
     sortVal: () => 2000,
-    cta: 'Learn More →'
+    cta: 'Open an Account →'
   }
 ];
 
@@ -1527,8 +1567,8 @@ function calculate(doScroll) {
   const primaryCta = document.getElementById('primary-cta');
   if (primaryCta) {
     primaryCta.textContent = totalSavings > 0
-      ? `Save ${fmt(totalSavings)} with RRSP/FHSA – Open Account & Get $25 Bonus →`
-      : 'Open Account & Get $25 Bonus →';
+      ? `Claim your ${fmt(totalSavings)} in tax savings — open your account →`
+      : 'Open your RRSP, FHSA & TFSA — free in ~5 minutes →';
   }
 
   // --- Sticky CTA text ---
@@ -1624,6 +1664,39 @@ function updateStickyCta() {
 }
 window.addEventListener('scroll', updateStickyCta, { passive: true });
 
+// Date-aware urgency banner
+function computeUrgency() {
+  const banner = document.getElementById('urgency-banner');
+  if (!banner) return;
+  const now = new Date();
+  const yr = now.getFullYear();
+  const fhsaDeadline = new Date(yr, 11, 31); // Dec 31
+  const rrspDeadline = new Date(yr + (now.getMonth() >= 2 ? 1 : 0), 2, 1); // Mar 1
+  const dayMs = 864e5;
+  const fhsaDays = Math.ceil((fhsaDeadline - now) / dayMs);
+  const rrspDays = Math.ceil((rrspDeadline - now) / dayMs);
+  if (fhsaDays <= 90) {
+    banner.textContent = `FHSA contribution deadline: ${fhsaDays} day${fhsaDays !== 1 ? 's' : ''} left (December 31)`;
+    banner.style.display = '';
+  } else if (rrspDays <= 60) {
+    banner.textContent = `RRSP contribution deadline: ${rrspDays} day${rrspDays !== 1 ? 's' : ''} left (March 1)`;
+    banner.style.display = '';
+  }
+}
+
+// In-page province switcher
+function setProvince(code) {
+  const sel = document.getElementById('province');
+  if (!sel) return;
+  sel.value = code;
+  calculate(false);
+  document.getElementById('calculator').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // update active state on province cards
+  document.querySelectorAll('.related-card[data-province]').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.province === code);
+  });
+}
+
 // Pre-fill form and trigger initial calculation on load
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('employment-income').value = '75,000';
@@ -1632,6 +1705,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('taxes-withheld').value = '0';
   updateFhsaNotice();
   calculate(false);
+  computeUrgency();
 });
 </script>
 </body>
