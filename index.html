@@ -24,16 +24,11 @@
   <meta property="og:url"         content="https://maplesavings.ca/" />
   <meta property="og:title"       content="MapleSavings – RRSP & FHSA Tax Calculator Canada" />
   <meta property="og:description" content="Free Canadian RRSP & FHSA tax savings calculator. Enter your income to see exactly how much tax you can save — all 13 provinces, 2024 & 2025 CRA brackets." />
-  <meta property="og:image"       content="https://maplesavings.ca/og-image.png" />
-  <meta property="og:image:alt"   content="MapleSavings RRSP and FHSA tax savings calculator for Canada" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
 
   <!-- ═══ TWITTER CARD ═══ -->
-  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:card"        content="summary" />
   <meta name="twitter:title"       content="MapleSavings – RRSP & FHSA Tax Calculator Canada" />
   <meta name="twitter:description" content="Free Canadian tax calculator. See how much you can save with RRSP & FHSA contributions — instant results for all 13 provinces." />
-  <meta name="twitter:image"       content="https://maplesavings.ca/og-image.png" />
 
   <!-- ═══ FONTS ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -821,7 +816,7 @@
             <option value="2024">2024 — Last filed year</option>
             <option value="2025" selected>2025 — Current filing season</option>
           </select>
-          <div class="year-notice" id="year-notice">2025 rates based on CRA-announced 2.7% indexation.</div>
+          <div class="year-notice" id="year-notice">2025 federal and provincial brackets confirmed from CRA sources.</div>
         </div>
 
         <!-- Province -->
@@ -987,12 +982,12 @@
             <div class="why-ws-feature"><span class="why-ws-check">✓</span> No minimum balance</div>
             <div class="why-ws-feature"><span class="why-ws-check">✓</span> RRSP + FHSA + TFSA in one app</div>
             <div class="why-ws-feature"><span class="why-ws-check">✓</span> ~5-minute setup</div>
-            <div class="why-ws-feature"><span class="why-ws-check">✓</span> CIPF protected</div>
+            <div class="why-ws-feature"><span class="why-ws-check">✓</span> CIPF member</div>
             <div class="why-ws-feature"><span class="why-ws-check">✓</span> Your data stays in your browser</div>
           </div>
         </div>
         <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-full" id="primary-cta" aria-live="polite">Open your account →</a>
-        <p class="cta-subtext">+ $25 to start · Free to open · No minimum · ~5 min · CIPF-protected</p>
+        <p class="cta-subtext">+ $25 to start · Free to open · No minimum · CIPF member · <a href="/disclosure/" style="color:inherit;text-decoration:underline;">Disclosure</a></p>
         <div class="urgency-banner" id="urgency-banner" aria-live="polite" style="display:none;"></div>
       </div>
 
@@ -1168,7 +1163,7 @@
 <!-- FOOTER CTA STRIP -->
 <section class="footer-cta-strip" aria-label="Open account call to action">
   <h2>Open your RRSP, FHSA, or TFSA today</h2>
-  <p>Wealthsimple is Canada's most trusted investing platform. Get a <strong>$25 bonus</strong> when you open and fund your account.</p>
+  <p>Wealthsimple is one of Canada's largest investing platforms. Get a <strong>$25 bonus</strong> when you open and fund your account.</p>
   <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-strip">Get $25 Bonus →</a>
 </section>
 
@@ -1200,6 +1195,10 @@
         <a href="/alberta/">Alberta Tax Calculator</a>
         <a href="/quebec/">Quebec Tax Calculator</a>
         <a href="#faq">FAQ</a>
+        <a href="/about/">About</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/disclosure/">Disclosure</a>
+        <a href="/privacy/">Privacy</a>
       </div>
     </nav>
     <div class="footer-disclaimer">
@@ -1684,7 +1683,7 @@ function calculate(doScroll) {
   // Update year notice below the selector
   const yearNotice = document.getElementById('year-notice');
   if (year === 2025) {
-    yearNotice.textContent = '2025 rates: federal bottom bracket reduced to 14.5% (blended, effective July 1, 2025). Provincial brackets indexed ~2.7%.';
+    yearNotice.textContent = '2025 federal and provincial brackets confirmed from CRA sources.';
     yearNotice.className = 'year-notice';
   } else {
     yearNotice.textContent = '';
