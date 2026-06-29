@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1D6B3E" />
+  <title>Canadian Tax Blog — RRSP, FHSA &amp; Tax Tips | MapleSavings</title>
+  <meta name="description" content="Free Canadian tax guides. Learn about RRSP vs FHSA, marginal tax rates, 2025 tax brackets, and how to legally reduce your income taxes." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://maplesavings.ca/blog/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="MapleSavings" />
+  <meta property="og:locale"      content="en_CA" />
+  <meta property="og:url"         content="https://maplesavings.ca/blog/" />
+  <meta property="og:title"       content="Canadian Tax Blog — RRSP, FHSA &amp; Tax Tips | MapleSavings" />
+  <meta property="og:description" content="Free Canadian tax guides. RRSP vs FHSA, marginal tax rates, 2025 tax brackets, and how to reduce your income taxes." />
+  <meta property="og:image"        content="https://maplesavings.ca/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:image"       content="https://maplesavings.ca/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MapleSavings", "item": "https://maplesavings.ca/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maplesavings.ca/blog/" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg:#F5F2ED; --surface:#FFFFFF; --surface-2:#F9F7F4; --border:#E4DDD4;
+      --accent:#1D6B3E; --accent-dim:#155230; --accent-light:#E8F4EE;
+      --text:#1C1917; --text-muted:#6B5E55; --text-dim:#7A6E64;
+      --gain:#15803D;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    .navbar { position: sticky; top: 0; z-index: 100; background: #FFFFFF; border-bottom: 1px solid var(--border); box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .logo { font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+    .logo-maple { color: var(--text); }
+    .logo-savings { color: var(--accent); }
+    .btn-nav { display: inline-flex; align-items: center; justify-content: center; font-weight: 700; border-radius: 10px; padding: 10px 20px; font-size: 0.875rem; transition: all 0.2s ease; background: var(--accent); color: #FFFFFF; }
+    .btn-nav:hover { background: var(--accent-dim); transform: translateY(-1px); }
+
+    .breadcrumb { background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 24px; }
+    .breadcrumb-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.8125rem; color: var(--text-muted); }
+    .breadcrumb a { color: var(--accent); }
+
+    .page-hero { background: linear-gradient(160deg, #FFFFFF 0%, #EDF5F0 100%); border-bottom: 1px solid var(--border); padding: 56px 24px 48px; text-align: center; }
+    .page-hero h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; max-width: 680px; margin: 0 auto 16px; }
+    .page-hero p { font-size: 1.0625rem; color: var(--text-muted); max-width: 560px; margin: 0 auto; line-height: 1.75; }
+
+    .blog-section { max-width: 1100px; margin: 0 auto; padding: 56px 24px 72px; }
+    .section-title { font-size: 1.375rem; font-weight: 700; margin-bottom: 32px; color: var(--text); }
+    .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .blog-card { background: var(--surface); border-radius: 18px; padding: 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04); display: flex; flex-direction: column; gap: 12px; transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .blog-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); transform: translateY(-3px); }
+    .blog-tag { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent); background: var(--accent-light); padding: 4px 10px; border-radius: 100px; display: inline-block; border: 1px solid rgba(29,107,62,0.2); }
+    .blog-card h2 { font-size: 1.125rem; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .blog-card p { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.7; flex: 1; }
+    .blog-card-meta { font-size: 0.8125rem; color: var(--text-dim); }
+    .blog-read-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9375rem; font-weight: 700; color: var(--accent); margin-top: 4px; }
+    .blog-read-link:hover { text-decoration: underline; }
+
+    .footer-cta-strip { background: var(--accent); padding: 64px 24px; text-align: center; }
+    .footer-cta-strip h2 { font-size: clamp(1.5rem, 3vw, 1.875rem); font-weight: 700; margin-bottom: 12px; color: #FFFFFF; }
+    .footer-cta-strip p { color: rgba(255,255,255,0.8); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .footer-cta-strip strong { color: #FDE68A; }
+    .btn-cta-strip { display: inline-flex; align-items: center; justify-content: center; background: #FFFFFF; color: var(--accent); font-weight: 700; border-radius: 10px; padding: 16px 36px; font-size: 1.0625rem; transition: all 0.2s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+    .btn-cta-strip:hover { background: #F0FDF4; transform: translateY(-1px); }
+
+    .footer { background: #2C2016; padding: 48px 24px; }
+    .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+    .footer-logo { font-size: 1.125rem; font-weight: 700; margin-bottom: 6px; color: #FFFFFF; }
+    .footer-logo .logo-savings { color: #6EE7A0; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.5); }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-links a:hover { color: #6EE7A0; }
+    .footer-disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.4); line-height: 1.65; }
+    .footer-bottom { max-width: 1100px; margin: 28px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="/" class="logo" aria-label="MapleSavings home">
+      <span aria-hidden="true">🍁</span>
+      <span><span class="logo-maple">Maple</span><span class="logo-savings">Savings</span></span>
+    </a>
+    <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-nav">Open RRSP Free →</a>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/">MapleSavings</a>
+    <span aria-hidden="true">›</span>
+    <span>Blog</span>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <h1>Canadian Tax Guides</h1>
+  <p>Accurate, no-fluff guides on RRSP, FHSA, tax brackets, and strategies to legally reduce your Canadian income taxes.</p>
+</header>
+
+<main>
+  <div class="blog-section">
+    <h2 class="section-title">All Articles</h2>
+    <div class="blog-grid">
+
+      <a href="/blog/rrsp-vs-fhsa/" class="blog-card">
+        <span class="blog-tag">RRSP &amp; FHSA</span>
+        <h2>RRSP vs FHSA: Which Is Better for Canadians in 2025?</h2>
+        <p>Both reduce your taxable income — but they work very differently. Here's a side-by-side comparison so you know which to max first and why.</p>
+        <div class="blog-card-meta">2025 Tax Year · 6 min read</div>
+        <span class="blog-read-link">Read guide →</span>
+      </a>
+
+      <a href="/blog/marginal-tax-rate-explained/" class="blog-card">
+        <span class="blog-tag">Tax Basics</span>
+        <h2>What Is the Marginal Tax Rate in Canada? 2025 Guide</h2>
+        <p>Your marginal rate is the rate on your next dollar of income — and it determines exactly how much you save when you contribute to an RRSP or FHSA.</p>
+        <div class="blog-card-meta">2025 Tax Year · 5 min read</div>
+        <span class="blog-read-link">Read guide →</span>
+      </a>
+
+      <a href="/blog/how-to-reduce-taxes-canada/" class="blog-card">
+        <span class="blog-tag">Tax Strategy</span>
+        <h2>How to Reduce Your Income Tax in Canada (2025)</h2>
+        <p>The most effective legal strategies to lower your tax bill — RRSP, FHSA, TFSA, the Home Buyers' Plan, and what each one actually saves you.</p>
+        <div class="blog-card-meta">2025 Tax Year · 7 min read</div>
+        <span class="blog-read-link">Read guide →</span>
+      </a>
+
+      <a href="/blog/tax-brackets-canada-2025/" class="blog-card">
+        <span class="blog-tag">Tax Brackets</span>
+        <h2>Canada Tax Brackets 2025: Federal &amp; Provincial Rates</h2>
+        <p>All 2025 federal income tax brackets and provincial rates for every province and territory, with plain-language examples of how progressive taxation works.</p>
+        <div class="blog-card-meta">2025 Tax Year · 8 min read</div>
+        <span class="blog-read-link">Read guide →</span>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<section class="footer-cta-strip" aria-label="Open account call to action">
+  <h2>Open your RRSP or FHSA — free in minutes</h2>
+  <p>Wealthsimple makes it simple. Open both accounts together with no minimum balance — and get a <strong>$25 bonus</strong> when you fund your account.</p>
+  <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-strip">Open Free — Get $25 Bonus →</a>
+  <p style="font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:12px;">Conditions apply &nbsp;·&nbsp; <a href="/disclosure/" style="color:rgba(255,255,255,0.6);text-decoration:underline;">Disclosure</a></p>
+</section>
+
+<footer class="footer" aria-label="Site footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">🍁 <span class="logo-maple">Maple</span><span class="logo-savings">Savings</span></div>
+      <p class="footer-tagline">Free Canadian tax savings calculator.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <div class="footer-links">
+        <a href="/">RRSP &amp; FHSA Calculator</a>
+        <a href="/blog/">Blog</a>
+        <a href="/blog/rrsp-vs-fhsa/">RRSP vs FHSA</a>
+        <a href="/blog/tax-brackets-canada-2025/">2025 Tax Brackets</a>
+        <a href="/ontario/">Ontario Calculator</a>
+        <a href="/bc/">BC Calculator</a>
+        <a href="/alberta/">Alberta Calculator</a>
+        <a href="/about/">About</a>
+        <a href="/disclosure/">Disclosure</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
+    </nav>
+    <div class="footer-disclaimer">
+      Tax information is for educational purposes only and does not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
+      <strong>Affiliate disclosure:</strong> Some links on this site are referral links. If you open an account through our links, we may receive a referral bonus at no cost to you.<br><br>
+      Tax data: 2025 federal &amp; provincial brackets · Source: CRA
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 MapleSavings · Your Canadian tax savings, calculated in seconds.</div>
+</footer>
+
+</body>
+</html>
