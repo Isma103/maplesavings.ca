@@ -85,6 +85,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://maplesavings.ca/blog/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maplesavings.ca/blog/rrsp-vs-fhsa/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maplesavings.ca/blog/marginal-tax-rate-explained/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maplesavings.ca/blog/how-to-reduce-taxes-canada/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maplesavings.ca/blog/tax-brackets-canada-2025/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://maplesavings.ca/about/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>yearly</changefreq>

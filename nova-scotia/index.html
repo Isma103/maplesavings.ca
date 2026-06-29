@@ -330,7 +330,7 @@
   <p class="hero-sub">Free Nova Scotia income tax calculator. Enter your income to see how RRSP &amp; FHSA contributions reduce your provincial tax — 2025 CRA federal and Nova Scotia tax brackets. Built for Canadians. 🍁</p>
   <div class="trust-bar" aria-label="Calculator highlights">
     <div class="trust-item"><span class="trust-value">All 13</span><span class="trust-label">Provinces &amp; Territories</span></div>
-    <div class="trust-item"><span class="trust-value">2024 &amp; 2025</span><span class="trust-label">Tax Year Brackets</span></div>
+    <div class="trust-item"><span class="trust-value">2024, 2025 &amp; 2026</span><span class="trust-label">Tax Year Brackets</span></div>
     <div class="trust-item"><span class="trust-value">Free</span><span class="trust-label">No Signup Required</span></div>
   </div>
 </section>
@@ -338,7 +338,7 @@
   <div class="calculator-card">
     <div class="trust-badges" aria-label="Calculator trust signals">
       <span class="trust-badge">🔒 Your data never leaves your browser</span>
-      <span class="trust-badge">✅ 2024 &amp; 2025 CRA tax tables</span>
+      <span class="trust-badge">✅ 2024, 2025 &amp; 2026 CRA tax tables</span>
       <span class="trust-badge"><span aria-hidden="true">🍁</span> Made for Canadians</span>
     </div>
     <h2 class="calc-title">Free Canadian RRSP &amp; FHSA Tax Calculator</h2>
@@ -842,7 +842,16 @@ function calculate(doScroll) {
   const year = parseInt(document.getElementById('tax-year').value);
   const B = ALL_BRACKETS[year];
   const yearNotice = document.getElementById('year-notice');
-  if (year === 2025) { yearNotice.textContent = '2025 federal and provincial brackets confirmed from CRA sources.'; yearNotice.className = 'year-notice'; } else { yearNotice.textContent = ''; }
+  if (year === 2026) {
+    yearNotice.textContent = '2026 federal and provincial brackets from CRA. Lowest federal rate: 14%.';
+    yearNotice.className = 'year-notice';
+  } else if (year === 2025) {
+    yearNotice.textContent = '2025 federal and provincial brackets confirmed from CRA sources.';
+    yearNotice.className = 'year-notice';
+  } else {
+    yearNotice.textContent = '2024 rates — confirmed from CRA.';
+    yearNotice.className = 'year-notice';
+  }
   let fedTax = calcTax(totalIncome, B.federal.brackets, B.federal.personalAmount);
   if (province === 'QC') fedTax *= 0.835;
   const provTax = calcTax(totalIncome, B[province].brackets, B[province].personalAmount);
