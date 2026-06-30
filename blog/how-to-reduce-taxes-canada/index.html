@@ -21,6 +21,8 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:image"       content="https://maplesavings.ca/og-image.png" />
+  <meta name="twitter:title"       content="How to Reduce Your Income Tax in Canada (2025)" />
+  <meta name="twitter:description" content="The most effective legal ways to reduce income tax in Canada — RRSP, FHSA, TFSA, and the Home Buyers' Plan with real numbers." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,8 +78,13 @@
       },
       {
         "@type": "Question",
-        "name": "What is the RRSP contribution deadline for the 2025 tax year?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The RRSP contribution deadline for the 2025 tax year is March 2, 2026 — 60 days after December 31, 2025. Contributions made by this date can be deducted on your 2025 tax return." }
+        "name": "What is the RRSP contribution deadline for 2025?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The RRSP deadline for the 2025 tax year is March 2, 2026 — 60 days after December 31, 2025. Contributions made by this date can be deducted on your 2025 tax return." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I contribute to both an RRSP and an FHSA in 2025?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — you can contribute to both in the same tax year. Both reduce your federal and provincial taxable income dollar-for-dollar. For a first-time homebuyer with room in both, combining them gives you the maximum deduction." }
       }
     ]
   }
@@ -87,7 +94,7 @@
     :root {
       --bg:#F5F2ED; --surface:#FFFFFF; --surface-2:#F9F7F4; --border:#E4DDD4;
       --accent:#1D6B3E; --accent-dim:#155230; --accent-light:#E8F4EE;
-      --text:#1C1917; --text-muted:#6B5E55; --text-dim:#7A6E64; --gain:#15803D;
+      --text:#1C1917; --text-muted:#6B5E55; --text-dim:#756959; --gain:#15803D;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -156,10 +163,10 @@
     .faq-section { padding: 0 24px 72px; }
     .section-header { text-align: center; margin-bottom: 40px; max-width: 1100px; margin-left: auto; margin-right: auto; }
     .section-title { font-size: clamp(1.375rem, 3vw, 1.75rem); font-weight: 700; margin-bottom: 10px; color: var(--text); }
-    .faq-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .faq-item { background: var(--surface); border-radius: 16px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04); }
-    .faq-q { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .faq-a { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
+    .faq-grid { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden; transition: box-shadow 0.2s ease, border-color 0.2s ease; } .faq-item:hover { border-color: rgba(29,107,62,0.25); box-shadow: 0 4px 16px rgba(0,0,0,0.08); } .faq-item.active { border-color: rgba(29,107,62,0.3); box-shadow: 0 4px 18px rgba(29,107,62,0.1); } .faq-q-heading { margin: 0; }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; background: none; border: none; cursor: pointer; padding: 20px 24px; font-size: 1rem; font-weight: 700; color: var(--text); font-family: inherit; transition: color 0.2s ease; } .faq-q:hover { color: var(--accent); } .faq-q:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; } .faq-icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; color: var(--accent); transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease; } .faq-item.active .faq-icon { transform: rotate(180deg); background: var(--accent); color: #fff; }
+    .faq-a-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.25s ease; } .faq-item.active .faq-a-wrap { grid-template-rows: 1fr; } .faq-a-inner { overflow: hidden; } .faq-a { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; padding: 0 24px 22px; margin: 0; } .faq-a a { color: var(--accent); text-decoration: underline; } @media (prefers-reduced-motion: reduce) { .faq-a-wrap, .faq-icon { transition: none; } }
 
     .related-articles { padding: 0 24px 72px; }
     .blog-grid-sm { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -201,6 +208,7 @@
       .article-hero { padding: 40px 20px 32px; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+      button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -367,28 +375,28 @@
   </div>
   <div class="faq-grid">
     <div class="faq-item">
-      <h3 class="faq-q">What is the fastest way to reduce income tax in Canada?</h3>
-      <p class="faq-a">The fastest way is to contribute to an RRSP before the March 2, 2026 deadline. Contributions reduce your taxable income dollar-for-dollar and save you taxes at your marginal rate. First-time homebuyers should also contribute to an FHSA for additional deductions and tax-free withdrawals.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the fastest way to reduce income tax in Canada?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The fastest way is to contribute to an RRSP before the March 2, 2026 deadline. Contributions reduce your taxable income dollar-for-dollar and save you taxes at your marginal rate. First-time homebuyers should also contribute to an FHSA for additional deductions and tax-free withdrawals.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">How much can I reduce my taxes with an RRSP?</h3>
-      <p class="faq-a">Your RRSP tax savings equal your contribution multiplied by your combined marginal tax rate. At a 30% combined rate, a $10,000 RRSP contribution saves approximately $3,000. The 2025 RRSP limit is $32,490, or 18% of 2024 earned income — whichever is lower.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">How much can I reduce my taxes with an RRSP?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Your RRSP tax savings equal your contribution multiplied by your combined marginal tax rate. At a 30% combined rate, a $10,000 RRSP contribution saves approximately $3,000. The 2025 RRSP limit is $32,490, or 18% of 2024 earned income — whichever is lower.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">Does a TFSA reduce income tax?</h3>
-      <p class="faq-a">A TFSA does not provide an upfront deduction — contributions don't reduce your taxable income today. However, all growth, dividends, and withdrawals inside a TFSA are permanently tax-free. It's best for investments that would otherwise generate taxable income. The 2025 limit is $7,000.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Does a TFSA reduce income tax?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">A TFSA does not provide an upfront deduction — contributions don't reduce your taxable income today. However, all growth, dividends, and withdrawals inside a TFSA are permanently tax-free. It's best for investments that would otherwise generate taxable income. The 2025 limit is $7,000.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">What is the Home Buyers' Plan and how does it reduce taxes?</h3>
-      <p class="faq-a">The HBP lets first-time buyers withdraw up to $35,000 from their RRSP tax-free to buy a first home. The tax benefit came from the original RRSP contribution. The HBP withdrawal must be repaid to your RRSP over 15 years, or it is added to your income in the year repayment was due.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the Home Buyers' Plan and how does it reduce taxes?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The HBP lets first-time buyers withdraw up to $35,000 from their RRSP tax-free to buy a first home. The tax benefit came from the original RRSP contribution. The HBP withdrawal must be repaid to your RRSP over 15 years, or it is added to your income in the year repayment was due.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">What is the RRSP contribution deadline for 2025?</h3>
-      <p class="faq-a">The RRSP deadline for the 2025 tax year is March 2, 2026 — 60 days after December 31, 2025. Contributions made by this date can be deducted on your 2025 tax return.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the RRSP contribution deadline for 2025?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The RRSP deadline for the 2025 tax year is March 2, 2026 — 60 days after December 31, 2025. Contributions made by this date can be deducted on your 2025 tax return.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">Can I contribute to both an RRSP and an FHSA in 2025?</h3>
-      <p class="faq-a">Yes — you can contribute to both in the same tax year. Both reduce your federal and provincial taxable income dollar-for-dollar. For a first-time homebuyer with room in both, combining them gives you the maximum deduction.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Can I contribute to both an RRSP and an FHSA in 2025?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Yes — you can contribute to both in the same tax year. Both reduce your federal and provincial taxable income dollar-for-dollar. For a first-time homebuyer with room in both, combining them gives you the maximum deduction.</p></div></div>
     </div>
   </div>
 </section>
@@ -468,7 +476,7 @@
       </div>
     </nav>
     <div class="footer-disclaimer">
-      Tax information is for educational purposes only and does not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
+      Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
       <strong>Affiliate disclosure:</strong> Some links on this site are referral links. If you open an account through our links, we may receive a referral bonus at no cost to you.<br><br>
       Tax data: 2025 federal &amp; provincial brackets · Source: CRA
     </div>
@@ -476,5 +484,38 @@
   <div class="footer-bottom">&copy; 2026 MapleSavings · Your Canadian tax savings, calculated in seconds.</div>
 </footer>
 
+<script>
+(function () {
+  var items = document.querySelectorAll('.faq-section .faq-item');
+  items.forEach(function (item, i) {
+    var btn = item.querySelector('.faq-q');
+    var wrap = item.querySelector('.faq-a-wrap');
+    if (!btn || !wrap) return;
+    var btnId = 'faq-q-' + i;
+    var panelId = 'faq-a-' + i;
+    btn.id = btnId;
+    wrap.id = panelId;
+    btn.setAttribute('aria-controls', panelId);
+    wrap.setAttribute('aria-labelledby', btnId);
+    var open = i === 0;
+    btn.setAttribute('aria-expanded', String(open));
+    item.classList.toggle('active', open);
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.toggle('active');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+    btn.addEventListener('keydown', function (e) {
+      var all = Array.prototype.map.call(items, function (it) { return it.querySelector('.faq-q'); });
+      var idx = all.indexOf(btn);
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var next = e.key === 'ArrowDown' ? (idx + 1) % all.length : (idx - 1 + all.length) % all.length;
+        all[next].focus();
+      } else if (e.key === 'Home') { e.preventDefault(); all[0].focus(); }
+      else if (e.key === 'End') { e.preventDefault(); all[all.length - 1].focus(); }
+    });
+  });
+})();
+</script>
 </body>
 </html>

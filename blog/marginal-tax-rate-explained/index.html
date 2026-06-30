@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1D6B3E" />
-  <title>What Is the Marginal Tax Rate in Canada? 2025 Guide | MapleSavings</title>
-  <meta name="description" content="Canada marginal tax rate explained for 2025. Learn what marginal vs effective tax rate means, see the federal brackets, and find out how much RRSP contributions save you." />
+  <title>Marginal Tax Rate Canada 2025 Explained | MapleSavings</title>
+  <meta name="description" content="Marginal vs effective tax rate explained for 2025 Canada. See federal brackets and how much RRSP contributions actually save you." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://maplesavings.ca/blog/marginal-tax-rate-explained/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -21,6 +21,8 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:image"       content="https://maplesavings.ca/og-image.png" />
+  <meta name="twitter:title"       content="What Is the Marginal Tax Rate in Canada? 2025 Guide" />
+  <meta name="twitter:description" content="Marginal vs effective tax rate explained. See the 2025 federal brackets and find out exactly how much RRSP contributions save you." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,6 +80,11 @@
         "@type": "Question",
         "name": "Does Quebec have a different federal marginal tax rate?",
         "acceptedAnswer": { "@type": "Answer", "text": "Quebec residents pay the same federal tax brackets as other Canadians, but receive a 16.5% federal tax abatement because Quebec provides its own provincial social programs. In practice, Quebec residents pay 83.5% of their calculated federal tax, then add Quebec's own provincial rates on top." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I find my exact marginal tax rate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The free MapleSavings calculator shows your exact combined federal + provincial marginal rate when you enter your income and province. It uses 2025 CRA tax brackets for all 13 provinces and territories." }
       }
     ]
   }
@@ -87,7 +94,7 @@
     :root {
       --bg:#F5F2ED; --surface:#FFFFFF; --surface-2:#F9F7F4; --border:#E4DDD4;
       --accent:#1D6B3E; --accent-dim:#155230; --accent-light:#E8F4EE;
-      --text:#1C1917; --text-muted:#6B5E55; --text-dim:#7A6E64; --gain:#15803D;
+      --text:#1C1917; --text-muted:#6B5E55; --text-dim:#756959; --gain:#15803D;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -157,10 +164,10 @@
     .faq-section { padding: 0 24px 72px; }
     .section-header { text-align: center; margin-bottom: 40px; max-width: 1100px; margin-left: auto; margin-right: auto; }
     .section-title { font-size: clamp(1.375rem, 3vw, 1.75rem); font-weight: 700; margin-bottom: 10px; color: var(--text); }
-    .faq-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .faq-item { background: var(--surface); border-radius: 16px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04); }
-    .faq-q { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .faq-a { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
+    .faq-grid { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden; transition: box-shadow 0.2s ease, border-color 0.2s ease; } .faq-item:hover { border-color: rgba(29,107,62,0.25); box-shadow: 0 4px 16px rgba(0,0,0,0.08); } .faq-item.active { border-color: rgba(29,107,62,0.3); box-shadow: 0 4px 18px rgba(29,107,62,0.1); } .faq-q-heading { margin: 0; }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; background: none; border: none; cursor: pointer; padding: 20px 24px; font-size: 1rem; font-weight: 700; color: var(--text); font-family: inherit; transition: color 0.2s ease; } .faq-q:hover { color: var(--accent); } .faq-q:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; } .faq-icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; color: var(--accent); transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease; } .faq-item.active .faq-icon { transform: rotate(180deg); background: var(--accent); color: #fff; }
+    .faq-a-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.25s ease; } .faq-item.active .faq-a-wrap { grid-template-rows: 1fr; } .faq-a-inner { overflow: hidden; } .faq-a { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; padding: 0 24px 22px; margin: 0; } .faq-a a { color: var(--accent); text-decoration: underline; } @media (prefers-reduced-motion: reduce) { .faq-a-wrap, .faq-icon { transition: none; } }
 
     .related-articles { padding: 0 24px 72px; }
     .blog-grid-sm { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -202,6 +209,7 @@
       .article-hero { padding: 40px 20px 32px; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+      button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -373,28 +381,28 @@
   </div>
   <div class="faq-grid">
     <div class="faq-item">
-      <h3 class="faq-q">What is the marginal tax rate in Canada?</h3>
-      <p class="faq-a">Your marginal tax rate is the rate applied to your next dollar of income. In 2025, federal rates range from 14.5% (first bracket) to 33% (top bracket). Each province adds its own rates on top, so combined marginal rates typically range from 20% to over 50% depending on income and province.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the marginal tax rate in Canada?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Your marginal tax rate is the rate applied to your next dollar of income. In 2025, federal rates range from 14.5% (first bracket) to 33% (top bracket). Each province adds its own rates on top, so combined marginal rates typically range from 20% to over 50% depending on income and province.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">What is the difference between marginal and effective tax rate?</h3>
-      <p class="faq-a">Your marginal rate is the rate on your highest dollar of income. Your effective (average) rate is total tax divided by total income. Effective rates are always lower than marginal rates because lower brackets apply to the first portions of your income.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the difference between marginal and effective tax rate?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Your marginal rate is the rate on your highest dollar of income. Your effective (average) rate is total tax divided by total income. Effective rates are always lower than marginal rates because lower brackets apply to the first portions of your income.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">What are the 2025 federal income tax brackets in Canada?</h3>
-      <p class="faq-a">The 2025 federal brackets are: 14.5% on the first $57,375; 20.5% on $57,375–$114,750; 26% on $114,750–$177,882; 29% on $177,882–$253,414; and 33% on income over $253,414. The basic personal amount is $16,129.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What are the 2025 federal income tax brackets in Canada?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The 2025 federal brackets are: 14.5% on the first $57,375; 20.5% on $57,375–$114,750; 26% on $114,750–$177,882; 29% on $177,882–$253,414; and 33% on income over $253,414. The basic personal amount is $16,129.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">How does the marginal tax rate affect RRSP savings?</h3>
-      <p class="faq-a">Each dollar you contribute to an RRSP reduces your taxable income by one dollar. You save tax at your marginal rate on that dollar. A $10,000 RRSP contribution at a 33% combined marginal rate saves $3,300 in taxes.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">How does the marginal tax rate affect RRSP savings?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Each dollar you contribute to an RRSP reduces your taxable income by one dollar. You save tax at your marginal rate on that dollar. A $10,000 RRSP contribution at a 33% combined marginal rate saves $3,300 in taxes.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">Does Quebec have a different federal marginal tax rate?</h3>
-      <p class="faq-a">Quebec residents pay the same federal brackets but receive a 16.5% federal tax abatement because Quebec provides its own provincial programs. Quebec residents effectively pay 83.5% of calculated federal tax, plus Quebec's own provincial rates.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Does Quebec have a different federal marginal tax rate?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Quebec residents pay the same federal brackets but receive a 16.5% federal tax abatement because Quebec provides its own provincial programs. Quebec residents effectively pay 83.5% of calculated federal tax, plus Quebec's own provincial rates.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">Where can I find my exact marginal tax rate?</h3>
-      <p class="faq-a">The free MapleSavings calculator shows your exact combined federal + provincial marginal rate when you enter your income and province. It uses 2025 CRA tax brackets for all 13 provinces and territories.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Where can I find my exact marginal tax rate?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The free MapleSavings calculator shows your exact combined federal + provincial marginal rate when you enter your income and province. It uses 2025 CRA tax brackets for all 13 provinces and territories.</p></div></div>
     </div>
   </div>
 </section>
@@ -474,7 +482,7 @@
       </div>
     </nav>
     <div class="footer-disclaimer">
-      Tax information is for educational purposes only and does not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
+      Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
       <strong>Affiliate disclosure:</strong> Some links on this site are referral links. If you open an account through our links, we may receive a referral bonus at no cost to you.<br><br>
       Tax data: 2025 federal &amp; provincial brackets · Source: CRA
     </div>
@@ -482,5 +490,38 @@
   <div class="footer-bottom">&copy; 2026 MapleSavings · Your Canadian tax savings, calculated in seconds.</div>
 </footer>
 
+<script>
+(function () {
+  var items = document.querySelectorAll('.faq-section .faq-item');
+  items.forEach(function (item, i) {
+    var btn = item.querySelector('.faq-q');
+    var wrap = item.querySelector('.faq-a-wrap');
+    if (!btn || !wrap) return;
+    var btnId = 'faq-q-' + i;
+    var panelId = 'faq-a-' + i;
+    btn.id = btnId;
+    wrap.id = panelId;
+    btn.setAttribute('aria-controls', panelId);
+    wrap.setAttribute('aria-labelledby', btnId);
+    var open = i === 0;
+    btn.setAttribute('aria-expanded', String(open));
+    item.classList.toggle('active', open);
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.toggle('active');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+    btn.addEventListener('keydown', function (e) {
+      var all = Array.prototype.map.call(items, function (it) { return it.querySelector('.faq-q'); });
+      var idx = all.indexOf(btn);
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var next = e.key === 'ArrowDown' ? (idx + 1) % all.length : (idx - 1 + all.length) % all.length;
+        all[next].focus();
+      } else if (e.key === 'Home') { e.preventDefault(); all[0].focus(); }
+      else if (e.key === 'End') { e.preventDefault(); all[all.length - 1].focus(); }
+    });
+  });
+})();
+</script>
 </body>
 </html>

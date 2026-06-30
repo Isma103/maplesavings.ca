@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1D6B3E" />
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Investment Calculator — Compound Interest Growth | MapleSavings</title>
+  <meta name="description" content="Free investment growth calculator for Canadians. Solve for end balance, required contribution, return rate, starting amount, or time to goal — with a full compound-interest schedule." />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="investment calculator, compound interest calculator, investment growth calculator Canada, compound interest calculator Canada, savings growth calculator, TFSA growth calculator" />
+  <link rel="canonical" href="https://maplesavings.ca/investment-calculator/" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="MapleSavings" />
+  <meta property="og:locale"      content="en_CA" />
+  <meta property="og:url"         content="https://maplesavings.ca/investment-calculator/" />
+  <meta property="og:title"       content="Investment Calculator — Compound Interest Growth | MapleSavings" />
+  <meta property="og:description" content="Free investment growth calculator. Solve for end balance, required contribution, return rate, starting amount, or time to goal — with a full compound-interest schedule." />
+  <meta property="og:image"        content="https://maplesavings.ca/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:image"       content="https://maplesavings.ca/og-image.png" />
+  <meta name="twitter:title"       content="Investment Calculator — Compound Interest Growth | MapleSavings" />
+  <meta name="twitter:description" content="Free investment growth calculator for Canadians. Solve for end balance, contribution, return rate, starting amount, or time to goal." />
+
+  <!-- ═══ STRUCTURED DATA: WebApplication ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Investment Calculator — MapleSavings",
+    "description": "Free investment growth calculator. Solve for end balance, required contribution, return rate, starting amount, or time to reach a goal, with a full compound-interest accumulation schedule.",
+    "url": "https://maplesavings.ca/investment-calculator/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+    "creator": { "@type": "Organization", "name": "MapleSavings" }
+  }
+  </script>
+
+  <!-- ═══ STRUCTURED DATA: Breadcrumb ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MapleSavings", "item": "https://maplesavings.ca/" },
+      { "@type": "ListItem", "position": 2, "name": "Investment Calculator", "item": "https://maplesavings.ca/investment-calculator/" }
+    ]
+  }
+  </script>
+
+  <!-- ═══ STRUCTURED DATA: FAQ ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does this investment calculator work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It simulates your investment month by month, converting your chosen compounding frequency (annually, semiannually, quarterly, monthly, daily, or continuously) into an equivalent monthly rate, then applies growth and any contributions one month at a time. This produces the same kind of result as a closed-form compound interest formula, but also lets it handle mismatched compounding and contribution frequencies — for example, quarterly compounding with monthly contributions — accurately." }
+      },
+      {
+        "@type": "Question",
+        "name": "What do the 5 calculator modes do?",
+        "acceptedAnswer": { "@type": "Answer", "text": "End Amount projects how much your investment will be worth. Contribution solves for the periodic deposit you'd need to reach a goal. Return Rate solves for the annual return you'd need. Starting Amount solves for the lump sum you'd need today. Invest Length solves for how many years and months it would take to reach your goal at your current rate and contributions." }
+      },
+      {
+        "@type": "Question",
+        "name": "What return rate should I use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "There's no single right answer — it depends entirely on what you're invested in and your risk tolerance. This calculator doesn't recommend a rate; it's a tool to see the effect of different assumptions. Treat any rate you enter as an estimate, not a guarantee, since real investment returns vary year to year and can be negative." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between compounding frequency and contribution frequency?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Compounding frequency is how often your investment's return is calculated and added to your balance (for example, monthly or daily). Contribution frequency is how often you add new money (monthly or annually). These don't have to match — many real accounts compound daily or monthly while you contribute monthly from each paycheque, and this calculator handles that combination correctly." }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I hold my investments in a TFSA, RRSP, or taxable account?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A TFSA shelters all growth and withdrawals from tax for life. An RRSP gives you a tax deduction today and defers tax until you withdraw, typically in retirement at a lower rate. A taxable account has no registered room limit but growth is taxed annually. Most Canadians benefit from filling TFSA and RRSP room before investing in a taxable account, but the right mix depends on your income and goals." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does contribution timing (beginning vs. end of period) change my result?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Money contributed at the beginning of a period earns a full period of growth before the next contribution, while money contributed at the end doesn't start growing until the following period. Over many years, beginning-of-period contributions produce a meaningfully larger end balance than identical end-of-period contributions." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does 'not reachable with these inputs' mean?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For the Contribution, Return Rate, Starting Amount, and Invest Length modes, the calculator searches for the answer within a wide but bounded range (for example, up to a 1000% annual return or 100 years). If your goal can't be reached even at that extreme, it tells you instead of returning a misleading number — try adjusting your other inputs." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator accurate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The compounding math is standard, well-established financial mathematics, and the engine is built to handle any combination of compounding and contribution frequency correctly. That said, this tool assumes a constant rate of return for the entire period for illustration purposes — real investments fluctuate, and actual results will differ. This is not investment advice." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* === VARIABLES & RESET === */
+    :root {
+      --bg:          #F5F2ED;
+      --surface:     #FFFFFF;
+      --surface-2:   #F9F7F4;
+      --border:      #E4DDD4;
+      --accent:      #1D6B3E;
+      --accent-dim:  #155230;
+      --accent-light:#E8F4EE;
+      --text:        #1C1917;
+      --text-muted:  #6B5E55;
+      --text-dim:    #756959;
+      --danger:      #C0392B;
+      --gold:        #C05621;
+      --gain:        #15803D;
+      --chart-starting: #1D6B3E;
+      --chart-contrib:  #6EE7A0;
+      --chart-interest: #C05621;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+    input, select { font-family: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* === NAVBAR === */
+    .navbar { position: sticky; top: 0; z-index: 100; background: #FFFFFF; border-bottom: 1px solid var(--border); box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .logo { font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+    .logo-maple { color: var(--text); }
+    .logo-savings { color: var(--accent); }
+
+    /* === BUTTONS === */
+    .btn { display: inline-flex; align-items: center; justify-content: center; font-weight: 700; border-radius: 10px; padding: 10px 20px; font-size: 0.875rem; transition: all 0.2s ease; cursor: pointer; }
+    .btn-primary { background: var(--accent); color: #FFFFFF; }
+    .btn-primary:hover { background: var(--accent-dim); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(29,107,62,0.25); }
+
+    /* === CALCULATOR SWITCHER === */
+    .calc-switcher { position: sticky; top: 64px; z-index: 99; background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+    .calc-switcher-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .calc-switch-pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 100px; font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); border: 1.5px solid var(--border); background: var(--surface-2); transition: all 0.2s ease; white-space: nowrap; }
+    .calc-switch-pill:hover { border-color: var(--accent); color: var(--accent); }
+    .calc-switch-pill.active { background: var(--accent); border-color: var(--accent); color: #FFFFFF; pointer-events: none; }
+    @media (max-width: 480px) { .calc-switcher { padding: 8px 16px; } .calc-switch-pill { padding: 7px 12px; font-size: 0.75rem; } }
+
+    /* === HERO === */
+    .hero { padding: 72px 24px 56px; text-align: center; background: linear-gradient(160deg, #FFFFFF 0%, #EDF5F0 100%); border-bottom: 1px solid var(--border); }
+    .hero h1 { font-size: clamp(1.875rem, 4.5vw, 2.875rem); font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; max-width: 720px; margin: 0 auto 18px; color: var(--text); }
+    .hero-sub { font-size: 1.0625rem; color: var(--text-muted); max-width: 620px; margin: 0 auto 40px; line-height: 1.75; }
+    .trust-bar { display: flex; align-items: stretch; justify-content: center; border: 1px solid var(--border); border-radius: 14px; background: #FFFFFF; max-width: 560px; margin: 0 auto; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .trust-item { flex: 1; padding: 16px 20px; text-align: center; border-right: 1px solid var(--border); }
+    .trust-item:last-child { border-right: none; }
+    .trust-value { display: block; font-size: 0.9375rem; font-weight: 700; color: var(--accent); margin-bottom: 3px; }
+    .trust-label { display: block; font-size: 0.6875rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* === CALCULATOR === */
+    .calculator-section { padding: 48px 24px 72px; }
+    .calculator-card { max-width: 1100px; margin: 0 auto; background: var(--surface); border-radius: 20px; padding: 44px; box-shadow: 0 2px 20px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04); }
+    .calc-title { font-size: 1.375rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .calc-subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; }
+    .trust-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .trust-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 0.8125rem; color: var(--text-muted); font-weight: 500; }
+
+    /* === MODE TABS === */
+    .mode-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .mode-tab { background: var(--surface-2); border: 1.5px solid var(--border); color: var(--text-muted); font-weight: 600; font-size: 0.8125rem; border-radius: 100px; padding: 9px 16px; transition: all 0.2s ease; }
+    .mode-tab:hover { border-color: var(--accent); color: var(--accent); }
+    .mode-tab.active { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
+    .mode-helper { font-size: 0.8125rem; color: var(--text-dim); margin-bottom: 24px; min-height: 1.2em; }
+
+    /* === FORM === */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 8px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group[hidden] { display: none; }
+    .form-group label { font-size: 0.875rem; font-weight: 600; color: var(--text); display: flex; align-items: baseline; justify-content: space-between; gap: 6px; }
+    .slider-value { font-size: 0.75rem; font-weight: 700; color: var(--accent); }
+    .input-wrapper { position: relative; display: flex; align-items: center; }
+    .input-prefix { position: absolute; left: 14px; color: var(--text-muted); font-size: 1rem; pointer-events: none; z-index: 1; }
+    .input-suffix { position: absolute; right: 14px; color: var(--text-muted); font-size: 1rem; pointer-events: none; z-index: 1; }
+    .form-input { width: 100%; background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; color: var(--text); font-size: 1rem; padding: 12px 16px; transition: border-color 0.2s ease, box-shadow 0.2s ease; min-height: 46px; }
+    .form-input.has-prefix { padding-left: 30px; }
+    .form-input.has-suffix { padding-right: 30px; }
+    .form-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(29,107,62,0.12); }
+    .form-input::placeholder { color: var(--text-dim); }
+    select.form-input { appearance: none; -webkit-appearance: none; background-color: var(--surface); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5E55' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+    .form-slider { width: 100%; height: 6px; border-radius: 4px; background: var(--border); appearance: none; -webkit-appearance: none; margin-top: 4px; cursor: pointer; }
+    .form-slider::-webkit-slider-thumb { appearance: none; -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); cursor: pointer; border: 3px solid #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.25); }
+    .form-slider::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--accent); cursor: pointer; border: 3px solid #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.25); }
+    .btn-calculate { width: 100%; padding: 17px; font-size: 1.0625rem; background: var(--accent); color: #FFFFFF; font-weight: 700; border-radius: 10px; border: none; cursor: pointer; transition: all 0.2s ease; min-height: 54px; box-shadow: 0 2px 10px rgba(29,107,62,0.2); margin-top: 20px; }
+    .btn-calculate:hover { background: var(--accent-dim); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(29,107,62,0.3); }
+    .trust-note { text-align: center; font-size: 0.75rem; color: var(--text-dim); margin-top: 12px; }
+
+    /* === RESULTS === */
+    .results-section { padding: 0 24px 72px; display: none; }
+    .results-section.visible { display: block; }
+    .results-inner { max-width: 1100px; margin: 0 auto; animation: fadeUp 0.4s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .not-achievable { background: rgba(192,57,43,0.08); border: 1px solid var(--danger); color: var(--danger); border-radius: 12px; padding: 14px 18px; font-size: 0.875rem; margin-bottom: 20px; }
+    .not-achievable[hidden] { display: none; }
+    .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .card { background: var(--surface); border-radius: 18px; padding: 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04); }
+    .card-title { font-size: 1.0625rem; font-weight: 700; margin-bottom: 18px; color: var(--text); }
+
+    .result-payoff { text-align: center; padding: 20px 16px 24px; }
+    .result-amount { font-size: 52px; font-weight: 700; color: var(--accent); line-height: 1; letter-spacing: -0.02em; }
+
+    /* === DONUT CHART === */
+    .donut-wrap { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; flex-wrap: wrap; justify-content: center; }
+    .donut-chart { width: 140px; height: 140px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(var(--border) 0deg 360deg); position: relative; transition: background 0.4s ease; }
+    .donut-chart::after { content: ''; position: absolute; inset: 22px; border-radius: 50%; background: var(--surface); }
+    .donut-legend { display: flex; flex-direction: column; gap: 8px; font-size: 0.8125rem; color: var(--text-muted); }
+    .legend-item { display: flex; align-items: center; gap: 8px; }
+    .legend-item span:last-child { font-weight: 700; color: var(--text); margin-left: auto; }
+    .legend-swatch { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
+    .swatch-starting { background: var(--chart-starting); }
+    .swatch-contrib { background: var(--chart-contrib); }
+    .swatch-interest { background: var(--chart-interest); }
+
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+    .stat-label { font-size: 0.6875rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+    .stat-value { font-size: 1.1875rem; font-weight: 700; color: var(--text); }
+
+    /* === SCHEDULE TABLE === */
+    .schedule-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+    .schedule-tab { background: var(--surface-2); border: 1.5px solid var(--border); color: var(--text-muted); font-weight: 600; font-size: 0.8125rem; border-radius: 100px; padding: 7px 16px; transition: all 0.2s ease; }
+    .schedule-tab.active { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
+    .schedule-table-wrap { max-height: 360px; overflow-y: auto; border: 1px solid var(--border); border-radius: 10px; }
+    .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; }
+    .schedule-table th { text-align: left; padding: 10px 12px; color: var(--text-muted); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border); background: var(--surface-2); position: sticky; top: 0; }
+    .schedule-table td { padding: 9px 12px; border-bottom: 1px solid #F0EBE4; color: var(--text); }
+    .schedule-table tr:last-child td { border-bottom: none; }
+
+    /* === RECOMMENDATIONS / ACCOUNT CARDS === */
+    .recommendations-section { padding: 0 24px 72px; display: none; }
+    .recommendations-section.visible { display: block; }
+    .section-header { text-align: center; margin-bottom: 36px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+    .section-title { font-size: clamp(1.375rem, 3vw, 1.75rem); font-weight: 700; margin-bottom: 10px; color: var(--text); }
+    .section-sub { color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+    .account-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .account-card { background: var(--surface); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04); }
+    .account-card h3 { font-size: 1.125rem; font-weight: 700; color: var(--text); }
+    .account-card p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
+    .account-chip { display: inline-block; padding: 4px 12px; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; width: fit-content; }
+    .chip-muted { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
+    .chip-accent { background: var(--accent-light); color: var(--accent); border: 1px solid rgba(29,107,62,0.2); }
+    .btn-rec { display: block; text-align: center; background: var(--accent-light); border: 1.5px solid rgba(29,107,62,0.2); color: var(--accent); font-weight: 600; border-radius: 8px; padding: 10px 14px; font-size: 0.875rem; transition: all 0.2s ease; margin-top: auto; }
+    .btn-rec:hover { background: var(--accent); color: #FFFFFF; border-color: var(--accent); transform: translateY(-1px); }
+    .rec-disclosure { max-width: 1100px; margin: 18px auto 0; text-align: center; font-size: 0.75rem; color: var(--text-dim); }
+    .rec-disclosure a { color: inherit; text-decoration: underline; }
+
+    /* === FAQ === */
+    .faq-section { padding: 0 24px 72px; }
+    .faq-grid { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden; transition: box-shadow 0.2s ease, border-color 0.2s ease; } .faq-item:hover { border-color: rgba(29,107,62,0.25); box-shadow: 0 4px 16px rgba(0,0,0,0.08); } .faq-item.active { border-color: rgba(29,107,62,0.3); box-shadow: 0 4px 18px rgba(29,107,62,0.1); } .faq-q-heading { margin: 0; }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; background: none; border: none; cursor: pointer; padding: 20px 24px; font-size: 1rem; font-weight: 700; color: var(--text); font-family: inherit; transition: color 0.2s ease; } .faq-q:hover { color: var(--accent); } .faq-q:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; } .faq-icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; color: var(--accent); transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease; } .faq-item.active .faq-icon { transform: rotate(180deg); background: var(--accent); color: #fff; }
+    .faq-a-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.25s ease; } .faq-item.active .faq-a-wrap { grid-template-rows: 1fr; } .faq-a-inner { overflow: hidden; } .faq-a { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; padding: 0 24px 22px; margin: 0; } .faq-a a { color: var(--accent); text-decoration: underline; } @media (prefers-reduced-motion: reduce) { .faq-a-wrap, .faq-icon { transition: none; } }
+    @media (max-width: 768px) { .faq-q { padding: 16px 18px; font-size: 0.9375rem; } .faq-a { padding: 0 18px 18px; font-size: 0.875rem; } }
+
+    /* === RELATED CALCULATORS === */
+    .related-section { padding: 0 24px 72px; }
+    .related-header { max-width: 1100px; margin: 0 auto 28px; text-align: center; }
+    .related-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+    .related-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 18px 12px; text-align: center; font-size: 0.875rem; font-weight: 600; color: var(--text-muted); transition: all 0.2s ease; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .related-card:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(29,107,62,0.1); }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* === FOOTER === */
+    .footer { background: #2C2016; padding: 48px 24px; }
+    .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+    .footer-logo { font-size: 1.125rem; font-weight: 700; margin-bottom: 6px; color: #FFFFFF; }
+    .footer-logo .logo-maple { color: #FFFFFF; }
+    .footer-logo .logo-savings { color: #6EE7A0; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.5); }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-links a:hover { color: #6EE7A0; }
+    .footer-disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.4); line-height: 1.65; }
+    .footer-disclaimer a { color: inherit; text-decoration: underline; }
+    .footer-bottom { max-width: 1100px; margin: 28px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+
+    /* === STICKY CTA === */
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 2px solid var(--accent); padding: 14px 24px; display: flex; align-items: center; justify-content: center; gap: 16px; box-shadow: 0 -4px 24px rgba(0,0,0,0.1); transform: translateY(100%); transition: transform 0.3s ease; flex-wrap: wrap; }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta-text { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+
+    /* === SKIP LINK === */
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; z-index: 300; }
+    .skip-link:focus { left: 0; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .hero { padding: 48px 20px 40px; }
+      .trust-bar { flex-direction: column; }
+      .trust-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .trust-item:last-child { border-bottom: none; }
+      .calculator-card { padding: 24px 20px; }
+      .mode-tabs { gap: 6px; }
+      .mode-tab { font-size: 0.75rem; padding: 8px 12px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .result-amount { font-size: 38px; }
+      .donut-wrap { flex-direction: column; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .account-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .section-title { font-size: 1.375rem; }
+      .calculator-section, .recommendations-section { padding-left: 20px; padding-right: 20px; }
+      .btn-calculate { min-height: 44px; }
+      .sticky-cta { padding: 12px 16px; gap: 10px; }
+      .sticky-cta-text { font-size: 0.8125rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+      button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+<a href="#calculator" class="skip-link">Skip to calculator</a>
+
+<!-- NAVBAR -->
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="/" class="logo" aria-label="MapleSavings home">
+      <span aria-hidden="true">🍁</span>
+      <span><span class="logo-maple">Maple</span><span class="logo-savings">Savings</span></span>
+    </a>
+    <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open TFSA Free →</a>
+  </div>
+</nav>
+
+<!-- CALCULATOR SWITCHER -->
+<div class="calc-switcher" aria-label="Switch calculator">
+  <div class="calc-switcher-inner">
+    <a href="/" class="calc-switch-pill"><span aria-hidden="true">🍁</span> RRSP &amp; FHSA</a>
+    <a href="/tax-refund/" class="calc-switch-pill"><span aria-hidden="true">📄</span> Tax Refund</a>
+    <a href="/investment-calculator/" class="calc-switch-pill active"><span aria-hidden="true">📈</span> Investment Growth</a>
+  </div>
+</div>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <h1>See How Your Investments Could Grow Over Time</h1>
+  <p class="hero-sub">Project your investment growth, solve for the contribution you need, or find out how long it'll take to hit your goal — with a full compound-interest schedule. <span aria-hidden="true">🍁</span></p>
+  <div class="trust-bar" aria-label="Calculator highlights">
+    <div class="trust-item">
+      <span class="trust-value">5 Ways</span>
+      <span class="trust-label">To Solve Your Goal</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-value">Compound</span>
+      <span class="trust-label">Interest, Done Right</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-value">Free</span>
+      <span class="trust-label">No Signup Required</span>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR FORM -->
+<section class="calculator-section" id="calculator" aria-label="Investment growth calculator">
+  <div class="calculator-card">
+    <div class="trust-badges" aria-label="Calculator trust signals">
+      <span class="trust-badge">🔒 Your data never leaves your browser</span>
+      <span class="trust-badge">📈 Monthly compounding simulation</span>
+      <span class="trust-badge"><span aria-hidden="true">🍁</span> Made for Canadians</span>
+    </div>
+    <h2 class="calc-title">Investment Growth Calculator</h2>
+    <p class="calc-subtitle">Choose what you want to solve for, then fill in the rest.</p>
+
+    <!-- MODE TABS -->
+    <div class="mode-tabs" id="mode-tabs" role="tablist" aria-label="Calculation mode">
+      <button type="button" id="mode-tab-endamount" class="mode-tab active" role="tab" aria-selected="true" aria-controls="investForm" data-mode="endamount">End Amount</button>
+      <button type="button" id="mode-tab-contributeamount" class="mode-tab" role="tab" aria-selected="false" aria-controls="investForm" data-mode="contributeamount">Contribution</button>
+      <button type="button" id="mode-tab-returnrate" class="mode-tab" role="tab" aria-selected="false" aria-controls="investForm" data-mode="returnrate">Return Rate</button>
+      <button type="button" id="mode-tab-startingamount" class="mode-tab" role="tab" aria-selected="false" aria-controls="investForm" data-mode="startingamount">Starting Amount</button>
+      <button type="button" id="mode-tab-investlength" class="mode-tab" role="tab" aria-selected="false" aria-controls="investForm" data-mode="investlength">Invest Length</button>
+    </div>
+    <p class="mode-helper" id="mode-helper">Project how much your investment will be worth.</p>
+
+    <form id="investForm" novalidate>
+      <div class="form-grid">
+
+        <!-- Target Amount (hidden in End Amount mode) -->
+        <div class="form-group" id="field-target">
+          <label for="target-amount">Goal / Target Amount</label>
+          <div class="input-wrapper"><span class="input-prefix">$</span><input type="text" id="target-amount" class="form-input has-prefix" placeholder="1,000,000" value="1,000,000" inputmode="decimal" autocomplete="off" /></div>
+        </div>
+
+        <!-- Starting Amount -->
+        <div class="form-group" id="field-starting">
+          <label for="starting-amount">Starting Amount</label>
+          <div class="input-wrapper"><span class="input-prefix">$</span><input type="text" id="starting-amount" class="form-input has-prefix" placeholder="20,000" value="20,000" inputmode="decimal" autocomplete="off" /></div>
+        </div>
+
+        <!-- Years -->
+        <div class="form-group" id="field-years">
+          <label for="years">Investment Length <span class="slider-value" id="years-value">10 years</span></label>
+          <input type="text" id="years" class="form-input" placeholder="10" value="10" inputmode="decimal" autocomplete="off" />
+          <input type="range" id="years-slider" class="form-slider" min="1" max="50" step="1" value="10" aria-label="Investment length in years" />
+        </div>
+
+        <!-- Return Rate -->
+        <div class="form-group" id="field-rate">
+          <label for="return-rate">Estimated Annual Return <span class="slider-value" id="return-rate-value">6%</span></label>
+          <div class="input-wrapper"><input type="text" id="return-rate" class="form-input has-suffix" placeholder="6" value="6" inputmode="decimal" autocomplete="off" /><span class="input-suffix">%</span></div>
+          <input type="range" id="return-rate-slider" class="form-slider" min="-5" max="20" step="0.1" value="6" aria-label="Estimated annual return percentage" />
+        </div>
+
+        <!-- Compounding Frequency -->
+        <div class="form-group">
+          <label for="compound-frequency">Compounding Frequency</label>
+          <select id="compound-frequency" class="form-input">
+            <option value="annually">Annually</option>
+            <option value="semiannually">Semiannually</option>
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly" selected>Monthly</option>
+            <option value="daily">Daily</option>
+            <option value="continuously">Continuously</option>
+          </select>
+        </div>
+
+        <!-- Contribution Amount -->
+        <div class="form-group" id="field-contribution">
+          <label for="contribution-amount">Additional Contribution</label>
+          <div class="input-wrapper"><span class="input-prefix">$</span><input type="text" id="contribution-amount" class="form-input has-prefix" placeholder="1,000" value="1,000" inputmode="decimal" autocomplete="off" /></div>
+        </div>
+
+        <!-- Contribution Frequency -->
+        <div class="form-group">
+          <label for="contribution-frequency">Contribute</label>
+          <select id="contribution-frequency" class="form-input">
+            <option value="monthly" selected>Monthly</option>
+            <option value="annually">Annually</option>
+          </select>
+        </div>
+
+        <!-- Contribution Timing -->
+        <div class="form-group">
+          <label for="contribution-timing">Contribution Timing</label>
+          <select id="contribution-timing" class="form-input">
+            <option value="end" selected>End of period</option>
+            <option value="beginning">Beginning of period</option>
+          </select>
+        </div>
+
+      </div><!-- /form-grid -->
+
+      <button type="submit" class="btn-calculate" id="calculateBtn">Calculate →</button>
+      <p class="trust-note">For illustration only. Investment returns are not guaranteed and actual results will vary.</p>
+    </form>
+  </div>
+</section>
+
+<!-- RESULTS PANEL -->
+<section class="results-section" id="results" aria-label="Investment growth results" aria-live="polite">
+  <div class="results-inner">
+
+    <div class="not-achievable" id="not-achievable-msg" hidden>
+      Your goal isn't reachable with these inputs even at the outer bound we search. Try increasing your years, contribution, or return rate.
+    </div>
+
+    <div class="results-grid">
+
+      <!-- Card A: Result payoff + chart -->
+      <div class="card">
+        <h2 class="card-title" id="result-label">Estimated End Balance</h2>
+        <div class="result-payoff">
+          <div class="result-amount" id="result-amount-counter">$0</div>
+        </div>
+        <div class="donut-wrap">
+          <div class="donut-chart" id="donut-chart"></div>
+          <div class="donut-legend">
+            <div class="legend-item"><span class="legend-swatch swatch-starting"></span>Starting Amount <span id="legend-starting">$0 (0%)</span></div>
+            <div class="legend-item"><span class="legend-swatch swatch-contrib"></span>Contributions <span id="legend-contrib">$0 (0%)</span></div>
+            <div class="legend-item"><span class="legend-swatch swatch-interest"></span>Interest Earned <span id="legend-interest">$0 (0%)</span></div>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-label">End Balance</div>
+            <div class="stat-value" id="stat-end-balance">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Total Contributions</div>
+            <div class="stat-value" id="stat-total-contributions">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Total Interest</div>
+            <div class="stat-value" id="stat-total-interest">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Investment Length</div>
+            <div class="stat-value" id="stat-length">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card B: Schedule -->
+      <div class="card">
+        <h2 class="card-title">Accumulation Schedule</h2>
+        <div class="schedule-tabs" role="tablist" aria-label="Schedule view">
+          <button type="button" id="schedule-tab-yearly" class="schedule-tab active" role="tab" aria-selected="true" aria-controls="schedule-table-wrap" data-view="yearly">Yearly</button>
+          <button type="button" id="schedule-tab-monthly" class="schedule-tab" role="tab" aria-selected="false" aria-controls="schedule-table-wrap" data-view="monthly">Monthly</button>
+        </div>
+        <div class="schedule-table-wrap" id="schedule-table-wrap" role="tabpanel" aria-label="Accumulation schedule table">
+          <table class="schedule-table">
+            <thead><tr><th id="schedule-period-header">Year</th><th>Deposit</th><th>Interest</th><th>Balance</th></tr></thead>
+            <tbody id="schedule-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TAX SHELTER RECOMMENDATIONS -->
+<section class="recommendations-section" id="recommendations" aria-label="Where to hold your investments">
+  <div class="section-header">
+    <h2 class="section-title">Where You Hold This Investment Matters</h2>
+    <p class="section-sub" id="tax-shelter-hook">The account type you choose changes how much of your growth you actually keep.</p>
+  </div>
+  <div class="account-grid">
+    <div class="account-card">
+      <div class="account-chip chip-accent">Best for tax-free growth</div>
+      <h3>TFSA</h3>
+      <p>All growth and withdrawals are completely tax-free, for life. No tax on the interest this calculator projects.</p>
+      <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-rec">Open TFSA with Wealthsimple →</a>
+    </div>
+    <div class="account-card">
+      <div class="account-chip chip-muted">Best for retirement</div>
+      <h3>RRSP</h3>
+      <p>Contributions are tax-deductible today, and growth is tax-deferred until you withdraw in retirement — often at a lower rate.</p>
+      <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-rec">Open RRSP with Wealthsimple →</a>
+    </div>
+    <div class="account-card">
+      <div class="account-chip chip-muted">No room left?</div>
+      <h3>Taxable Account</h3>
+      <p>Once your registered room is used up, a regular investing account still works — interest, dividends, and capital gains are simply taxed as income each year.</p>
+      <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-rec">Open an Account →</a>
+    </div>
+  </div>
+  <p class="rec-disclosure">Referral link — we may earn a bonus if you open an account. See our <a href="/disclosure/">full disclosure</a>. This is not investment advice; consult a qualified advisor for your personal situation.</p>
+</section>
+
+</main>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq" aria-label="Frequently asked questions">
+  <div class="section-header">
+    <h2 class="section-title">Investment Calculator — Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-grid" id="faq-grid">
+    <div class="faq-item">
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">How does this investment calculator work?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">It simulates your investment month by month, converting your chosen compounding frequency into an equivalent monthly rate, then applies growth and contributions one month at a time. This handles mismatched compounding and contribution frequencies — like quarterly compounding with monthly contributions — accurately.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What do the 5 calculator modes do?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">End Amount projects how much your investment will be worth. Contribution solves for the periodic deposit needed to reach a goal. Return Rate solves for the annual return needed. Starting Amount solves for the lump sum needed today. Invest Length solves for how long it would take to reach your goal.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What return rate should I use?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">There's no single right answer — it depends on what you're invested in and your risk tolerance. This calculator doesn't recommend a rate; it's a tool to see the effect of different assumptions. Treat any rate as an estimate, not a guarantee, since real returns vary year to year and can be negative.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What's the difference between compounding frequency and contribution frequency?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Compounding frequency is how often your return is calculated and added to your balance. Contribution frequency is how often you add new money. These don't have to match — many real accounts compound daily or monthly while you contribute monthly, and this calculator handles that combination correctly.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Should I hold my investments in a TFSA, RRSP, or taxable account?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">A TFSA shelters all growth and withdrawals from tax for life. An RRSP gives a tax deduction today and defers tax until withdrawal, typically at a lower rate in retirement. A taxable account has no room limit but growth is taxed annually. Most Canadians benefit from filling TFSA and RRSP room first — see exactly how much an RRSP contribution would save you with our <a href="/">RRSP &amp; FHSA Calculator</a>.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Why does contribution timing change my result?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Money contributed at the beginning of a period earns a full period of growth before the next contribution, while end-of-period money doesn't start growing until the next period. Over many years, beginning-of-period contributions produce a meaningfully larger end balance.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What does "not reachable with these inputs" mean?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">For the Contribution, Return Rate, Starting Amount, and Invest Length modes, the calculator searches within a wide but bounded range (e.g. up to a 1000% annual return or 100 years). If your goal can't be reached even at that extreme, it tells you instead of returning a misleading number.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Is this calculator accurate?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The compounding math is standard, well-established financial mathematics, built to handle any combination of compounding and contribution frequency correctly. That said, this tool assumes a constant rate of return for illustration purposes — real investments fluctuate. This is not investment advice.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED CALCULATORS -->
+<section class="related-section" aria-label="Related calculators">
+  <div class="related-header">
+    <h2 class="section-title">More Canadian Tax &amp; Savings Tools</h2>
+  </div>
+  <div class="related-grid">
+    <a href="/" class="related-card"><span aria-hidden="true">🍁</span><span>RRSP &amp; FHSA Calculator</span></a>
+    <a href="/tax-refund/" class="related-card"><span aria-hidden="true">📄</span><span>Tax Refund Calculator</span></a>
+    <a href="/ontario/" class="related-card"><span aria-hidden="true">🏙️</span><span>Ontario Tax Calculator</span></a>
+    <a href="/bc/" class="related-card"><span aria-hidden="true">🏔️</span><span>BC Tax Calculator</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Site footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><span aria-hidden="true">🍁</span> <span class="logo-maple">Maple</span><span class="logo-savings">Savings</span></div>
+      <p class="footer-tagline">Free Canadian tax savings calculator.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <div class="footer-links">
+        <a href="/">RRSP &amp; FHSA Calculator</a>
+        <a href="/tax-refund/">Tax Refund Calculator</a>
+        <a href="/investment-calculator/">Investment Calculator</a>
+        <a href="/ontario/">Ontario Tax Calculator</a>
+        <a href="/bc/">BC Tax Calculator</a>
+        <a href="/about/">About</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/disclosure/">Disclosure</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
+    </nav>
+    <div class="footer-disclaimer">
+      This calculator is for illustration purposes only and does not constitute investment, tax, or financial advice. Projected returns are not guaranteed — actual investment performance will vary and may result in loss. Consult a qualified financial advisor for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
+      <strong>Affiliate disclosure:</strong> Some links on this site are referral links. If you open an account through our links, we may receive a referral bonus at no cost to you.
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 MapleSavings · Your Canadian tax savings, calculated in seconds.
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Quick account opening">
+  <span class="sticky-cta-text" id="sticky-cta-text">Hold this investment tax-free in a TFSA</span>
+  <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open TFSA →</a>
+</div>
+
+<script>
+// ================================
+// Formatters
+// ================================
+const fmtCAD = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 });
+function fmt(n) { return fmtCAD.format(Math.round(n || 0)); }
+function parseInput(val) {
+  const n = parseFloat(String(val).replace(/[$,\s]/g, ''));
+  return isNaN(n) || n < 0 ? 0 : n;
+}
+function parseNum(val) {
+  const n = parseFloat(String(val).replace(/,/g, ''));
+  return isNaN(n) ? 0 : n;
+}
+function formatYearsMonths(totalMonths) {
+  const m = Math.max(0, Math.round(totalMonths));
+  const yrs = Math.floor(m / 12);
+  const mos = m % 12;
+  if (yrs === 0) return mos + (mos === 1 ? ' month' : ' months');
+  if (mos === 0) return yrs + (yrs === 1 ? ' year' : ' years');
+  return yrs + (yrs === 1 ? ' year ' : ' years ') + mos + (mos === 1 ? ' month' : ' months');
+}
+
+// ================================
+// Core compound-interest simulation engine
+// Converts any compounding frequency to an effective monthly rate, then
+// steps month-by-month applying growth and contributions. This correctly
+// handles mismatched compounding/contribution frequencies (e.g. quarterly
+// compounding with monthly contributions) the same way calculator.net does.
+// ================================
+const COMPOUND_N = { annually: 1, semiannually: 2, quarterly: 4, monthly: 12, daily: 365 };
+
+function effectiveMonthlyRate(annualRate, compoundFreq) {
+  if (compoundFreq === 'continuously') return Math.exp(annualRate / 12) - 1;
+  const n = COMPOUND_N[compoundFreq] || 12;
+  return Math.pow(1 + annualRate / n, n / 12) - 1;
+}
+
+function simulateInvestment(p) {
+  const monthlyRate = effectiveMonthlyRate(p.annualRate, p.compoundFreq);
+  let balance = p.startingAmount;
+  let totalContributions = 0;
+  let totalInterest = 0;
+  const schedule = [];
+  const roundedMonths = Math.max(0, Math.round(p.totalMonths));
+
+  for (let m = 1; m <= roundedMonths; m++) {
+    const isContribMonth = p.contributionFreq === 'annually' ? (m % 12 === 0) : true;
+    const deposit = (isContribMonth && p.contributionAmount > 0) ? p.contributionAmount : 0;
+
+    if (p.contributionTiming === 'beginning' && deposit > 0) {
+      balance += deposit;
+      totalContributions += deposit;
+    }
+    const interestThisMonth = balance * monthlyRate;
+    balance += interestThisMonth;
+    totalInterest += interestThisMonth;
+    if (p.contributionTiming === 'end' && deposit > 0) {
+      balance += deposit;
+      totalContributions += deposit;
+    }
+
+    schedule.push({ month: m, year: Math.ceil(m / 12), deposit, interest: interestThisMonth, balance });
+  }
+
+  return { endBalance: balance, startingAmount: p.startingAmount, totalContributions, totalInterest, schedule };
+}
+
+function buildYearlySchedule(monthlySchedule) {
+  const grouped = {};
+  monthlySchedule.forEach(entry => {
+    if (!grouped[entry.year]) grouped[entry.year] = { year: entry.year, deposit: 0, interest: 0, balance: 0 };
+    grouped[entry.year].deposit += entry.deposit;
+    grouped[entry.year].interest += entry.interest;
+    grouped[entry.year].balance = entry.balance;
+  });
+  return Object.values(grouped);
+}
+
+// ================================
+// Generic bisection solver — works for any monotonically increasing function
+// of the unknown. Expands the upper bound (capped at maxHi) before bisecting,
+// and returns null if the target is genuinely unreachable within that cap.
+// ================================
+function bisectionSolve(fn, lo, hi, target, tolerance, maxIter, maxHi) {
+  const valLo = fn(lo);
+  if (valLo >= target) return lo;
+  let valHi = fn(hi);
+  let guard = 0;
+  while (valHi < target && guard < 60) {
+    if (maxHi !== undefined && hi >= maxHi) return null;
+    hi = maxHi !== undefined ? Math.min(hi * 2 + 1, maxHi) : hi * 2 + 1;
+    valHi = fn(hi);
+    guard++;
+  }
+  if (valHi < target) return null;
+  for (let i = 0; i < maxIter; i++) {
+    const mid = (lo + hi) / 2;
+    const val = fn(mid);
+    if (Math.abs(val - target) < tolerance) return mid;
+    if (val < target) lo = mid; else hi = mid;
+  }
+  return (lo + hi) / 2;
+}
+
+// ================================
+// 5 calculation modes
+// ================================
+function solveEndAmount(p) {
+  const totalMonths = p.years * 12;
+  const result = simulateInvestment({ ...p, totalMonths });
+  return { ...result, totalMonths, solvedValue: result.endBalance, achievable: true };
+}
+
+function solveContributeAmount(p) {
+  const totalMonths = p.years * 12;
+  const fn = (c) => simulateInvestment({ ...p, totalMonths, contributionAmount: c }).endBalance;
+  const solved = bisectionSolve(fn, 0, Math.max(1000, p.targetAmount), p.targetAmount, 0.5, 100, 1e9);
+  if (solved === null) return { achievable: false };
+  const result = simulateInvestment({ ...p, totalMonths, contributionAmount: solved });
+  return { ...result, totalMonths, solvedValue: solved, achievable: true };
+}
+
+function solveReturnRate(p) {
+  const totalMonths = p.years * 12;
+  const fn = (r) => simulateInvestment({ ...p, totalMonths, annualRate: r }).endBalance;
+  const lo = -0.99;
+  const solved = bisectionSolve(fn, lo, 1.0, p.targetAmount, 0.5, 100, 10);
+  if (solved === null) return { achievable: false };
+  const result = simulateInvestment({ ...p, totalMonths, annualRate: solved });
+  // If the solver bottomed out at -99%, your starting amount + contributions alone
+  // already clear the goal — even a near-total yearly loss would still get you there.
+  const alreadyMet = solved <= lo;
+  return { ...result, totalMonths, solvedValue: solved, achievable: true, alreadyMet };
+}
+
+function solveStartingAmount(p) {
+  const totalMonths = p.years * 12;
+  const fn = (s) => simulateInvestment({ ...p, totalMonths, startingAmount: s }).endBalance;
+  const solved = bisectionSolve(fn, 0, Math.max(1000, p.targetAmount), p.targetAmount, 0.5, 100, 1e9);
+  if (solved === null) return { achievable: false };
+  const result = simulateInvestment({ ...p, totalMonths, startingAmount: solved });
+  return { ...result, totalMonths, solvedValue: solved, achievable: true };
+}
+
+function solveInvestLength(p) {
+  const fn = (months) => simulateInvestment({ ...p, totalMonths: months }).endBalance;
+  const solved = bisectionSolve(fn, 0, 600, p.targetAmount, 1, 100, 1200);
+  if (solved === null) return { achievable: false };
+  const totalMonths = Math.round(solved);
+  const result = simulateInvestment({ ...p, totalMonths });
+  return { ...result, totalMonths, solvedValue: totalMonths, achievable: true };
+}
+
+function runMode(mode, p) {
+  if (mode === 'endamount') return solveEndAmount(p);
+  if (mode === 'contributeamount') return solveContributeAmount(p);
+  if (mode === 'returnrate') return solveReturnRate(p);
+  if (mode === 'startingamount') return solveStartingAmount(p);
+  if (mode === 'investlength') return solveInvestLength(p);
+}
+
+// ================================
+// Mode metadata & field visibility
+// ================================
+const MODE_META = {
+  endamount:        { label: 'Estimated End Balance',   helper: 'Project how much your investment will be worth.' },
+  contributeamount: { label: 'Required Contribution',   helper: 'Solve for the contribution needed to reach your goal.' },
+  returnrate:        { label: 'Required Annual Return',  helper: 'Solve for the return rate needed to reach your goal.' },
+  startingamount:    { label: 'Required Starting Amount',helper: 'Solve for the starting amount needed to reach your goal.' },
+  investlength:      { label: 'Time to Reach Your Goal', helper: 'Solve for how long it will take to reach your goal.' }
+};
+const HIDDEN_FIELD_BY_MODE = {
+  endamount: 'field-target', contributeamount: 'field-contribution',
+  returnrate: 'field-rate', startingamount: 'field-starting', investlength: 'field-years'
+};
+
+function applyModeVisibility(mode) {
+  ['field-target', 'field-contribution', 'field-rate', 'field-starting', 'field-years'].forEach(id => {
+    document.getElementById(id).hidden = false;
+  });
+  document.getElementById(HIDDEN_FIELD_BY_MODE[mode]).hidden = true;
+  document.getElementById('mode-helper').textContent = MODE_META[mode].helper;
+}
+
+function getCurrentMode() {
+  return document.querySelector('.mode-tab.active').dataset.mode;
+}
+
+// ================================
+// Animated counter (matches homepage pattern)
+// ================================
+let rafId = null;
+function animateCounter(el, from, to, suffix) {
+  suffix = suffix || '';
+  if (rafId) cancelAnimationFrame(rafId);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = fmt(to) + suffix; return; }
+  const duration = 900;
+  const start = performance.now();
+  function tick(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = fmt(Math.round(from + (to - from) * eased)) + suffix;
+    if (t < 1) rafId = requestAnimationFrame(tick);
+  }
+  rafId = requestAnimationFrame(tick);
+}
+
+// ================================
+// Donut chart (pure CSS conic-gradient, no chart library)
+// ================================
+function renderDonut(startingAmount, totalContributions, totalInterest, endBalance) {
+  const total = Math.max(endBalance, 0.01);
+  const pctStarting = Math.max(0, startingAmount) / total * 100;
+  const pctContrib  = Math.max(0, totalContributions) / total * 100;
+  const pctInterest = Math.max(0, totalInterest) / total * 100;
+  const deg1 = pctStarting * 3.6;
+  const deg2 = (pctStarting + pctContrib) * 3.6;
+  document.getElementById('donut-chart').style.background =
+    `conic-gradient(var(--chart-starting) 0deg ${deg1}deg, var(--chart-contrib) ${deg1}deg ${deg2}deg, var(--chart-interest) ${deg2}deg 360deg)`;
+  document.getElementById('legend-starting').textContent = `${fmt(startingAmount)} (${pctStarting.toFixed(0)}%)`;
+  document.getElementById('legend-contrib').textContent  = `${fmt(totalContributions)} (${pctContrib.toFixed(0)}%)`;
+  document.getElementById('legend-interest').textContent = `${fmt(totalInterest)} (${pctInterest.toFixed(0)}%)`;
+}
+
+// ================================
+// Schedule table rendering
+// ================================
+let lastSchedule = null;
+let scheduleView = 'yearly';
+
+function renderSchedule(schedule, view) {
+  const tbody = document.getElementById('schedule-body');
+  const headerEl = document.getElementById('schedule-period-header');
+  tbody.innerHTML = '';
+  if (view === 'yearly') {
+    headerEl.textContent = 'Year';
+    buildYearlySchedule(schedule).forEach(row => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${row.year}</td><td>${fmt(row.deposit)}</td><td>${fmt(row.interest)}</td><td>${fmt(row.balance)}</td>`;
+      tbody.appendChild(tr);
+    });
+  } else {
+    headerEl.textContent = 'Month';
+    schedule.forEach(row => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${row.month}</td><td>${fmt(row.deposit)}</td><td>${fmt(row.interest)}</td><td>${fmt(row.balance)}</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+}
+
+// ================================
+// Main render
+// ================================
+function renderResults(mode, result, p) {
+  const meta = MODE_META[mode];
+  document.getElementById('result-label').textContent = meta.label;
+
+  const counterEl = document.getElementById('result-amount-counter');
+  if (mode === 'returnrate') {
+    counterEl.textContent = result.alreadyMet
+      ? 'Goal already met'
+      : (result.solvedValue * 100).toFixed(2) + '%';
+  } else if (mode === 'investlength') {
+    counterEl.textContent = formatYearsMonths(result.solvedValue);
+  } else if (mode === 'contributeamount') {
+    const perLabel = p.contributionFreq === 'annually' ? '/year' : '/month';
+    animateCounter(counterEl, 0, result.solvedValue, perLabel);
+  } else {
+    animateCounter(counterEl, 0, result.solvedValue);
+  }
+
+  document.getElementById('stat-end-balance').textContent = fmt(result.endBalance);
+  document.getElementById('stat-total-contributions').textContent = fmt(result.totalContributions);
+  document.getElementById('stat-total-interest').textContent = fmt(result.totalInterest);
+  document.getElementById('stat-length').textContent = formatYearsMonths(result.totalMonths);
+
+  renderDonut(result.startingAmount, result.totalContributions, result.totalInterest, result.endBalance);
+
+  lastSchedule = result.schedule;
+  renderSchedule(lastSchedule, scheduleView);
+
+  document.getElementById('tax-shelter-hook').textContent =
+    `Based on this projection, ${fmt(Math.max(0, result.totalInterest))} of this would be investment growth. Held in a TFSA, none of it would be taxed.`;
+}
+
+function showNotAchievable() {
+  document.getElementById('not-achievable-msg').hidden = false;
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('recommendations').classList.remove('visible');
+}
+function hideResults() {
+  document.getElementById('not-achievable-msg').hidden = true;
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('recommendations').classList.remove('visible');
+}
+function hideNotAchievable() {
+  document.getElementById('not-achievable-msg').hidden = true;
+}
+
+// ================================
+// Main calculate orchestration
+// ================================
+function calculate(doScroll) {
+  const mode = getCurrentMode();
+  const startingAmount = parseInput(document.getElementById('starting-amount').value);
+  // Clamp at the source (not just the slider) so a pasted/typed extreme value can't
+  // trigger a multi-million-iteration simulation — the slider's own range (1-50) is
+  // the intended bound regardless of how the years field was set.
+  const years = Math.min(Math.max(parseNum(document.getElementById('years').value), 0), 50);
+  const annualRate = parseNum(document.getElementById('return-rate').value) / 100;
+  const compoundFreq = document.getElementById('compound-frequency').value;
+  const contributionAmount = parseInput(document.getElementById('contribution-amount').value);
+  const contributionFreq = document.getElementById('contribution-frequency').value;
+  const contributionTiming = document.getElementById('contribution-timing').value;
+  const targetAmount = parseInput(document.getElementById('target-amount').value);
+
+  if (mode !== 'investlength' && years <= 0) { hideResults(); return; }
+  if (mode !== 'endamount' && targetAmount <= 0) { hideResults(); return; }
+
+  const p = { startingAmount, years, annualRate, compoundFreq, contributionAmount, contributionFreq, contributionTiming, targetAmount };
+  const result = runMode(mode, p);
+
+  if (!result || result.achievable === false) { showNotAchievable(); return; }
+  hideNotAchievable();
+  renderResults(mode, result, p);
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('recommendations').classList.add('visible');
+
+  if (doScroll) {
+    const resultsEl = document.getElementById('results');
+    setTimeout(() => window.scrollTo({ top: resultsEl.offsetTop - 80, behavior: 'smooth' }), 50);
+  }
+}
+
+// ================================
+// UI wiring: mode tabs, sliders, schedule tabs, form, live recalc, sticky CTA
+// ================================
+document.querySelectorAll('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.mode-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    applyModeVisibility(tab.dataset.mode);
+    calculate(false);
+  });
+});
+
+function syncSliderAndInput(sliderId, inputId, labelId, formatLabel) {
+  const slider = document.getElementById(sliderId);
+  const input = document.getElementById(inputId);
+  const label = document.getElementById(labelId);
+  slider.addEventListener('input', () => {
+    input.value = slider.value;
+    label.textContent = formatLabel(slider.value);
+    calculate(false);
+  });
+  input.addEventListener('input', () => {
+    const v = parseNum(input.value);
+    if (!isNaN(v)) { slider.value = Math.min(Math.max(v, slider.min), slider.max); label.textContent = formatLabel(v); }
+  });
+}
+syncSliderAndInput('years-slider', 'years', 'years-value', v => v + (Number(v) === 1 ? ' year' : ' years'));
+syncSliderAndInput('return-rate-slider', 'return-rate', 'return-rate-value', v => v + '%');
+
+document.querySelectorAll('.schedule-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.schedule-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    scheduleView = tab.dataset.view;
+    if (lastSchedule) renderSchedule(lastSchedule, scheduleView);
+  });
+});
+
+document.getElementById('investForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  calculate(true);
+});
+
+let debounceTimer = null;
+function onInputChange() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => calculate(false), 300);
+}
+document.querySelectorAll('#investForm input, #investForm select').forEach(el => {
+  el.addEventListener('input', onInputChange);
+  el.addEventListener('change', onInputChange);
+});
+
+function updateStickyCta() {
+  const stickyCta = document.getElementById('sticky-cta');
+  if (!document.getElementById('results').classList.contains('visible')) { stickyCta.classList.remove('visible'); return; }
+  const calcCard = document.querySelector('.calculator-card');
+  const rect = calcCard.getBoundingClientRect();
+  stickyCta.classList.toggle('visible', rect.bottom < 0);
+}
+window.addEventListener('scroll', updateStickyCta, { passive: true });
+
+// Initial calculation on load using the pre-filled defaults
+applyModeVisibility('endamount');
+calculate(false);
+</script>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.faq-section .faq-item');
+  items.forEach(function (item, i) {
+    var btn = item.querySelector('.faq-q');
+    var wrap = item.querySelector('.faq-a-wrap');
+    if (!btn || !wrap) return;
+    var btnId = 'faq-q-' + i;
+    var panelId = 'faq-a-' + i;
+    btn.id = btnId;
+    wrap.id = panelId;
+    btn.setAttribute('aria-controls', panelId);
+    wrap.setAttribute('aria-labelledby', btnId);
+    var open = i === 0;
+    btn.setAttribute('aria-expanded', String(open));
+    item.classList.toggle('active', open);
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.toggle('active');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+    btn.addEventListener('keydown', function (e) {
+      var all = Array.prototype.map.call(items, function (it) { return it.querySelector('.faq-q'); });
+      var idx = all.indexOf(btn);
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var next = e.key === 'ArrowDown' ? (idx + 1) % all.length : (idx - 1 + all.length) % all.length;
+        all[next].focus();
+      } else if (e.key === 'Home') { e.preventDefault(); all[0].focus(); }
+      else if (e.key === 'End') { e.preventDefault(); all[all.length - 1].focus(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

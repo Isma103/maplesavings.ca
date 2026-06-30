@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1D6B3E" />
 
   <title>About MapleSavings — Free Canadian Tax Calculator</title>
-  <meta name="description" content="About MapleSavings.ca — a free Canadian RRSP and FHSA tax savings calculator. Learn about our mission, methodology, and commitment to accuracy and transparency." />
+  <meta name="description" content="MapleSavings.ca is a free Canadian RRSP and FHSA tax calculator. Learn our mission, methodology, and commitment to accuracy." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://maplesavings.ca/about/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -45,7 +45,7 @@
     :root {
       --bg:#F5F2ED; --surface:#FFFFFF; --surface-2:#F9F7F4;
       --border:#E4DDD4; --accent:#1D6B3E; --accent-dim:#155230;
-      --accent-light:#E8F4EE; --text:#1C1917; --text-muted:#6B5E55; --text-dim:#7A6E64;
+      --accent-light:#E8F4EE; --text:#1C1917; --text-muted:#6B5E55; --text-dim:#756959;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -88,6 +88,7 @@
     @media (max-width: 768px) { .footer-inner { flex-direction: column; } }
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; z-index: 300; }
     .skip-link:focus { left: 0; }
+      button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -188,7 +189,7 @@
       </div>
     </nav>
     <div class="footer-disclaimer">
-      Tax calculations are estimates for informational purposes only and do not constitute tax advice. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
+      Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
       <strong>Affiliate disclosure:</strong> Some links on this site are referral links. See our <a href="/disclosure/" style="color:inherit;">full disclosure</a>.
     </div>
   </div>

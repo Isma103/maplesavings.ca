@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8" />
@@ -152,7 +152,7 @@
       --accent-light:#E8F4EE;   /* pale green tint */
       --text:        #1C1917;   /* warm near-black */
       --text-muted:  #6B5E55;   /* warm medium brown */
-      --text-dim:    #7A6E64;   /* warm light gray — WCAG AA compliant */
+      --text-dim:    #756959;   /* warm light gray — WCAG AA compliant */
       --danger:      #C0392B;   /* warm red */
       --gold:        #C05621;   /* amber-orange for warnings */
       --gain:        #15803D;   /* positive savings green */
@@ -520,7 +520,7 @@
       border-radius: 6px; vertical-align: middle; letter-spacing: 0.04em;
       border: 1px solid rgba(29,107,62,0.2);
     }
-    .year-notice { font-size: 0.75rem; color: var(--gold); margin-top: 3px; min-height: 1em; }
+    .year-notice { font-size: 0.75rem; color: #A8481A; margin-top: 3px; min-height: 1em; }
 
     /* === FILING BANNER === */
     .filing-banner { padding: 0 24px 72px; }
@@ -657,11 +657,11 @@
 
     /* === FAQ === */
     .faq-section { padding: 0 24px 72px; }
-    .faq-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .faq-item { background: var(--surface); border-radius: 16px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04); }
-    .faq-q { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .faq-a { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
-    @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
+    .faq-grid { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden; transition: box-shadow 0.2s ease, border-color 0.2s ease; } .faq-item:hover { border-color: rgba(29,107,62,0.25); box-shadow: 0 4px 16px rgba(0,0,0,0.08); } .faq-item.active { border-color: rgba(29,107,62,0.3); box-shadow: 0 4px 18px rgba(29,107,62,0.1); } .faq-q-heading { margin: 0; }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; background: none; border: none; cursor: pointer; padding: 20px 24px; font-size: 1rem; font-weight: 700; color: var(--text); font-family: inherit; transition: color 0.2s ease; } .faq-q:hover { color: var(--accent); } .faq-q:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; } .faq-icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; color: var(--accent); transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease; } .faq-item.active .faq-icon { transform: rotate(180deg); background: var(--accent); color: #fff; }
+    .faq-a-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.25s ease; } .faq-item.active .faq-a-wrap { grid-template-rows: 1fr; } .faq-a-inner { overflow: hidden; } .faq-a { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; padding: 0 24px 22px; margin: 0; } .faq-a a { color: var(--accent); text-decoration: underline; } @media (prefers-reduced-motion: reduce) { .faq-a-wrap, .faq-icon { transition: none; } }
+    @media (max-width: 768px) { .faq-q { padding: 16px 18px; font-size: 0.9375rem; } .faq-a { padding: 0 18px 18px; font-size: 0.875rem; } }
 
     /* === SOCIAL PROOF === */
     .social-proof { padding: 0 24px 40px; display: none; }
@@ -703,13 +703,14 @@
     .skip-link:focus { left: 0; }
 
     /* === BRIDGE + WHY-WS === */
-    .savings-bridge { background: rgba(198,160,80,0.08); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); margin: 14px 0 10px; }
-    .why-ws { background: rgba(198,160,80,0.06); border-radius: 10px; padding: 14px 16px; margin: 0 0 14px; }
-    .why-ws-title { font-weight: 700; font-size: 0.85rem; letter-spacing: .04em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .why-ws-features { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
-    .why-ws-feature { font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
-    .why-ws-check { color: var(--gold); font-weight: 700; }
+    .savings-bridge { background: linear-gradient(135deg, #F0FAF5 0%, #EBF5F0 100%); border: 1px solid #CDE9D8; border-radius: 12px; padding: 13px 16px; margin-bottom: 12px; font-size: 0.8125rem; color: var(--text-muted); line-height: 1.7; } .savings-bridge strong { color: var(--accent); font-weight: 600; }
+    .why-ws { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+    .why-ws-title { font-size: 0.6875rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 9px; }
+    .why-ws-features { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px; }
+    .why-ws-feature { font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+    .why-ws-check { color: var(--accent); font-weight: 700; }
     @media (max-width: 480px) { .why-ws-features { grid-template-columns: 1fr; } }
+      button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -925,7 +926,7 @@
         </div>
         <div class="savings-payoff">
           <div class="savings-payoff-label">Your Potential Tax Savings</div>
-          <div class="savings-amount" id="total-savings-counter" aria-live="polite">$0</div>
+          <div class="savings-amount" id="total-savings-counter">$0</div>
           <div class="savings-divider"></div>
           <div class="savings-breakdown">
             <div class="savings-breakdown-item">RRSP Savings: <span id="rrsp-savings-amount">$0</span></div>
@@ -946,9 +947,9 @@
             <div class="why-ws-feature"><span class="why-ws-check">✓</span> Your data stays in your browser</div>
           </div>
         </div>
-        <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-full" id="primary-cta" aria-live="polite">Open your account →</a>
+        <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-full" id="primary-cta">Open your account →</a>
         <p class="cta-subtext">+ $25 to start · Free to open · CIPF member · <a href="/disclosure/" style="color:inherit;text-decoration:underline;">Disclosure</a></p>
-        <div class="urgency-banner" id="urgency-banner" aria-live="polite" style="display:none;"></div>
+        <div class="urgency-banner" id="urgency-banner" style="display:none;"></div>
       </div>
 
       <!-- Card B: Tax Bracket Breakdown -->
@@ -966,6 +967,10 @@
             </table>
           </div>
           <div class="totals-row">
+            <span class="lbl">Less: Basic Personal Amount Credit</span>
+            <span class="amt" id="federal-bpa-credit">—</span>
+          </div>
+          <div class="totals-row">
             <span class="lbl">Total Federal Tax</span>
             <span class="amt" id="federal-total-tax">—</span>
           </div>
@@ -976,6 +981,10 @@
               <thead><tr><th>Income Range</th><th>Rate</th><th>Tax in Bracket</th></tr></thead>
               <tbody id="provincial-bracket-body"></tbody>
             </table>
+          </div>
+          <div class="totals-row">
+            <span class="lbl">Less: Basic Personal Amount Credit</span>
+            <span class="amt" id="provincial-bpa-credit">—</span>
           </div>
           <div class="totals-row">
             <span class="lbl">Total Provincial Tax</span>
@@ -1055,32 +1064,32 @@
   </div>
   <div class="faq-grid">
     <div class="faq-item">
-      <h3 class="faq-q">What is Ontario's marginal tax rate at $75,000 income?</h3>
-      <p class="faq-a">At $75,000 of employment income in Ontario in 2025, your combined marginal tax rate is approximately 29.65% — 20.5% federal plus 9.15% Ontario provincial. Every RRSP or FHSA dollar you contribute saves you about $0.30 in income taxes.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is Ontario's marginal tax rate at $75,000 income?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">At $75,000 of employment income in Ontario in 2025, your combined marginal tax rate is approximately 29.65% — 20.5% federal plus 9.15% Ontario provincial. Every RRSP or FHSA dollar you contribute saves you about $0.30 in income taxes.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">What is Ontario's top combined marginal tax rate?</h3>
-      <p class="faq-a">Ontario's top combined marginal tax rate is 46.16% for income over $220,000, combining the 33% federal rate with Ontario's 13.16% top provincial rate. Ontario also applies a surtax at higher income levels, which can push effective rates higher. Consult a tax professional if your income exceeds $100,000.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is Ontario's top combined marginal tax rate?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Ontario's top combined marginal tax rate is 46.16% for income over $220,000, combining the 33% federal rate with Ontario's 13.16% top provincial rate. Ontario also applies a surtax at higher income levels, which can push effective rates higher. Consult a tax professional if your income exceeds $100,000.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">What is an FHSA and how much can I contribute?</h3>
-      <p class="faq-a">The First Home Savings Account (FHSA) is for first-time homebuyers. In your first year, you can contribute up to $8,000. Unused room carries forward (up to $8,000), allowing up to $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible and withdrawals for a first home purchase are tax-free.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is an FHSA and how much can I contribute?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The First Home Savings Account (FHSA) is for first-time homebuyers. In your first year, you can contribute up to $8,000. Unused room carries forward (up to $8,000), allowing up to $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible and withdrawals for a first home purchase are tax-free.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">What is the RRSP contribution limit for 2025 and 2026?</h3>
-      <p class="faq-a">The 2025 RRSP limit is $32,490 (or 18% of your 2024 earned income, whichever is lower). For 2026, the limit increased to $33,810. Unused room carries forward indefinitely. Your personal limit is shown on your CRA Notice of Assessment or in My CRA Account.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the RRSP contribution limit for 2025 and 2026?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The 2025 RRSP limit is $32,490 (or 18% of your 2024 earned income, whichever is lower). For 2026, the limit increased to $33,810. Unused room carries forward indefinitely. Your personal limit is shown on your CRA Notice of Assessment or in My CRA Account.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">Can I contribute to both an RRSP and FHSA in the same year?</h3>
-      <p class="faq-a">Yes — Ontario residents can contribute to both in the same tax year. Both reduce your federal and Ontario provincial taxable income dollar-for-dollar, maximizing your combined tax savings. This calculator shows both savings simultaneously above.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Can I contribute to both an RRSP and FHSA in the same year?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Yes — Ontario residents can contribute to both in the same tax year. Both reduce your federal and Ontario provincial taxable income dollar-for-dollar, maximizing your combined tax savings. This calculator shows both savings simultaneously above.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">Is my personal data safe when using MapleSavings?</h3>
-      <p class="faq-a">Yes. MapleSavings runs entirely in your browser — your income, RRSP room, FHSA room, and all other inputs are never sent to any server or third party. All calculations happen locally on your device and nothing is stored or tracked.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Is my personal data safe when using MapleSavings?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Yes. MapleSavings runs entirely in your browser — your income, RRSP room, FHSA room, and all other inputs are never sent to any server or third party. All calculations happen locally on your device and nothing is stored or tracked.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q">Are these Ontario tax calculations accurate?</h3>
-      <p class="faq-a">MapleSavings uses 2025 CRA federal and Ontario provincial tax brackets to estimate your savings. Note: Ontario's surtax is not included in these estimates. Results are for informational purposes — your actual tax owing may differ. Consult a tax professional for personalized advice.</p>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Are these Ontario tax calculations accurate?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">MapleSavings uses 2025 CRA federal and Ontario provincial tax brackets to estimate your savings. Note: Ontario's surtax is not included in these estimates. Results are for informational purposes — your actual tax owing may differ. Consult a tax professional for personalized advice.</p></div></div>
     </div>
   </div>
 </section>
@@ -1501,16 +1510,26 @@ function parseInput(val) {
 
 // ================================
 // Core Tax Engine
-// Calculate progressive tax using brackets applied to (income - personalAmount)
 // ================================
-function calcTax(income, brackets, personalAmount) {
-  const taxableIncome = Math.max(0, income - personalAmount);
+// Gross progressive tax on full taxable income, before any non-refundable credits.
+function calcGrossTax(income, brackets) {
+  const taxableIncome = Math.max(0, income);
   let tax = 0;
   for (const b of brackets) {
     if (taxableIncome <= b.min) break;
     tax += (Math.min(taxableIncome, b.max) - b.min) * b.rate;
   }
   return tax;
+}
+
+// Net tax after the Basic Personal Amount credit (BPA × lowest bracket rate).
+// The BPA is a non-refundable CREDIT against gross tax, not a deduction from
+// taxable income — subtracting it before applying brackets would shield income
+// at the taxpayer's marginal rate instead of the lowest rate.
+function calcTax(income, brackets, personalAmount) {
+  const grossTax = calcGrossTax(income, brackets);
+  const bpaCredit = personalAmount * brackets[0].rate;
+  return Math.max(0, grossTax - bpaCredit);
 }
 
 function calcTotalTax(income, province, B) {
@@ -1529,11 +1548,12 @@ function getMarginalRate(income, province, B) {
     }
     return rate;
   }
-  const fedTaxable  = Math.max(0, income - B.federal.personalAmount);
-  const provTaxable = Math.max(0, income - B[province].personalAmount);
-  const fedRate = bracketRate(fedTaxable, B.federal.brackets);
+  // Marginal rate depends only on which bracket the next dollar of income falls
+  // into — the BPA is a flat-dollar credit and does not shift bracket boundaries.
+  const taxable = Math.max(0, income);
+  const fedRate = bracketRate(taxable, B.federal.brackets);
   const adjustedFedRate = province === 'QC' ? fedRate * 0.835 : fedRate;
-  return adjustedFedRate + bracketRate(provTaxable, B[province].brackets);
+  return adjustedFedRate + bracketRate(taxable, B[province].brackets);
 }
 
 // RRSP savings = actual tax difference (handles bracket crossings correctly)
@@ -1576,7 +1596,7 @@ function animateCounter(el, from, to, duration) {
 function buildBracketRows(tbodyId, brackets, personalAmount, income) {
   const tbody = document.getElementById(tbodyId);
   tbody.innerHTML = '';
-  const taxable = Math.max(0, income - personalAmount);
+  const taxable = Math.max(0, income);
   for (const b of brackets) {
     const isLast = b.max === Infinity;
     const rangeStr = isLast ? fmt(b.min) + '+' : fmt(b.min) + ' – ' + fmt(b.max);
@@ -1783,6 +1803,8 @@ function calculate(doScroll) {
   document.getElementById('tab-prov').textContent = B[province].name;
   buildBracketRows('federal-bracket-body',    B.federal.brackets,   B.federal.personalAmount,   totalIncome);
   buildBracketRows('provincial-bracket-body', B[province].brackets, B[province].personalAmount, totalIncome);
+  document.getElementById('federal-bpa-credit').textContent    = '−' + fmt(B.federal.personalAmount * B.federal.brackets[0].rate);
+  document.getElementById('provincial-bpa-credit').textContent = '−' + fmt(B[province].personalAmount * B[province].brackets[0].rate);
   document.getElementById('federal-total-tax').textContent    = fmt(fedTax);
   document.getElementById('provincial-total-tax').textContent = fmt(provTax);
   document.getElementById('combined-total-tax').textContent   = fmt(totalTax);
@@ -1940,6 +1962,39 @@ document.addEventListener('DOMContentLoaded', function() {
   calculate(false);
   computeUrgency();
 });
+</script>
+<script>
+(function () {
+  var items = document.querySelectorAll('.faq-section .faq-item');
+  items.forEach(function (item, i) {
+    var btn = item.querySelector('.faq-q');
+    var wrap = item.querySelector('.faq-a-wrap');
+    if (!btn || !wrap) return;
+    var btnId = 'faq-q-' + i;
+    var panelId = 'faq-a-' + i;
+    btn.id = btnId;
+    wrap.id = panelId;
+    btn.setAttribute('aria-controls', panelId);
+    wrap.setAttribute('aria-labelledby', btnId);
+    var open = i === 0;
+    btn.setAttribute('aria-expanded', String(open));
+    item.classList.toggle('active', open);
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.toggle('active');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+    btn.addEventListener('keydown', function (e) {
+      var all = Array.prototype.map.call(items, function (it) { return it.querySelector('.faq-q'); });
+      var idx = all.indexOf(btn);
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var next = e.key === 'ArrowDown' ? (idx + 1) % all.length : (idx - 1 + all.length) % all.length;
+        all[next].focus();
+      } else if (e.key === 'Home') { e.preventDefault(); all[0].focus(); }
+      else if (e.key === 'End') { e.preventDefault(); all[all.length - 1].focus(); }
+    });
+  });
+})();
 </script>
 </body>
 </html>

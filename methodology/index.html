@@ -45,7 +45,7 @@
     :root {
       --bg:#F5F2ED; --surface:#FFFFFF; --surface-2:#F9F7F4;
       --border:#E4DDD4; --accent:#1D6B3E; --accent-dim:#155230;
-      --accent-light:#E8F4EE; --text:#1C1917; --text-muted:#6B5E55; --text-dim:#7A6E64;
+      --accent-light:#E8F4EE; --text:#1C1917; --text-muted:#6B5E55; --text-dim:#756959;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -89,6 +89,7 @@
     @media (max-width: 768px) { .footer-inner { flex-direction: column; } .source-table { display: block; overflow-x: auto; } }
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; z-index: 300; }
     .skip-link:focus { left: 0; }
+      button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -164,13 +165,10 @@
     <p><strong>Important:</strong> All bracket values are hardcoded from confirmed sources — we do not derive 2025 values by indexing 2024 values. Alberta (new 8% first bracket), PEI (rate changes across all brackets), and Yukon (new 12.93% bracket) had structural changes that cannot be modeled by simple indexation, so we sourced them directly.</p>
 
     <h2>Core Calculation Engine</h2>
-    <h3>Step 1 — Taxable income</h3>
-    <p>For each of federal and provincial, taxable income = max(0, gross income − basic personal amount). The basic personal amount differs by province and year.</p>
-
-    <h3>Step 2 — Progressive tax</h3>
-    <p>Tax is applied bracket-by-bracket to taxable income:</p>
-    <div class="code-block">function calcTax(income, brackets, personalAmount) {
-  const taxableIncome = Math.max(0, income - personalAmount);
+    <h3>Step 1 — Progressive tax on full taxable income</h3>
+    <p>For each of federal and provincial, tax is applied bracket-by-bracket directly to your full taxable income — gross income minus deductions like RRSP contributions, but <strong>before</strong> the basic personal amount:</p>
+    <div class="code-block">function calcGrossTax(income, brackets) {
+  const taxableIncome = Math.max(0, income);
   let tax = 0;
   for (const b of brackets) {
     if (taxableIncome &lt;= b.min) break;
@@ -178,6 +176,15 @@
   }
   return tax;
 }</div>
+
+    <h3>Step 2 — Basic personal amount credit</h3>
+    <p>The basic personal amount (BPA) is a <strong>non-refundable tax credit</strong>, not a deduction from taxable income. It's worth your BPA multiplied by the lowest bracket rate, and is subtracted from the gross tax computed in Step 1:</p>
+    <div class="code-block">function calcTax(income, brackets, personalAmount) {
+  const grossTax = calcGrossTax(income, brackets);
+  const bpaCredit = personalAmount * brackets[0].rate;
+  return Math.max(0, grossTax - bpaCredit);
+}</div>
+    <p>This matters because it's mathematically different from subtracting the BPA before applying brackets: that approach would shield income at your <em>marginal</em> rate instead of the lowest rate, understating tax for anyone whose income reaches above the bottom bracket. The two approaches only agree when your full taxable income stays within the bottom bracket.</p>
 
     <h3>Step 3 — Quebec federal abatement</h3>
     <p>Quebec residents pay a reduced federal tax because Quebec operates its own provincial tax system separately. The CRA provides a 16.5% abatement on the federal portion for Quebec residents:</p>
@@ -233,7 +240,7 @@
       </div>
     </nav>
     <div class="footer-disclaimer">
-      Tax calculations are estimates for informational purposes only and do not constitute tax advice. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
+      Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
       <strong>Affiliate disclosure:</strong> Some links on this site are referral links. See our <a href="/disclosure/" style="color:inherit;">full disclosure</a>.
     </div>
   </div>
