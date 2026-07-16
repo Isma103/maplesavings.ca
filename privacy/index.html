@@ -9,6 +9,8 @@
   <meta name="description" content="MapleSavings privacy policy. We collect no personal data. All tax calculations run locally in your browser. No tracking, no cookies, no accounts required." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://maplesavings.ca/privacy/" />
+  <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/privacy/" />
+  <link rel="alternate" hreflang="x-default" href="https://maplesavings.ca/privacy/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.svg" />
 
@@ -26,10 +28,9 @@
   <meta name="twitter:title"       content="Privacy Policy | MapleSavings" />
   <meta name="twitter:description" content="MapleSavings privacy policy. We collect no personal data. All tax calculations run locally in your browser." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts/inter.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -141,8 +142,8 @@
     <p>MapleSavings does not set any cookies. No consent banner is required because no cookies are used.</p>
 
     <h2>Third Parties</h2>
-    <h3>Google Fonts</h3>
-    <p>This site loads the Inter typeface from Google Fonts. When your browser requests the font, Google may receive your IP address and browser user agent as part of a standard HTTP request. This is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>. The font is used purely for visual display.</p>
+    <h3>Fonts</h3>
+    <p>This site uses the Inter typeface, served directly from our own domain (self-hosted). No font requests are sent to Google or any other third party, and no data about you is shared through font loading.</p>
 
     <h3>Wealthsimple</h3>
     <p>MapleSavings has a referral relationship with Wealthsimple (see our <a href="/disclosure/">Disclosure page</a>). If you click a referral link and visit Wealthsimple, Wealthsimple's privacy policy applies to your interaction with their site. MapleSavings does not pass any of your calculator inputs to Wealthsimple. The only information shared via the referral link is a referral code embedded in the URL.</p>
@@ -179,9 +180,11 @@
         <a href="/methodology/">Methodology</a>
         <a href="/disclosure/">Disclosure</a>
         <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
       </div>
     </nav>
     <div class="footer-disclaimer">
+      <strong>Estimates only. Results may differ from your official CRA assessment.</strong><br><br>
       Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
       <strong>Affiliate disclosure:</strong> Some links on this site are referral links. See our <a href="/disclosure/" style="color:inherit;">full disclosure</a>.
     </div>

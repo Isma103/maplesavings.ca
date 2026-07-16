@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8" />
@@ -8,6 +8,8 @@
   <meta name="description" content="All 2025 Canadian income tax brackets. Federal rates, provincial rates for all 13 provinces, basic personal amounts, and how progressive taxation works in Canada." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://maplesavings.ca/blog/tax-brackets-canada-2025/" />
+  <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/blog/tax-brackets-canada-2025/" />
+  <link rel="alternate" hreflang="x-default" href="https://maplesavings.ca/blog/tax-brackets-canada-2025/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <meta property="og:type"        content="article" />
@@ -24,10 +26,9 @@
   <meta name="twitter:title"       content="Canada Tax Brackets 2025: Federal &amp; Provincial Rates" />
   <meta name="twitter:description" content="All 2025 Canadian income tax brackets — federal and provincial rates for all 13 provinces with plain-language examples." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts/inter.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,11 +45,13 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Canada Tax Brackets 2025: Federal & Provincial Rates",
-    "description": "All 2025 Canadian income tax brackets — federal and provincial rates for all 13 provinces.",
-    "datePublished": "2026-06-29",
-    "dateModified": "2026-06-29",
-    "author": { "@type": "Organization", "name": "MapleSavings" },
-    "publisher": { "@type": "Organization", "name": "MapleSavings", "url": "https://maplesavings.ca/" }
+    "description": "All 2025 Canadian income tax brackets. Federal rates, provincial rates for all 13 provinces, basic personal amounts, and how progressive taxation works in Canada.",
+    "image": "https://maplesavings.ca/og-image.png",
+    "datePublished": "2026-07-15",
+    "dateModified": "2026-07-15",
+    "author": { "@type": "Organization", "name": "MapleSavings", "url": "https://maplesavings.ca/" },
+    "publisher": { "@type": "Organization", "name": "MapleSavings", "url": "https://maplesavings.ca/", "logo": { "@type": "ImageObject", "url": "https://maplesavings.ca/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://maplesavings.ca/blog/tax-brackets-canada-2025/" }
   }
   </script>
   <script type="application/ld+json">
@@ -492,6 +495,10 @@
     <a href="/northwest-territories/" class="related-card"><span style="font-size:22px;" aria-hidden="true">❄️</span><span>NW Territories</span></a>
     <a href="/nunavut/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🐻‍❄️</span><span>Nunavut</span></a>
     <a href="/yukon/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🌌</span><span>Yukon</span></a>
+      <a href="/tax-refund/" class="related-card"><span style="font-size:22px;" aria-hidden="true">💰</span><span>Tax Refund Calculator</span></a>
+    <a href="/investment-calculator/" class="related-card"><span style="font-size:22px;" aria-hidden="true">📈</span><span>Investment Calculator</span></a>
+    <a href="/take-home-pay/" class="related-card"><span style="font-size:22px;" aria-hidden="true">💵</span><span>Take-Home Pay Calculator</span></a>
+    <a href="/capital-gains/" class="related-card"><span style="font-size:22px;" aria-hidden="true">📊</span><span>Capital Gains Calculator</span></a>
   </div>
 </section>
 
@@ -519,9 +526,11 @@
         <a href="/about/">About</a>
         <a href="/disclosure/">Disclosure</a>
         <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
       </div>
     </nav>
     <div class="footer-disclaimer">
+      <strong>Estimates only. Results may differ from your official CRA assessment.</strong><br><br>
       Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
       <strong>Affiliate disclosure:</strong> Some links on this site are referral links. If you open an account through our links, we may receive a referral bonus at no cost to you.<br><br>
       Tax data: 2025 federal &amp; provincial brackets · Source: CRA

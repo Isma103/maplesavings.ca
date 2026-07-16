@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8" />
@@ -8,8 +8,9 @@
   <title>Investment Calculator — Compound Interest Growth | MapleSavings</title>
   <meta name="description" content="Free investment growth calculator for Canadians. Solve for end balance, required contribution, return rate, starting amount, or time to goal — with a full compound-interest schedule." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="investment calculator, compound interest calculator, investment growth calculator Canada, compound interest calculator Canada, savings growth calculator, TFSA growth calculator" />
   <link rel="canonical" href="https://maplesavings.ca/investment-calculator/" />
+  <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/investment-calculator/" />
+  <link rel="alternate" hreflang="x-default" href="https://maplesavings.ca/investment-calculator/" />
 
   <!-- ═══ OPEN GRAPH ═══ -->
   <meta property="og:type"        content="website" />
@@ -109,9 +110,9 @@
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts/inter.css" />
   <style>
     /* === VARIABLES & RESET === */
     :root {
@@ -618,6 +619,8 @@
   <div class="related-grid">
     <a href="/" class="related-card"><span aria-hidden="true">🍁</span><span>RRSP &amp; FHSA Calculator</span></a>
     <a href="/tax-refund/" class="related-card"><span aria-hidden="true">📄</span><span>Tax Refund Calculator</span></a>
+    <a href="/take-home-pay/" class="related-card"><span aria-hidden="true">💵</span><span>Take-Home Pay Calculator</span></a>
+    <a href="/capital-gains/" class="related-card"><span aria-hidden="true">📊</span><span>Capital Gains Calculator</span></a>
     <a href="/ontario/" class="related-card"><span aria-hidden="true">🏙️</span><span>Ontario Tax Calculator</span></a>
     <a href="/bc/" class="related-card"><span aria-hidden="true">🏔️</span><span>BC Tax Calculator</span></a>
   </div>
@@ -635,15 +638,19 @@
         <a href="/">RRSP &amp; FHSA Calculator</a>
         <a href="/tax-refund/">Tax Refund Calculator</a>
         <a href="/investment-calculator/">Investment Calculator</a>
+        <a href="/take-home-pay/">Take-Home Pay Calculator</a>
+        <a href="/capital-gains/">Capital Gains Calculator</a>
         <a href="/ontario/">Ontario Tax Calculator</a>
         <a href="/bc/">BC Tax Calculator</a>
         <a href="/about/">About</a>
         <a href="/methodology/">Methodology</a>
         <a href="/disclosure/">Disclosure</a>
         <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
       </div>
     </nav>
     <div class="footer-disclaimer">
+      <strong>Estimates only. Results may differ from your official CRA assessment.</strong><br><br>
       This calculator is for illustration purposes only and does not constitute investment, tax, or financial advice. Projected returns are not guaranteed — actual investment performance will vary and may result in loss. Consult a qualified financial advisor for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
       <strong>Affiliate disclosure:</strong> Some links on this site are referral links. If you open an account through our links, we may receive a referral bonus at no cost to you.
     </div>

@@ -8,6 +8,8 @@
   <meta name="description" content="Free Canadian tax guides. Learn about RRSP vs FHSA, marginal tax rates, 2025 tax brackets, and how to legally reduce your income taxes." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://maplesavings.ca/blog/" />
+  <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://maplesavings.ca/blog/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <meta property="og:type"        content="website" />
@@ -24,10 +26,9 @@
   <meta name="twitter:title"       content="Canadian Tax Blog — RRSP, FHSA &amp; Tax Tips | MapleSavings" />
   <meta name="twitter:description" content="Free Canadian tax guides. RRSP vs FHSA, marginal tax rates, 2025 tax brackets, and how to reduce your income taxes." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts/inter.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -193,9 +194,11 @@
         <a href="/about/">About</a>
         <a href="/disclosure/">Disclosure</a>
         <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
       </div>
     </nav>
     <div class="footer-disclaimer">
+      <strong>Estimates only. Results may differ from your official CRA assessment.</strong><br><br>
       Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
       <strong>Affiliate disclosure:</strong> Some links on this site are referral links. If you open an account through our links, we may receive a referral bonus at no cost to you.<br><br>
       Tax data: 2025 federal &amp; provincial brackets · Source: CRA

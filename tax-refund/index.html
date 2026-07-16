@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8" />
@@ -8,8 +8,9 @@
   <title>Tax Refund Calculator Canada 2025 — MapleSavings</title>
   <meta name="description" content="Free Canadian tax refund calculator. Enter your income, deductions, and credits — see your estimated refund or balance owing using 2024, 2025 & 2026 CRA tax rules." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="tax refund calculator Canada, income tax refund calculator, CRA tax return calculator, tax return estimator Canada, balance owing calculator, T1 tax calculator, Canada tax refund 2025" />
   <link rel="canonical" href="https://maplesavings.ca/tax-refund/" />
+  <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/tax-refund/" />
+  <link rel="alternate" hreflang="x-default" href="https://maplesavings.ca/tax-refund/" />
 
   <!-- ═══ OPEN GRAPH ═══ -->
   <meta property="og:type"        content="website" />
@@ -109,9 +110,9 @@
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts/inter.css" />
   <style>
     /* === VARIABLES & RESET === */
     :root {
@@ -648,6 +649,8 @@
   <div class="related-grid">
     <a href="/" class="related-card"><span aria-hidden="true">🍁</span><span>RRSP &amp; FHSA Calculator</span></a>
     <a href="/investment-calculator/" class="related-card"><span aria-hidden="true">📈</span><span>Investment Calculator</span></a>
+    <a href="/take-home-pay/" class="related-card"><span aria-hidden="true">💵</span><span>Take-Home Pay Calculator</span></a>
+    <a href="/capital-gains/" class="related-card"><span aria-hidden="true">📊</span><span>Capital Gains Calculator</span></a>
     <a href="/ontario/" class="related-card"><span aria-hidden="true">🏙️</span><span>Ontario Tax Calculator</span></a>
     <a href="/bc/" class="related-card"><span aria-hidden="true">🏔️</span><span>BC Tax Calculator</span></a>
     <a href="/alberta/" class="related-card"><span aria-hidden="true">🌾</span><span>Alberta Tax Calculator</span></a>
@@ -679,6 +682,8 @@
         <a href="/">RRSP &amp; FHSA Calculator</a>
         <a href="/tax-refund/">Tax Refund Calculator</a>
         <a href="/investment-calculator/">Investment Calculator</a>
+        <a href="/take-home-pay/">Take-Home Pay Calculator</a>
+        <a href="/capital-gains/">Capital Gains Calculator</a>
         <a href="/ontario/">Ontario Tax Calculator</a>
         <a href="/bc/">BC Tax Calculator</a>
         <a href="/alberta/">Alberta Tax Calculator</a>
@@ -687,6 +692,7 @@
         <a href="/methodology/">Methodology</a>
         <a href="/disclosure/">Disclosure</a>
         <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
       </div>
     </nav>
     <div class="footer-disclaimer">
@@ -925,7 +931,7 @@ const ALL_BRACKETS = { 2024: BRACKETS_2024, 2025: BRACKETS_2025, 2026: BRACKETS_
 // ================================
 const CPP_PARAMS = {
   2024: { rate1: 0.0595, exemption: 3500, max1: 68500, rate2: 0.04, max2: 73200 },
-  2025: { rate1: 0.0595, exemption: 3500, max1: 73200, rate2: 0.04, max2: 81200 },
+  2025: { rate1: 0.0595, exemption: 3500, max1: 71300, rate2: 0.04, max2: 81200 },
   2026: { rate1: 0.0595, exemption: 3500, max1: 76400, rate2: 0.04, max2: 84500 }
 };
 const EI_PARAMS = {
