@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#1D6B3E" />
 
   <!-- ═══ PRIMARY SEO ═══ -->
-  <title>Quebec Income Tax Calculator 2025 — RRSP &amp; FHSA Savings | MapleSavings</title>
-  <meta name="description" content="Free Quebec income tax calculator. See how RRSP & FHSA contributions reduce your Revenu Québec tax bill — 2025 CRA federal and Quebec provincial brackets. Instant results." />
+  <title>Quebec Income Tax Calculator 2025 | MapleSavings</title>
+  <meta name="description" content="Free Quebec income tax calculator. See how RRSP &amp; FHSA contributions reduce your Revenu Québec tax bill. 2025 CRA brackets, instant results." />
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://maplesavings.ca/quebec/" />
@@ -159,7 +159,7 @@
       --maple:       #B91C1C;   /* Canadian maple red */
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; } body { overflow-x: hidden; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
@@ -261,7 +261,7 @@
       transform: translateX(-50%);
       background: var(--text); color: #FFFFFF;
       border-radius: 10px; padding: 10px 14px;
-      font-size: 0.75rem; width: 240px; line-height: 1.55;
+      font-size: 0.75rem; width: 240px; max-width: calc(100vw - 32px); line-height: 1.55;
       z-index: 20; opacity: 0; pointer-events: none;
       transition: opacity 0.15s ease; white-space: normal;
       box-shadow: 0 4px 16px rgba(0,0,0,0.15);
@@ -1119,6 +1119,7 @@
     <a href="/investment-calculator/" class="related-card"><span style="font-size:22px;" aria-hidden="true">📈</span><span>Investment Calculator</span></a>
     <a href="/take-home-pay/" class="related-card"><span style="font-size:22px;" aria-hidden="true">💵</span><span>Take-Home Pay Calculator</span></a>
     <a href="/capital-gains/" class="related-card"><span style="font-size:22px;" aria-hidden="true">📊</span><span>Capital Gains Calculator</span></a>
+    <a href="/fhsa-calculator/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏠</span><span>FHSA Calculator</span></a>
   </div>
 </section>
 
@@ -1166,6 +1167,7 @@
         <a href="/investment-calculator/">Investment Calculator</a>
         <a href="/take-home-pay/">Take-Home Pay Calculator</a>
         <a href="/capital-gains/">Capital Gains Calculator</a>
+        <a href="/fhsa-calculator/">FHSA Calculator</a>
       </div>
     </nav>
     <div class="footer-disclaimer">

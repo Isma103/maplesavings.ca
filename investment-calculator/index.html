@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1D6B3E" />
   <!-- ═══ PRIMARY SEO ═══ -->
-  <title>Investment Calculator — Compound Interest Growth | MapleSavings</title>
-  <meta name="description" content="Free investment growth calculator for Canadians. Solve for end balance, required contribution, return rate, starting amount, or time to goal — with a full compound-interest schedule." />
+  <title>Investment Growth Calculator | MapleSavings</title>
+  <meta name="description" content="Free investment growth calculator for Canadians. Solve for end balance, contribution, return rate, or time to goal — full compound-interest schedule." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://maplesavings.ca/investment-calculator/" />
   <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/investment-calculator/" />
@@ -134,7 +134,7 @@
       --chart-interest: #C05621;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; } body { overflow-x: hidden; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; outline: none; }
@@ -354,7 +354,10 @@
 <div class="calc-switcher" aria-label="Switch calculator">
   <div class="calc-switcher-inner">
     <a href="/" class="calc-switch-pill"><span aria-hidden="true">🍁</span> RRSP &amp; FHSA</a>
+    <a href="/fhsa-calculator/" class="calc-switch-pill"><span aria-hidden="true">🏠</span> FHSA Calculator</a>
     <a href="/tax-refund/" class="calc-switch-pill"><span aria-hidden="true">📄</span> Tax Refund</a>
+    <a href="/take-home-pay/" class="calc-switch-pill"><span aria-hidden="true">💵</span> Take-Home Pay</a>
+    <a href="/capital-gains/" class="calc-switch-pill"><span aria-hidden="true">📊</span> Capital Gains</a>
     <a href="/investment-calculator/" class="calc-switch-pill active"><span aria-hidden="true">📈</span> Investment Growth</a>
   </div>
 </div>
@@ -621,6 +624,7 @@
     <a href="/tax-refund/" class="related-card"><span aria-hidden="true">📄</span><span>Tax Refund Calculator</span></a>
     <a href="/take-home-pay/" class="related-card"><span aria-hidden="true">💵</span><span>Take-Home Pay Calculator</span></a>
     <a href="/capital-gains/" class="related-card"><span aria-hidden="true">📊</span><span>Capital Gains Calculator</span></a>
+    <a href="/fhsa-calculator/" class="related-card"><span aria-hidden="true">🏠</span><span>FHSA Calculator</span></a>
     <a href="/ontario/" class="related-card"><span aria-hidden="true">🏙️</span><span>Ontario Tax Calculator</span></a>
     <a href="/bc/" class="related-card"><span aria-hidden="true">🏔️</span><span>BC Tax Calculator</span></a>
   </div>
@@ -640,6 +644,7 @@
         <a href="/investment-calculator/">Investment Calculator</a>
         <a href="/take-home-pay/">Take-Home Pay Calculator</a>
         <a href="/capital-gains/">Capital Gains Calculator</a>
+        <a href="/fhsa-calculator/">FHSA Calculator</a>
         <a href="/ontario/">Ontario Tax Calculator</a>
         <a href="/bc/">BC Tax Calculator</a>
         <a href="/about/">About</a>

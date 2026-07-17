@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1D6B3E" />
   <title>Capital Gains Tax Calculator Canada 2025 | MapleSavings</title>
-  <meta name="description" content="Estimate your 2025 capital gains tax in any Canadian province. Uses the confirmed 50% inclusion rate — see the extra tax a gain adds and your after-tax proceeds." />
+  <meta name="description" content="Estimate your 2025 capital gains tax in any Canadian province. Uses the confirmed 50% inclusion rate — see the extra tax a gain adds and after-tax proceeds." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://maplesavings.ca/capital-gains/" />
   <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/capital-gains/" />
@@ -42,7 +42,7 @@
   <style>
     :root { --bg:#F5F2ED; --surface:#FFFFFF; --surface-2:#F9F7F4; --border:#E4DDD4; --accent:#1D6B3E; --accent-dim:#155230; --accent-light:#E8F4EE; --text:#1C1917; --text-muted:#6B5E55; --text-dim:#756959; --danger:#C0392B; --gold:#C05621; --gain:#15803D; --maple:#B91C1C; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; } body { overflow-x: hidden; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; } button { font-family: inherit; cursor: pointer; border: none; outline: none; } input, select { font-family: inherit; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
@@ -51,6 +51,14 @@
     .logo { font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 6px; } .logo-maple { color: var(--text); } .logo-savings { color: var(--accent); }
     .btn { display: inline-flex; align-items: center; justify-content: center; font-weight: 700; border-radius: 10px; padding: 14px 28px; font-size: 1rem; transition: all 0.2s ease; cursor: pointer; }
     .btn-primary { background: var(--accent); color: #FFFFFF; } .btn-primary:hover { background: var(--accent-dim); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(29,107,62,0.25); }
+    /* === CALCULATOR SWITCHER === */
+    .calc-switcher { position: sticky; top: 64px; z-index: 99; background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+    .calc-switcher-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .calc-switch-pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 100px; font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); border: 1.5px solid var(--border); background: var(--surface-2); transition: all 0.2s ease; white-space: nowrap; }
+    .calc-switch-pill:hover { border-color: var(--accent); color: var(--accent); }
+    .calc-switch-pill.active { background: var(--accent); border-color: var(--accent); color: #FFFFFF; pointer-events: none; }
+    @media (max-width: 480px) { .calc-switcher { padding: 8px 16px; } .calc-switch-pill { padding: 7px 12px; font-size: 0.75rem; } }
+
     .hero { padding: 72px 24px 56px; text-align: center; background: linear-gradient(160deg, #FFFFFF 0%, #EDF5F0 100%); border-bottom: 1px solid var(--border); }
     .hero h1 { font-size: clamp(1.875rem, 4.5vw, 2.875rem); font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; max-width: 680px; margin: 0 auto 18px; color: var(--text); }
     .hero-sub { font-size: 1.0625rem; color: var(--text-muted); max-width: 580px; margin: 0 auto 40px; line-height: 1.75; }
@@ -65,7 +73,7 @@
     .field-label { display: flex; align-items: center; gap: 6px; } .field-label label { font-size: 0.875rem; font-weight: 600; color: var(--text); }
     .tooltip-wrapper { position: relative; display: inline-flex; align-items: center; }
     .tooltip-trigger { width: 24px; height: 24px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted); font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
-    .tooltip-box { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--text); color: #FFFFFF; border-radius: 10px; padding: 10px 14px; font-size: 0.75rem; width: 240px; line-height: 1.55; z-index: 20; opacity: 0; pointer-events: none; transition: opacity 0.15s ease; white-space: normal; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .tooltip-box { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--text); color: #FFFFFF; border-radius: 10px; padding: 10px 14px; font-size: 0.75rem; width: 240px; max-width: calc(100vw - 32px); line-height: 1.55; z-index: 20; opacity: 0; pointer-events: none; transition: opacity 0.15s ease; white-space: normal; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
     .tooltip-wrapper:hover .tooltip-box, .tooltip-trigger:focus + .tooltip-box { opacity: 1; pointer-events: auto; }
     .input-wrapper { position: relative; display: flex; align-items: center; } .input-prefix { position: absolute; left: 14px; color: var(--text-muted); font-size: 1rem; pointer-events: none; z-index: 1; }
     .form-input { width: 100%; background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; color: var(--text); font-size: 1rem; padding: 12px 16px; transition: border-color 0.2s ease, box-shadow 0.2s ease; min-height: 46px; }
@@ -153,6 +161,19 @@
     <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:10px 20px;font-size:0.875rem;">Open RRSP Free →</a>
   </div>
 </nav>
+
+<!-- CALCULATOR SWITCHER -->
+<div class="calc-switcher" aria-label="Switch calculator">
+  <div class="calc-switcher-inner">
+    <a href="/" class="calc-switch-pill"><span aria-hidden="true">🍁</span> RRSP &amp; FHSA</a>
+    <a href="/fhsa-calculator/" class="calc-switch-pill"><span aria-hidden="true">🏠</span> FHSA Calculator</a>
+    <a href="/tax-refund/" class="calc-switch-pill"><span aria-hidden="true">📄</span> Tax Refund</a>
+    <a href="/take-home-pay/" class="calc-switch-pill"><span aria-hidden="true">💵</span> Take-Home Pay</a>
+    <a href="/capital-gains/" class="calc-switch-pill active"><span aria-hidden="true">📊</span> Capital Gains</a>
+    <a href="/investment-calculator/" class="calc-switch-pill"><span aria-hidden="true">📈</span> Investment Growth</a>
+  </div>
+</div>
+
 <main id="main-content">
 <section class="hero" id="hero">
   <h1>Capital Gains Tax Calculator Canada 2025</h1>
@@ -332,6 +353,7 @@
         <a href="/tax-refund/">Tax Refund Calculator</a>
         <a href="/investment-calculator/">Investment Calculator</a>
         <a href="/capital-gains/">Capital Gains Calculator</a>
+        <a href="/fhsa-calculator/">FHSA Calculator</a>
         <a href="/ontario/">Ontario Tax Calculator</a>
         <a href="/bc/">BC Tax Calculator</a>
         <a href="/alberta/">Alberta Tax Calculator</a>

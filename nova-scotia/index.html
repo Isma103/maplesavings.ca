@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1D6B3E" />
-  <title>Nova Scotia Income Tax Calculator 2025 — RRSP &amp; FHSA Savings | MapleSavings</title>
+  <title>Nova Scotia Income Tax Calculator 2025 | MapleSavings</title>
   <meta name="description" content="Nova Scotia 2025 income tax calculator — federal and provincial tax, take-home pay, and RRSP &amp; FHSA savings estimates from CRA-published brackets." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://maplesavings.ca/nova-scotia/" />
@@ -118,7 +118,7 @@
       --gain:#15803D; --maple:#B91C1C;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; } body { overflow-x: hidden; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; outline: none; }
@@ -152,7 +152,7 @@
     .field-label label { font-size: 0.875rem; font-weight: 600; color: var(--text); }
     .tooltip-wrapper { position: relative; display: inline-flex; align-items: center; }
     .tooltip-trigger { width: 24px; height: 24px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted); font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
-    .tooltip-box { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--text); color: #FFFFFF; border-radius: 10px; padding: 10px 14px; font-size: 0.75rem; width: 240px; line-height: 1.55; z-index: 20; opacity: 0; pointer-events: none; transition: opacity 0.15s ease; white-space: normal; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .tooltip-box { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--text); color: #FFFFFF; border-radius: 10px; padding: 10px 14px; font-size: 0.75rem; width: 240px; max-width: calc(100vw - 32px); line-height: 1.55; z-index: 20; opacity: 0; pointer-events: none; transition: opacity 0.15s ease; white-space: normal; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
     .tooltip-wrapper:hover .tooltip-box, .tooltip-trigger:focus + .tooltip-box { opacity: 1; pointer-events: auto; }
     .input-wrapper { position: relative; display: flex; align-items: center; }
     .input-prefix { position: absolute; left: 14px; color: var(--text-muted); font-size: 1rem; pointer-events: none; z-index: 1; }
@@ -567,6 +567,7 @@
     <a href="/investment-calculator/" class="related-card"><span style="font-size:22px;" aria-hidden="true">📈</span><span>Investment Calculator</span></a>
     <a href="/take-home-pay/" class="related-card"><span style="font-size:22px;" aria-hidden="true">💵</span><span>Take-Home Pay Calculator</span></a>
     <a href="/capital-gains/" class="related-card"><span style="font-size:22px;" aria-hidden="true">📊</span><span>Capital Gains Calculator</span></a>
+    <a href="/fhsa-calculator/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏠</span><span>FHSA Calculator</span></a>
   </div>
 </section>
 <section class="footer-cta-strip" aria-label="Open account call to action">
@@ -607,6 +608,7 @@
         <a href="/investment-calculator/">Investment Calculator</a>
         <a href="/take-home-pay/">Take-Home Pay Calculator</a>
         <a href="/capital-gains/">Capital Gains Calculator</a>
+        <a href="/fhsa-calculator/">FHSA Calculator</a>
       </div>
     </nav>
     <div class="footer-disclaimer">

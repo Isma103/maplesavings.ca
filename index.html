@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1D6B3E" />
 
   <!-- ═══ PRIMARY SEO ═══ -->
-  <title>Canada Income Tax Calculator 2025 — RRSP &amp; FHSA Savings | MapleSavings</title>
+  <title>Canada Income Tax Calculator 2025 | MapleSavings</title>
   <meta name="description" content="Free Canadian RRSP & FHSA tax savings calculator. Enter your income to see exactly how much tax you can save — all 13 provinces, 2024, 2025 & 2026 CRA brackets." />
   <meta name="robots" content="index, follow" />
 
@@ -187,7 +187,7 @@
       --maple:       #B91C1C;   /* Canadian maple red */
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; } body { overflow-x: hidden; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
@@ -297,7 +297,7 @@
       transform: translateX(-50%);
       background: var(--text); color: #FFFFFF;
       border-radius: 10px; padding: 10px 14px;
-      font-size: 0.75rem; width: 240px; line-height: 1.55;
+      font-size: 0.75rem; width: 240px; max-width: calc(100vw - 32px); line-height: 1.55;
       z-index: 20; opacity: 0; pointer-events: none;
       transition: opacity 0.15s ease; white-space: normal;
       box-shadow: 0 4px 16px rgba(0,0,0,0.15);
@@ -785,8 +785,10 @@
 <div class="calc-switcher" aria-label="Switch calculator">
   <div class="calc-switcher-inner">
     <a href="/" class="calc-switch-pill active"><span aria-hidden="true">🍁</span> RRSP &amp; FHSA</a>
+    <a href="/fhsa-calculator/" class="calc-switch-pill"><span aria-hidden="true">🏠</span> FHSA Calculator</a>
     <a href="/tax-refund/" class="calc-switch-pill"><span aria-hidden="true">📄</span> Tax Refund</a>
     <a href="/take-home-pay/" class="calc-switch-pill"><span aria-hidden="true">💵</span> Take-Home Pay</a>
+    <a href="/capital-gains/" class="calc-switch-pill"><span aria-hidden="true">📊</span> Capital Gains</a>
     <a href="/investment-calculator/" class="calc-switch-pill"><span aria-hidden="true">📈</span> Investment Growth</a>
   </div>
 </div>
@@ -1235,6 +1237,7 @@
         <a href="/investment-calculator/">Investment Calculator</a>
         <a href="/take-home-pay/">Take-Home Pay Calculator</a>
         <a href="/capital-gains/">Capital Gains Calculator</a>
+        <a href="/fhsa-calculator/">FHSA Calculator</a>
         <a href="/ontario/">Ontario Tax Calculator</a>
         <a href="/bc/">BC Tax Calculator</a>
         <a href="/alberta/">Alberta Tax Calculator</a>
