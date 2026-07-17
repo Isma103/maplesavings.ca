@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1D6B3E" />
+
+  <title>Tax Calculation Methodology | MapleSavings</title>
+  <meta name="description" content="How MapleSavings calculates Canadian income tax. Sources for tax brackets, calculation approach, known limitations, and links to official CRA data." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://maplesavings.ca/methodology/" />
+  <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/methodology/" />
+  <link rel="alternate" hreflang="x-default" href="https://maplesavings.ca/methodology/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="MapleSavings" />
+  <meta property="og:locale"      content="en_CA" />
+  <meta property="og:url"         content="https://maplesavings.ca/methodology/" />
+  <meta property="og:title"       content="Tax Calculation Methodology | MapleSavings" />
+  <meta property="og:description" content="How MapleSavings calculates Canadian income tax. Sources, approach, limitations, and links to official CRA data." />
+  <meta property="og:image"        content="https://maplesavings.ca/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:image"       content="https://maplesavings.ca/og-image.png" />
+  <meta name="twitter:title"       content="Tax Calculation Methodology | MapleSavings" />
+  <meta name="twitter:description" content="How MapleSavings calculates Canadian income tax. Sources, approach, limitations, and links to official CRA data." />
+
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts/inter.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MapleSavings", "item": "https://maplesavings.ca/" },
+      { "@type": "ListItem", "position": 2, "name": "Methodology", "item": "https://maplesavings.ca/methodology/" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg:#F5F2ED; --surface:#FFFFFF; --surface-2:#F9F7F4;
+      --border:#E4DDD4; --accent:#1D6B3E; --accent-dim:#155230;
+      --accent-light:#E8F4EE; --text:#1C1917; --text-muted:#6B5E55; --text-dim:#756959;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; } body { overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: underline; }
+    .navbar { position: sticky; top: 0; z-index: 100; background: #FFFFFF; border-bottom: 1px solid var(--border); box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .logo { font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 6px; text-decoration: none; color: inherit; }
+    .logo-savings { color: var(--accent); }
+    .btn-nav { display: inline-flex; align-items: center; background: var(--accent); color: #FFFFFF; font-weight: 700; border-radius: 10px; padding: 10px 20px; font-size: 0.875rem; text-decoration: none; transition: all 0.2s ease; }
+    .btn-nav:hover { background: var(--accent-dim); transform: translateY(-1px); }
+    .page-hero { padding: 60px 24px 40px; background: linear-gradient(160deg, #FFFFFF 0%, #EDF5F0 100%); border-bottom: 1px solid var(--border); }
+    .page-hero-inner { max-width: 760px; margin: 0 auto; }
+    .breadcrumb { font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--text-muted); }
+    .page-hero h1 { font-size: clamp(1.625rem, 3.5vw, 2.25rem); font-weight: 700; line-height: 1.25; margin-bottom: 12px; }
+    .page-hero p { font-size: 1.0625rem; color: var(--text-muted); }
+    .content-section { padding: 56px 24px 80px; }
+    .content-inner { max-width: 760px; margin: 0 auto; }
+    .content-inner h2 { font-size: 1.25rem; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
+    .content-inner h2:first-child { margin-top: 0; }
+    .content-inner h3 { font-size: 1rem; font-weight: 700; margin: 20px 0 8px; color: var(--text); }
+    .content-inner p { font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.75; }
+    .content-inner ul { margin: 0 0 14px 20px; }
+    .content-inner ul li { font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 8px; line-height: 1.65; }
+    .content-inner strong { color: var(--text); }
+    .code-block { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; font-family: monospace; font-size: 0.8125rem; color: var(--text); overflow-x: auto; margin: 12px 0 20px; line-height: 1.6; }
+    .source-table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 0.875rem; }
+    .source-table th { text-align: left; padding: 10px 12px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted); font-weight: 600; font-size: 0.8125rem; }
+    .source-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
+    .source-table td:first-child { font-weight: 600; color: var(--text); white-space: nowrap; }
+    .footer { background: #2C2016; padding: 40px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-start; }
+    .footer-logo { font-size: 1.125rem; font-weight: 700; color: #FFFFFF; display: flex; align-items: center; gap: 6px; text-decoration: none; }
+    .footer-logo-savings { color: #6EE7A0; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+    .footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #6EE7A0; }
+    .footer-disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.4); line-height: 1.65; max-width: 480px; }
+    .footer-bottom { max-width: 1100px; margin: 20px auto 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+    @media (max-width: 768px) { .footer-inner { flex-direction: column; } .source-table { display: block; overflow-x: auto; } }
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; z-index: 300; }
+    .skip-link:focus { left: 0; }
+      button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="/" class="logo" aria-label="MapleSavings home">
+      <span aria-hidden="true">🍁</span>
+      <span><span>Maple</span><span class="logo-savings">Savings</span></span>
+    </a>
+    <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-nav">Open RRSP Free →</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">MapleSavings</a> / Methodology
+    </nav>
+    <h1>Tax Calculation Methodology</h1>
+    <p>How MapleSavings calculates federal and provincial income tax — including data sources, the calculation approach, Quebec-specific adjustments, and known limitations.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-inner">
+
+    <h2>Overview</h2>
+    <p>MapleSavings calculates Canadian income tax using the same progressive bracket system used by the Canada Revenue Agency. The calculator applies federal and provincial tax brackets to taxable income (income minus the basic personal amount), then shows how RRSP and FHSA contributions reduce that taxable income and therefore reduce the total tax owing.</p>
+    <p>All calculations run in your browser using JavaScript. No data is sent to a server.</p>
+
+    <h2>Data Sources</h2>
+    <table class="source-table" aria-label="Tax data sources by year">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Source</th>
+          <th>Status</th>
+          <th>Last verified</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2024 Federal</td>
+          <td><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html" target="_blank" rel="noopener noreferrer">CRA — Canadian income tax rates</a></td>
+          <td>Confirmed</td>
+          <td>June 2026</td>
+        </tr>
+        <tr>
+          <td>2024 Provincial (all 13)</td>
+          <td>CRA + TaxTips.ca provincial pages</td>
+          <td>Confirmed</td>
+          <td>June 2026</td>
+        </tr>
+        <tr>
+          <td>2025 Federal</td>
+          <td><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html" target="_blank" rel="noopener noreferrer">CRA — 2025 rates</a></td>
+          <td>Confirmed</td>
+          <td>June 2026</td>
+        </tr>
+        <tr>
+          <td>2025 Provincial (all 13)</td>
+          <td>CRA + TaxTips.ca + provincial finance ministry announcements</td>
+          <td>Confirmed (hardcoded)</td>
+          <td>June 2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Important:</strong> All bracket values are hardcoded from confirmed sources — we do not derive 2025 values by indexing 2024 values. Alberta (new 8% first bracket), PEI (rate changes across all brackets), and Yukon (new 12.93% bracket) had structural changes that cannot be modeled by simple indexation, so we sourced them directly.</p>
+
+    <h2>Core Calculation Engine</h2>
+    <h3>Step 1 — Progressive tax on full taxable income</h3>
+    <p>For each of federal and provincial, tax is applied bracket-by-bracket directly to your full taxable income — gross income minus deductions like RRSP contributions, but <strong>before</strong> the basic personal amount:</p>
+    <div class="code-block">function calcGrossTax(income, brackets) {
+  const taxableIncome = Math.max(0, income);
+  let tax = 0;
+  for (const b of brackets) {
+    if (taxableIncome &lt;= b.min) break;
+    tax += (Math.min(taxableIncome, b.max) - b.min) * b.rate;
+  }
+  return tax;
+}</div>
+
+    <h3>Step 2 — Basic personal amount credit</h3>
+    <p>The basic personal amount (BPA) is a <strong>non-refundable tax credit</strong>, not a deduction from taxable income. It's worth your BPA multiplied by the lowest bracket rate, and is subtracted from the gross tax computed in Step 1:</p>
+    <div class="code-block">function calcTax(income, brackets, personalAmount) {
+  const grossTax = calcGrossTax(income, brackets);
+  const bpaCredit = personalAmount * brackets[0].rate;
+  return Math.max(0, grossTax - bpaCredit);
+}</div>
+    <p>This matters because it's mathematically different from subtracting the BPA before applying brackets: that approach would shield income at your <em>marginal</em> rate instead of the lowest rate, understating tax for anyone whose income reaches above the bottom bracket. The two approaches only agree when your full taxable income stays within the bottom bracket.</p>
+
+    <h3>Step 3 — Quebec federal abatement</h3>
+    <p>Quebec residents pay a reduced federal tax because Quebec operates its own provincial tax system separately. The CRA provides a 16.5% abatement on the federal portion for Quebec residents:</p>
+    <div class="code-block">if (province === 'QC') fedTax *= 0.835; // 16.5% federal abatement</div>
+
+    <h3>Step 4 — RRSP / FHSA savings</h3>
+    <p>Savings are calculated as the actual tax difference before and after the deduction — not as contribution × marginal rate. This handles bracket crossings correctly (when a deduction moves you from one bracket to another):</p>
+    <div class="code-block">function calcRRSPSavings(income, rrspRoom, province, B) {
+  const before = calcTotalTax(income, province, B);
+  const after  = calcTotalTax(Math.max(0, income - rrspRoom), province, B);
+  return Math.max(0, before - after);
+}</div>
+    <p>When both RRSP and FHSA are entered, combined savings are calculated by stacking both contributions in a single tax difference call — this prevents double-counting when the two contributions together cross a bracket boundary.</p>
+
+    <h3>Step 5 — Marginal rate display</h3>
+    <p>The displayed marginal rate is the rate that applies to the next dollar of income at the current income level. For Quebec, the federal component of the marginal rate is multiplied by 0.835 to reflect the abatement.</p>
+
+    <h2>Known Limitations</h2>
+    <ul>
+      <li><strong>Ontario surtax:</strong> Ontario applies an additional surtax of 20% on Ontario tax above approximately $5,315 and 56% on Ontario tax above approximately $6,802. This surtax is not currently included in our Ontario estimates. For income above approximately $80,000 in Ontario, our estimate of provincial tax may be understated.</li>
+      <li><strong>CPP and EI:</strong> CPP contributions and EI premiums are not calculated. They reduce after-tax income but do not reduce taxable income in the same way as RRSP/FHSA contributions (CPP generates a 15% federal tax credit; EI generates a 15% federal tax credit).</li>
+      <li><strong>Nova Scotia BPA phase-out:</strong> Nova Scotia's basic personal amount phases out for income between approximately $25,000 and $75,000. We use the headline BPA figure, which may overstate the personal amount for some income ranges.</li>
+      <li><strong>Capital gains:</strong> Not modeled. Capital gains are subject to an inclusion rate (50% in most cases) before being added to income, with different rules for gains above $250,000.</li>
+      <li><strong>Dividends:</strong> Not modeled. Eligible and non-eligible dividends have gross-up and dividend tax credit mechanisms that significantly affect effective tax rates.</li>
+      <li><strong>Quebec-specific deductions:</strong> QPP (instead of CPP), QPIP premiums, and Quebec-specific refundable credits are not modeled.</li>
+      <li><strong>2025 federal bottom rate:</strong> The 2025 federal budget proposed reducing the bottom federal bracket rate from 15% to 14%. We model this as a blended 14.5% rate for the full calendar year (reflecting the proposed mid-year implementation). If legislation has changed, this rate may need updating.</li>
+    </ul>
+
+    <h2>Disclaimer</h2>
+    <p>Results from MapleSavings are <strong>estimates only</strong>. They are provided for informational purposes and do not constitute tax advice. Your actual tax owing is determined by your complete return filed with the CRA, including all deductions, credits, and income sources. Always consult a qualified tax professional for personalized advice.</p>
+    <p>MapleSavings is not affiliated with the Canada Revenue Agency.</p>
+
+    <p style="margin-top:32px;font-size:0.8125rem;color:var(--text-dim);">Last updated: June 2026 · <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html" target="_blank" rel="noopener noreferrer">CRA source</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" aria-label="Site footer">
+  <div class="footer-inner">
+    <a href="/" class="footer-logo"><span aria-hidden="true">🍁</span> <span>Maple</span><span class="footer-logo-savings">Savings</span></a>
+    <nav aria-label="Footer navigation">
+      <div class="footer-links">
+        <a href="/">Calculator</a>
+        <a href="/ontario/">Ontario</a>
+        <a href="/bc/">British Columbia</a>
+        <a href="/alberta/">Alberta</a>
+        <a href="/quebec/">Quebec</a>
+        <a href="/about/">About</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/disclosure/">Disclosure</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </nav>
+    <div class="footer-disclaimer">
+      <strong>Estimates only. Results may differ from your official CRA assessment.</strong><br><br>
+      Tax calculations are estimates for informational purposes only and do not constitute tax advice. Consult a qualified tax professional for personalized guidance. MapleSavings is not affiliated with the Canada Revenue Agency.<br><br>
+      <strong>Affiliate disclosure:</strong> Some links on this site are referral links. See our <a href="/disclosure/" style="color:inherit;">full disclosure</a>.
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 MapleSavings · Your Canadian tax savings, calculated in seconds.</div>
+</footer>
+
+</body>
+</html>
