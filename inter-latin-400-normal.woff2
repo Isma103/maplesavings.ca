@@ -6,13 +6,13 @@
   <meta name="theme-color" content="#1D6B3E" />
 
   <!-- ═══ PRIMARY SEO ═══ -->
-  <title>Canada Income Tax Calculator 2025 | MapleSavings</title>
-  <meta name="description" content="Free Canadian RRSP & FHSA tax savings calculator. Enter your income to see exactly how much tax you can save — all 13 provinces, 2024, 2025 & 2026 CRA brackets." />
+  <title>Alberta Income Tax Calculator 2025 | MapleSavings</title>
+  <meta name="description" content="Free Alberta income tax calculator. No provincial sales tax, flat 8% base rate. See your RRSP &amp; FHSA savings with 2025 tax brackets — instant results." />
   <meta name="robots" content="index, follow" />
 
-  <link rel="canonical" href="https://maplesavings.ca/" />
-  <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/" />
-  <link rel="alternate" hreflang="x-default" href="https://maplesavings.ca/" />
+  <link rel="canonical" href="https://maplesavings.ca/alberta/" />
+  <link rel="alternate" hreflang="en-ca" href="https://maplesavings.ca/alberta/" />
+  <link rel="alternate" hreflang="x-default" href="https://maplesavings.ca/alberta/" />
 
   <!-- ═══ FAVICON ═══ -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -22,9 +22,9 @@
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="MapleSavings" />
   <meta property="og:locale"      content="en_CA" />
-  <meta property="og:url"         content="https://maplesavings.ca/" />
-  <meta property="og:title"       content="Canada Income Tax Calculator 2025 — RRSP &amp; FHSA Savings | MapleSavings" />
-  <meta property="og:description" content="Free Canadian RRSP & FHSA tax savings calculator. Enter your income to see exactly how much tax you can save — all 13 provinces, 2024, 2025 & 2026 CRA brackets." />
+  <meta property="og:url"         content="https://maplesavings.ca/alberta/" />
+  <meta property="og:title"       content="Alberta Income Tax Calculator 2025 — RRSP &amp; FHSA Savings | MapleSavings" />
+  <meta property="og:description" content="Free Alberta income tax calculator. Alberta has no provincial sales tax and its 2025 brackets start at 8%. See your RRSP & FHSA savings with 2025 tax brackets." />
 
   <!-- ═══ TWITTER CARD ═══ -->
   <meta property="og:image"        content="https://maplesavings.ca/og-image.png" />
@@ -32,8 +32,8 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:image"       content="https://maplesavings.ca/og-image.png" />
-  <meta name="twitter:title"       content="Canada Income Tax Calculator 2025 — RRSP &amp; FHSA Savings | MapleSavings" />
-  <meta name="twitter:description" content="Free Canadian tax calculator. See how much you can save with RRSP & FHSA contributions — instant results for all 13 provinces." />
+  <meta name="twitter:title"       content="Alberta Income Tax Calculator 2025 — RRSP &amp; FHSA Savings | MapleSavings" />
+  <meta name="twitter:description" content="Free Alberta income tax calculator. Alberta has no provincial sales tax and its 2025 brackets start at 8%. See your RRSP & FHSA tax savings instantly." />
 
   <!-- ═══ FONTS ═══ -->
   <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
@@ -44,9 +44,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "MapleSavings — RRSP & FHSA Tax Calculator",
-    "description": "Free Canadian tax savings calculator. Calculate your RRSP and FHSA tax savings instantly across all 13 provinces and territories for 2024 and 2025.",
-    "url": "https://maplesavings.ca/",
+    "name": "Alberta RRSP & FHSA Tax Calculator — MapleSavings",
+    "description": "Free Alberta income tax calculator. Alberta has no provincial sales tax and its 2025 brackets start at 8%. Calculate your RRSP and FHSA tax savings using 2025 brackets.",
+    "url": "https://maplesavings.ca/alberta/",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "inLanguage": "en-CA",
@@ -63,6 +63,18 @@
   }
   </script>
 
+  <!-- ═══ STRUCTURED DATA: Breadcrumb ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MapleSavings", "item": "https://maplesavings.ca/" },
+      { "@type": "ListItem", "position": 2, "name": "Alberta Tax Calculator", "item": "https://maplesavings.ca/alberta/" }
+    ]
+  }
+  </script>
+
   <!-- ═══ STRUCTURED DATA: FAQ ═══ -->
   <script type="application/ld+json">
   {
@@ -71,34 +83,18 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How much can I save with an RRSP contribution?",
+        "name": "Does Alberta have provincial income tax?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Your RRSP tax savings equal your contribution multiplied by your combined federal and provincial marginal tax rate. For example, contributing $18,000 at a 43% marginal rate saves approximately $7,740 in taxes. Enter your income and province above to see your personalized savings."
+          "text": "Yes, Alberta levies provincial income tax starting at a flat 10% on income up to $148,269 (2024), with rates up to 15% on income over $355,845. However, Alberta has no provincial sales tax (PST), giving Albertans the lowest overall tax burden among Canadian provinces for most income levels."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the RRSP contribution limit for 2025 and 2026?",
+        "name": "What is Alberta's combined marginal tax rate at $75,000?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The 2025 RRSP contribution limit is $32,490 (or 18% of your 2024 earned income, whichever is lower). For 2026, the limit increased to $33,810. Unused room from prior years carries forward indefinitely. Your personal limit is on your CRA Notice of Assessment or in My CRA Account."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the RRSP contribution deadline?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The RRSP contribution deadline for the 2025 tax year is March 2, 2026. Contributions made by this date can be deducted on your 2025 tax return. The deadline is always 60 days after December 31 of the tax year."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens to unused RRSP contribution room?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Unused RRSP contribution room carries forward indefinitely from any year after 1990. If you under-contribute in a given year, the unused room accumulates and can be used in any future year — there is no deadline to use it. Your current accumulated room is shown on your CRA Notice of Assessment."
+          "text": "At $75,000 of employment income in Alberta in 2025, your combined marginal tax rate is approximately 30.5% — 20.5% federal plus 10% Alberta provincial. Contributing $18,000 to your RRSP saves approximately $5,490 in income tax — one of the better RRSP values in Canada."
         }
       },
       {
@@ -106,31 +102,23 @@
         "name": "What is an FHSA and how much can I contribute?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The First Home Savings Account (FHSA) is a registered account for first-time homebuyers. In your first year, you can contribute up to $8,000. Unused room from the prior year carries forward (up to $8,000), allowing up to $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible and qualifying withdrawals to buy a first home are completely tax-free."
+          "text": "The First Home Savings Account (FHSA) is for first-time homebuyers. In your first year, you can contribute up to $8,000. Unused room carries forward (up to $8,000), allowing up to $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible and withdrawals for a first home purchase are tax-free."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I contribute to both an RRSP and an FHSA in the same year?",
+        "name": "What is the RRSP contribution limit for 2025 and 2026?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — you can contribute to both an RRSP and an FHSA in the same tax year, and both reduce your taxable income dollar-for-dollar. For a first-time homebuyer with available room in both accounts, stacking RRSP and FHSA contributions delivers the maximum combined tax deduction."
+          "text": "The 2025 RRSP limit is $32,490 (or 18% of your 2024 earned income, whichever is lower). For 2026, the limit increased to $33,810. Unused room carries forward indefinitely. Your personal limit is on your CRA Notice of Assessment or in My CRA Account."
         }
       },
       {
         "@type": "Question",
-        "name": "How does the FHSA compare to the Home Buyers' Plan (HBP)?",
+        "name": "Can I contribute to both an RRSP and FHSA in the same year?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Both help Canadians buy a first home, but they work differently. The FHSA offers a tax deduction on contributions AND tax-free withdrawals — with no repayment required. The HBP lets you borrow up to $60,000 from an existing RRSP and repay it over 15 years. The FHSA is generally more flexible because there is no repayment obligation and you can also use both plans together."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens to my FHSA if I never buy a home?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If you never purchase a qualifying first home, your FHSA savings can be transferred tax-free to your RRSP or RRIF, or withdrawn as taxable income. The account must be closed by December 31 of the year you turn 71, or 15 years after you first opened it, whichever comes first."
+          "text": "Yes — Alberta residents can contribute to both in the same tax year. Both reduce your federal and Alberta provincial taxable income dollar-for-dollar. With Alberta's 2025 brackets starting at 8%, the combined savings are straightforward to calculate — this calculator shows both above."
         }
       },
       {
@@ -138,31 +126,15 @@
         "name": "Is my personal data safe when using MapleSavings?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — MapleSavings runs entirely in your browser. Your income, RRSP room, FHSA room, and all other inputs are never sent to any server or third party. All calculations happen locally on your device and nothing is stored or tracked."
+          "text": "Yes. MapleSavings runs entirely in your browser — your income, RRSP room, FHSA room, and all other inputs are never sent to any server or third party. All calculations happen locally on your device and nothing is stored or tracked."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the TFSA contribution limit?",
+        "name": "Are these Alberta tax calculations accurate?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The TFSA contribution limit is $7,000 per year for 2024, 2025, and 2026. If you have been eligible since the TFSA launched in 2009 and have never contributed, your total lifetime room is $102,000 as of 2026. Unused TFSA room carries forward indefinitely. Want to see how it could grow over time? Try our investment growth calculator."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does this calculator work for all Canadian provinces?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — MapleSavings supports all 13 provinces and territories: Ontario, British Columbia, Alberta, Quebec, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, PEI, Newfoundland and Labrador, Northwest Territories, Nunavut, and Yukon. Select your province in the calculator for province-specific tax brackets."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are these tax calculations accurate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "MapleSavings uses 2025 federal and provincial tax brackets to estimate your savings. Results are estimates for informational purposes only. Your actual tax owing may differ based on your full tax situation. Consult a qualified tax professional for personalized advice. For a full refund or balance-owing estimate including CPP, EI, and tax credits, try our Tax Refund Calculator."
+          "text": "MapleSavings uses 2025 CRA federal and Alberta provincial tax brackets to estimate your savings. Results are estimates for informational purposes — your actual tax owing may differ. Consult a tax professional for personalized advice."
         }
       }
     ]
@@ -230,14 +202,6 @@
       border: 1.5px solid var(--accent); padding: 10px 20px; font-size: 0.875rem;
     }
     .btn-ghost:hover { background: var(--accent-light); transform: translateY(-1px); }
-
-    /* === CALCULATOR SWITCHER === */
-    .calc-switcher { position: sticky; top: 64px; z-index: 99; background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
-    .calc-switcher-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-    .calc-switch-pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 100px; font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); border: 1.5px solid var(--border); background: var(--surface-2); transition: all 0.2s ease; white-space: nowrap; }
-    .calc-switch-pill:hover { border-color: var(--accent); color: var(--accent); }
-    .calc-switch-pill.active { background: var(--accent); border-color: var(--accent); color: #FFFFFF; pointer-events: none; }
-    @media (max-width: 480px) { .calc-switcher { padding: 8px 16px; } .calc-switch-pill { padding: 7px 12px; font-size: 0.75rem; } }
 
     /* === HERO === */
     .hero {
@@ -738,31 +702,14 @@
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; z-index: 300; }
     .skip-link:focus { left: 0; }
 
-    /* === SAVINGS BRIDGE === */
-    .savings-bridge {
-      background: linear-gradient(135deg, #F0FAF5 0%, #EBF5F0 100%);
-      border: 1px solid #CDE9D8; border-radius: 12px;
-      padding: 13px 16px; margin-bottom: 12px;
-      font-size: 0.8125rem; color: var(--text-muted); line-height: 1.7;
-    }
-    .savings-bridge strong { color: var(--accent); font-weight: 600; }
-
-    /* === WHY WEALTHSIMPLE === */
-    .why-ws {
-      background: var(--surface-2); border: 1px solid var(--border);
-      border-radius: 10px; padding: 12px 14px; margin-bottom: 12px;
-    }
-    .why-ws-title {
-      font-size: 0.6875rem; font-weight: 700; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 9px;
-    }
+    /* === BRIDGE + WHY-WS === */
+    .savings-bridge { background: linear-gradient(135deg, #F0FAF5 0%, #EBF5F0 100%); border: 1px solid #CDE9D8; border-radius: 12px; padding: 13px 16px; margin-bottom: 12px; font-size: 0.8125rem; color: var(--text-muted); line-height: 1.7; } .savings-bridge strong { color: var(--accent); font-weight: 600; }
+    .why-ws { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+    .why-ws-title { font-size: 0.6875rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 9px; }
     .why-ws-features { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px; }
-    .why-ws-feature {
-      font-size: 0.78rem; color: var(--text-muted);
-      display: flex; align-items: center; gap: 5px;
-    }
-    .why-ws-check { color: var(--accent); font-weight: 700; flex-shrink: 0; }
-    @media (max-width: 768px) { .why-ws-features { grid-template-columns: 1fr; } }
+    .why-ws-feature { font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+    .why-ws-check { color: var(--accent); font-weight: 700; }
+    @media (max-width: 480px) { .why-ws-features { grid-template-columns: 1fr; } }
       button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </style>
 </head>
@@ -773,7 +720,7 @@
 <!-- NAVBAR -->
 <nav class="navbar" aria-label="Main navigation">
   <div class="navbar-inner">
-    <a href="#hero" class="logo" aria-label="MapleSavings home">
+    <a href="/" class="logo" aria-label="MapleSavings home">
       <span aria-hidden="true">🍁</span>
       <span><span class="logo-maple">Maple</span><span class="logo-savings">Savings</span></span>
     </a>
@@ -781,24 +728,12 @@
   </div>
 </nav>
 
-<!-- CALCULATOR SWITCHER -->
-<div class="calc-switcher" aria-label="Switch calculator">
-  <div class="calc-switcher-inner">
-    <a href="/" class="calc-switch-pill active"><span aria-hidden="true">🍁</span> RRSP &amp; FHSA</a>
-    <a href="/fhsa-calculator/" class="calc-switch-pill"><span aria-hidden="true">🏠</span> FHSA Calculator</a>
-    <a href="/tax-refund/" class="calc-switch-pill"><span aria-hidden="true">📄</span> Tax Refund</a>
-    <a href="/take-home-pay/" class="calc-switch-pill"><span aria-hidden="true">💵</span> Take-Home Pay</a>
-    <a href="/capital-gains/" class="calc-switch-pill"><span aria-hidden="true">📊</span> Capital Gains</a>
-    <a href="/investment-calculator/" class="calc-switch-pill"><span aria-hidden="true">📈</span> Investment Growth</a>
-  </div>
-</div>
-
 <main id="main-content">
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <h1>See How Much Tax You Could Save With an RRSP or FHSA</h1>
-  <p class="hero-sub">Enter your income and contribution room — MapleSavings calculates your exact federal and provincial tax savings instantly. Built for Canadians. <span aria-hidden="true">🍁</span></p>
+  <h1>Alberta Income Tax Calculator — See Your 2025 RRSP &amp; FHSA Savings</h1>
+  <p class="hero-sub">Alberta has no provincial sales tax and its 2025 tax brackets start at 8%. Enter your income and contribution room to see your exact 2025 RRSP & FHSA savings. Free, instant, no signup. <span aria-hidden="true">🍁</span></p>
   <div class="trust-bar" aria-label="Calculator highlights">
     <div class="trust-item">
       <span class="trust-value">All 13</span>
@@ -851,7 +786,7 @@
             <label for="province">Your Province or Territory</label>
           </div>
           <select id="province" class="form-input" aria-label="Select province or territory">
-            <option value="AB">Alberta (AB)</option>
+            <option value="AB" selected>Alberta (AB)</option>
             <option value="BC">British Columbia (BC)</option>
             <option value="MB">Manitoba (MB)</option>
             <option value="NB">New Brunswick (NB)</option>
@@ -859,7 +794,7 @@
             <option value="NS">Nova Scotia (NS)</option>
             <option value="NT">Northwest Territories (NT)</option>
             <option value="NU">Nunavut (NU)</option>
-            <option value="ON" selected>Ontario (ON)</option>
+            <option value="ON">Ontario (ON)</option>
             <option value="PE">Prince Edward Island (PE)</option>
             <option value="QC">Quebec (QC)</option>
             <option value="SK">Saskatchewan (SK)</option>
@@ -889,7 +824,7 @@
             <label for="rrsp-room">Available RRSP Room</label>
             <div class="tooltip-wrapper">
               <button type="button" class="tooltip-trigger" aria-label="Info about RRSP room">?</button>
-              <div class="tooltip-box" role="tooltip">Find this on your CRA Notice of Assessment, or log into My CRA Account at canada.ca. The 2025 limit is $32,490 (18% of 2024 earned income). The 2026 limit is $33,810.</div>
+              <div class="tooltip-box" role="tooltip">Find this on your CRA Notice of Assessment, or log into My CRA Account at canada.ca. The 2024 annual limit is 18% of your 2023 earned income, up to $31,560.</div>
             </div>
           </div>
           <div class="input-wrapper">
@@ -1103,7 +1038,7 @@
   </div>
   <div class="optimization-cta">
     <p>By contributing to your RRSP and FHSA, you could save an additional <span class="savings-highlight" id="cmp-savings-inline">$0</span> this tax year.</p>
-    <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-center">Open your account — free in ~5 minutes →</a>
+    <a href="https://wealthsimple.com/invite/E7IMSP" target="_blank" rel="noopener noreferrer" class="btn-cta-center">Start Saving Now →</a>
   </div>
 </section>
 
@@ -1125,56 +1060,36 @@
 <!-- FAQ -->
 <section class="faq-section" id="faq" aria-label="Frequently asked questions">
   <div class="section-header" style="max-width:1100px;margin:0 auto 32px;">
-    <h2 class="section-title">RRSP &amp; FHSA Tax Savings — Frequently Asked Questions</h2>
+    <h2 class="section-title">Alberta RRSP &amp; FHSA Tax Calculator — Frequently Asked Questions</h2>
   </div>
   <div class="faq-grid">
     <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">How much can I save with an RRSP contribution?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Your RRSP tax savings equal your contribution multiplied by your combined federal and provincial marginal tax rate. For example, contributing $18,000 at a 43% marginal rate saves approximately $7,740 in taxes. Enter your income and province above to see your personalized savings.</p></div></div>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Does Alberta have provincial income tax?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Yes, Alberta levies provincial income tax starting at a flat 10% on income up to $148,269 (2024), with rates up to 15% on income over $355,845. However, Alberta has no provincial sales tax (PST), giving Albertans the lowest overall tax burden among Canadian provinces for most income levels.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the RRSP contribution limit for 2025 and 2026?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The 2025 RRSP limit is $32,490 (or 18% of your 2024 earned income, whichever is lower). For 2026, it increased to $33,810. Unused room from prior years carries forward indefinitely. Your personal limit is on your CRA Notice of Assessment or in My CRA Account.</p></div></div>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the RRSP contribution deadline?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The RRSP deadline for the 2025 tax year is March 2, 2026 — 60 days after December 31. Contributions made by that date can be deducted on your 2025 tax return. Missing the deadline means waiting until next year to claim the deduction.</p></div></div>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">What happens to unused RRSP contribution room?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Unused RRSP room carries forward indefinitely from any year after 1990. If you under-contribute in a given year, the unused room accumulates and can be used in any future year — there is no expiry. Your total accumulated room is shown on your CRA Notice of Assessment.</p></div></div>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is Alberta's combined marginal tax rate at $75,000?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">At $75,000 of employment income in Alberta in 2025, your combined marginal tax rate is approximately 30.5% — 20.5% federal plus 10% Alberta provincial. Contributing $18,000 to your RRSP saves approximately $5,490 in income tax — one of the better RRSP values in Canada.</p></div></div>
     </div>
     <div class="faq-item">
       <h3 class="faq-q-heading"><button class="faq-q" type="button">What is an FHSA and how much can I contribute?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The First Home Savings Account (FHSA) is a registered account for first-time homebuyers. In your first year you can contribute up to $8,000. Unused room from the prior year carries forward (up to $8,000), allowing up to $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible and qualifying withdrawals for a first home are completely tax-free.</p></div></div>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The First Home Savings Account (FHSA) is for first-time homebuyers. In your first year, you can contribute up to $8,000. Unused room carries forward (up to $8,000), allowing up to $16,000 in a carry-forward year. The lifetime maximum is $40,000. Contributions are fully tax-deductible and withdrawals for a first home purchase are tax-free.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">Can I contribute to both an RRSP and an FHSA in the same year?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Yes — both reduce your taxable income dollar-for-dollar and can be used in the same tax year. For a first-time homebuyer with available room in both accounts, stacking RRSP + FHSA contributions delivers the maximum combined tax deduction. This calculator shows both savings simultaneously.</p></div></div>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the RRSP contribution limit for 2025 and 2026?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The 2025 RRSP limit is $32,490 (or 18% of your 2024 earned income, whichever is lower). For 2026, the limit increased to $33,810. Unused room carries forward indefinitely. Your personal limit is on your CRA Notice of Assessment or in My CRA Account.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">How does the FHSA compare to the Home Buyers' Plan (HBP)?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Both help Canadians buy a first home, but the FHSA is generally more flexible. The FHSA gives you a tax deduction on contributions AND tax-free withdrawals — with no repayment required. The HBP lets you borrow up to $60,000 from an existing RRSP, but you must repay it over 15 years. You can use both together.</p></div></div>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Can I contribute to both an RRSP and FHSA in the same year?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Yes — Alberta residents can contribute to both in the same tax year. Both reduce your federal and Alberta provincial taxable income dollar-for-dollar. With Alberta's 2025 brackets starting at 8%, the combined savings are straightforward to calculate — this calculator shows both above.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">What happens to my FHSA if I never buy a home?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">If you never purchase a qualifying first home, your FHSA savings can be transferred tax-free to your RRSP or RRIF. You can also withdraw the funds as taxable income. The account must be closed by December 31 of the year you turn 71, or 15 years after you first opened it — whichever comes first.</p></div></div>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">Is my personal data safe when I use MapleSavings?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Is my personal data safe when using MapleSavings?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
       <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Yes. MapleSavings runs entirely in your browser — your income, RRSP room, FHSA room, and all other inputs are never sent to any server or third party. All calculations happen locally on your device and nothing is stored or tracked.</p></div></div>
     </div>
     <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">What is the TFSA contribution limit?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">The TFSA limit is $7,000 per year for 2024, 2025, and 2026. If you have been eligible since the TFSA launched in 2009 and have never contributed, your total lifetime room is $102,000 as of 2026. Unused TFSA room also carries forward indefinitely. Want to see how it could grow over time? Try our <a href="/investment-calculator/">investment growth calculator</a>.</p></div></div>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">Does this calculator work for all Canadian provinces?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">Yes — MapleSavings supports all 13 provinces and territories: Ontario, British Columbia, Alberta, Quebec, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, PEI, Newfoundland and Labrador, Northwest Territories, Nunavut, and Yukon. Select your province in the calculator above for province-specific tax brackets.</p></div></div>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q-heading"><button class="faq-q" type="button">Are these tax calculations accurate?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">MapleSavings uses 2025 federal and provincial tax brackets to estimate your savings. Results are estimates for informational purposes only. Your actual tax owing may differ based on your full tax situation. Consult a qualified tax professional for personalized advice. For a full refund or balance-owing estimate including CPP, EI, and tax credits, try our <a href="/tax-refund/">Tax Refund Calculator</a>.</p></div></div>
+      <h3 class="faq-q-heading"><button class="faq-q" type="button">Are these Alberta tax calculations accurate?<span class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+      <div class="faq-a-wrap"><div class="faq-a-inner"><p class="faq-a">MapleSavings uses 2025 CRA federal and Alberta provincial tax brackets to estimate your savings. Results are estimates for informational purposes — your actual tax owing may differ. Consult a tax professional for personalized advice.</p></div></div>
     </div>
   </div>
 </section>
@@ -1186,20 +1101,25 @@
     <p class="section-sub">Select your province for a pre-configured view with local tax brackets.</p>
   </div>
   <div class="related-grid">
-    <a href="/" class="related-card active" data-province=""><span style="font-size:22px;" aria-hidden="true">🍁</span><span>All Provinces</span></a>
-    <a href="/ontario/" class="related-card" data-province="ON"><span style="font-size:22px;" aria-hidden="true">🏙️</span><span>Ontario</span></a>
-    <a href="/bc/" class="related-card" data-province="BC"><span style="font-size:22px;" aria-hidden="true">🏔️</span><span>British Columbia</span></a>
-    <a href="/alberta/" class="related-card" data-province="AB"><span style="font-size:22px;" aria-hidden="true">🌾</span><span>Alberta</span></a>
-    <a href="/quebec/" class="related-card" data-province="QC"><span style="font-size:22px;" aria-hidden="true">⚜️</span><span>Quebec</span></a>
-    <a href="/manitoba/" class="related-card" data-province="MB"><span style="font-size:22px;" aria-hidden="true">🌻</span><span>Manitoba</span></a>
-    <a href="/saskatchewan/" class="related-card" data-province="SK"><span style="font-size:22px;" aria-hidden="true">🌿</span><span>Saskatchewan</span></a>
-    <a href="/nova-scotia/" class="related-card" data-province="NS"><span style="font-size:22px;" aria-hidden="true">🌊</span><span>Nova Scotia</span></a>
-    <a href="/new-brunswick/" class="related-card" data-province="NB"><span style="font-size:22px;" aria-hidden="true">🍂</span><span>New Brunswick</span></a>
-    <a href="/newfoundland/" class="related-card" data-province="NL"><span style="font-size:22px;" aria-hidden="true">⛵</span><span>Newfoundland</span></a>
-    <a href="/pei/" class="related-card" data-province="PE"><span style="font-size:22px;" aria-hidden="true">🏝️</span><span>PEI</span></a>
-    <a href="/northwest-territories/" class="related-card" data-province="NT"><span style="font-size:22px;" aria-hidden="true">❄️</span><span>NW Territories</span></a>
-    <a href="/nunavut/" class="related-card" data-province="NU"><span style="font-size:22px;" aria-hidden="true">🐻‍❄️</span><span>Nunavut</span></a>
-    <a href="/yukon/" class="related-card" data-province="YT"><span style="font-size:22px;" aria-hidden="true">🌌</span><span>Yukon</span></a>
+    <a href="/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🍁</span><span>All Provinces</span></a>
+    <a href="/ontario/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏙️</span><span>Ontario</span></a>
+    <a href="/bc/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏔️</span><span>British Columbia</span></a>
+    <a href="/alberta/" class="related-card active"><span style="font-size:22px;" aria-hidden="true">🌾</span><span>Alberta</span></a>
+    <a href="/quebec/" class="related-card"><span style="font-size:22px;" aria-hidden="true">⚜️</span><span>Quebec</span></a>
+    <a href="/manitoba/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🌻</span><span>Manitoba</span></a>
+    <a href="/saskatchewan/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🌿</span><span>Saskatchewan</span></a>
+    <a href="/nova-scotia/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🌊</span><span>Nova Scotia</span></a>
+    <a href="/new-brunswick/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🍂</span><span>New Brunswick</span></a>
+    <a href="/newfoundland/" class="related-card"><span style="font-size:22px;" aria-hidden="true">⛵</span><span>Newfoundland</span></a>
+    <a href="/pei/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏝️</span><span>PEI</span></a>
+    <a href="/northwest-territories/" class="related-card"><span style="font-size:22px;" aria-hidden="true">❄️</span><span>NW Territories</span></a>
+    <a href="/nunavut/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🐻‍❄️</span><span>Nunavut</span></a>
+    <a href="/yukon/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🌌</span><span>Yukon</span></a>
+      <a href="/tax-refund/" class="related-card"><span style="font-size:22px;" aria-hidden="true">💰</span><span>Tax Refund Calculator</span></a>
+    <a href="/investment-calculator/" class="related-card"><span style="font-size:22px;" aria-hidden="true">📈</span><span>Investment Calculator</span></a>
+    <a href="/take-home-pay/" class="related-card"><span style="font-size:22px;" aria-hidden="true">💵</span><span>Take-Home Pay Calculator</span></a>
+    <a href="/capital-gains/" class="related-card"><span style="font-size:22px;" aria-hidden="true">📊</span><span>Capital Gains Calculator</span></a>
+    <a href="/fhsa-calculator/" class="related-card"><span style="font-size:22px;" aria-hidden="true">🏠</span><span>FHSA Calculator</span></a>
   </div>
 </section>
 
@@ -1233,11 +1153,6 @@
       <div class="footer-links">
         <a href="#calculator">RRSP Calculator</a>
         <a href="#calculator">FHSA Calculator</a>
-        <a href="/tax-refund/">Tax Refund Calculator</a>
-        <a href="/investment-calculator/">Investment Calculator</a>
-        <a href="/take-home-pay/">Take-Home Pay Calculator</a>
-        <a href="/capital-gains/">Capital Gains Calculator</a>
-        <a href="/fhsa-calculator/">FHSA Calculator</a>
         <a href="/ontario/">Ontario Tax Calculator</a>
         <a href="/bc/">BC Tax Calculator</a>
         <a href="/alberta/">Alberta Tax Calculator</a>
@@ -1248,6 +1163,11 @@
         <a href="/disclosure/">Disclosure</a>
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
+        <a href="/tax-refund/">Tax Refund Calculator</a>
+        <a href="/investment-calculator/">Investment Calculator</a>
+        <a href="/take-home-pay/">Take-Home Pay Calculator</a>
+        <a href="/capital-gains/">Capital Gains Calculator</a>
+        <a href="/fhsa-calculator/">FHSA Calculator</a>
       </div>
     </nav>
     <div class="footer-disclaimer">
@@ -1616,10 +1536,7 @@ function calcGrossTax(income, brackets) {
 // Net tax after the Basic Personal Amount credit (BPA × lowest bracket rate).
 // The BPA is a non-refundable CREDIT against gross tax, not a deduction from
 // taxable income — subtracting it before applying brackets would shield income
-// at the taxpayer's marginal rate instead of the lowest rate, understating tax
-// for anyone above the bottom bracket. (Within the bottom bracket the two
-// approaches are mathematically identical, so this only changes results for
-// multi-bracket incomes.)
+// at the taxpayer's marginal rate instead of the lowest rate.
 function calcTax(income, brackets, personalAmount) {
   const grossTax = calcGrossTax(income, brackets);
   const bpaCredit = personalAmount * brackets[0].rate;
@@ -1628,7 +1545,7 @@ function calcTax(income, brackets, personalAmount) {
 
 function calcTotalTax(income, province, B) {
   let fedTax = calcTax(income, B.federal.brackets, B.federal.personalAmount);
-  if (province === 'QC') fedTax *= 0.835; // 16.5% federal abatement for Quebec residents
+  if (province === 'QC') fedTax *= 0.835;
   return fedTax + calcTax(income, B[province].brackets, B[province].personalAmount);
 }
 
@@ -1654,6 +1571,12 @@ function getMarginalRate(income, province, B) {
 function calcRRSPSavings(income, rrspRoom, province, B) {
   if (rrspRoom <= 0) return 0;
   return Math.max(0, calcTotalTax(income, province, B) - calcTotalTax(Math.max(0, income - rrspRoom), province, B));
+}
+
+// FHSA savings — fhsaRoom is already capped to the correct annual limit before being passed in
+function calcFHSASavings(income, fhsaRoom, province, B) {
+  if (fhsaRoom <= 0) return 0;
+  return Math.max(0, calcTotalTax(income, province, B) - calcTotalTax(Math.max(0, income - fhsaRoom), province, B));
 }
 
 // ================================
@@ -1753,12 +1676,12 @@ const REC_DEFS = [
 ];
 
 const REC_CTA_LABELS = {
-  rrsp: 'Contribute to RRSP',
-  fhsa: 'Open FHSA',
-  tfsa: 'Open TFSA',
-  instalments: 'Plan Payment',
-  spousal: 'Learn More',
-  advanced: 'Consult a Pro'
+  rrsp: 'Open RRSP Account',
+  fhsa: 'Open FHSA Account',
+  tfsa: 'Open TFSA Account',
+  instalments: 'File Taxes Free',
+  spousal: 'Open Spousal RRSP',
+  advanced: 'Open an Account'
 };
 
 function makeRecCard(r, rank) {
@@ -1857,12 +1780,11 @@ function calculate(doScroll) {
 
   // Tax calcs
   let fedTax = calcTax(totalIncome, B.federal.brackets, B.federal.personalAmount);
-  if (province === 'QC') fedTax *= 0.835; // 16.5% federal abatement for QC
+  if (province === 'QC') fedTax *= 0.835;
   const provTax  = calcTax(totalIncome, B[province].brackets, B[province].personalAmount);
   const totalTax = fedTax + provTax;
   const marginalRate = getMarginalRate(totalIncome, province, B);
-
-  // Optimized scenario — single source of truth prevents double-counting at bracket boundaries
+  // Single source of truth — prevents double-counting at bracket boundaries
   const reducedIncome   = Math.max(0, totalIncome - rrspRoom - fhsaRoom);
   const reducedTax      = calcTotalTax(reducedIncome, province, B);
   const combinedSavings = Math.max(0, totalTax - reducedTax);
@@ -2022,14 +1944,13 @@ function updateStickyCta() {
 }
 window.addEventListener('scroll', updateStickyCta, { passive: true });
 
-// Date-aware urgency banner
 function computeUrgency() {
   const banner = document.getElementById('urgency-banner');
   if (!banner) return;
   const now = new Date();
   const yr = now.getFullYear();
-  const fhsaDeadline = new Date(yr, 11, 31); // Dec 31
-  const rrspDeadline = new Date(yr + (now.getMonth() >= 2 ? 1 : 0), 2, 1); // Mar 1
+  const fhsaDeadline = new Date(yr, 11, 31);
+  const rrspDeadline = new Date(yr + (now.getMonth() >= 2 ? 1 : 0), 2, 1);
   const dayMs = 864e5;
   const fhsaDays = Math.ceil((fhsaDeadline - now) / dayMs);
   const rrspDays = Math.ceil((rrspDeadline - now) / dayMs);
